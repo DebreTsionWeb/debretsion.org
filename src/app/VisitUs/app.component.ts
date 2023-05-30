@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
   template: `
 
     <Header></Header>
+    <VisitUsBody></VisitUsBody>
     <Footer></Footer>
 
 
     `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../app.component.css']
 })
 
 export class AppComponent {
