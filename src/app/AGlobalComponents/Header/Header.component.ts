@@ -1,43 +1,46 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "Header",
     template: `
         <div id="Navbar">
-      <div id="NavbarContainer">
-        <div id="NavbarTextContainer">
-          <ul id="NavbarListContainer">
-            <li id="Home">
-              <a href="/">Home</a>
-            </li>
-            <li id="VisitUs">
-              <a href="/">Visit Us</a>
-            </li>
-            <li id="Appointment">
-              <a href="/">Appointment</a>
-            </li>
-            <li id="LiveGallery">
-              <a href="/">Live Gallery</a>
-            </li>
-            <li id="ContactUs">
-              <a href="/">Contact Us</a>
-            </li>
-          </ul>
+            <div id="NavbarContainer">
+                <div id="NavbarTextContainer">
+                    <ul id="NavbarListContainer">
+                        <li id="Home">
+                            <a (click)="navigateTo('/')">Home</a>
+                        </li>
+                        <li id="VisitUs">
+                            <a (click)="navigateTo('/VisitUs')">Visit Us</a>
+                        </li>
+                        <li id="Live">
+                        <a (click)="navigateTo('/Live')">Live</a>
+                        </li>
+                        <li id="Appointment">
+                            <a (click)="navigateTo('/Appointment')">Appointment</a>
+                        </li>
+                        <li id="Gallery">
+                            <a (click)="navigateTo('/Gallery')">Gallery</a>
+                        </li>
+                        <li id="Contact">
+                            <a (click)="navigateTo('/Contact')">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="NavbarIconContainer">
+                    <div id="Youtube">
+                        <a href="/" target="blank"></a>
+                    </div>
+                    <div id="Instagram">
+                        <a href="/" target="blank"></a>
+                    </div>
+                    <div id="Facebook">
+                        <a href="/" target="blank"></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="NavbarIconContainer">
-          <div id="Youtube">
-            <a href="/" target="blank"></a>
-          </div>
-          <div id="Instagram">
-            <a href="/" target="blank"></a>
-          </div>
-          <div id="Facebook">
-            <a href="/" target="blank"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     `,
     styles: [`
         .header {
@@ -57,7 +60,15 @@ import { Component, OnInit } from "@angular/core";
         }
     `]
 })
-export class HeaderComponent implements OnInit{
-    constructor() {}
+export class HeaderComponent implements OnInit {
+    constructor(private router: Router) {}
+
     ngOnInit() {}
+
+    navigateTo(route: string): void {
+        this.router.navigate([route]);
+    }
+
+
+    
 }

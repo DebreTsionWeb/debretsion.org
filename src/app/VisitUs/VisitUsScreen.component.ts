@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 @Component({
-  selector: 'app-root',
+  selector: 'VisitUsScreen',
   template: `
 
     <Header></Header>
-    <VisitUsBody></VisitUsBody>
     <Footer></Footer>
 
 
@@ -12,6 +11,6 @@ import { Component } from '@angular/core';
   styleUrls: ['../app.component.css']
 })
 
-export class AppComponent {
-  title = 'DebreTsionWebsite';
+export class VisitUsScreen {
+  title = 'Visit Us | Debre Tsion';
 }
