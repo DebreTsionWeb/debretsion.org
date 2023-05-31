@@ -6,21 +6,16 @@ import mongoose from 'mongoose';
 const AppointmentSchema = new mongoose.Schema({
     user: {
         type: String,
-        required: true,
-    },
-    date: {
-        type: String,
-        ref: 'Date',
+        ref: 'User',
         required: true,
     },
     time: {
         type: String,
-        ref: 'Time',
         required: true,
     },
     reason: {
         type: String,
-        required: false,
+        required: true,
     },
     createdAt: {
         type: Date,

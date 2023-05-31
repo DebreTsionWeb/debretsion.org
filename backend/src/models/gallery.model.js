@@ -4,9 +4,9 @@ import mongoose from 'mongoose';
  * Gallery Schema for MongoDB
  */
 const GallerySchema = new mongoose.Schema({
-    Image: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Image',
+    url: {
+        type: String,
+        required: true,
     },
     createdAt: {
         type: Date,

@@ -24,11 +24,11 @@ const NewUserSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String,
-        required: true,
+        required: false,
     },
     email: {
         type: String,
-        required: false,
+        required: true,
         unique: true,
     },
     createdAt: {
