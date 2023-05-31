@@ -9,12 +9,12 @@ import { VisitUsScreen } from './VisitUs/VisitUsScreen.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeScreen },
-  { path: 'Appointment', component: AppointmentScreen},
-  { path: 'Contact', component: ContactScreen},
-  { path: 'Gallery', component: GalleryScreen},
-  { path: 'Live', component: LiveScreen},
-  { path: 'VisitUs', component: VisitUsScreen}
+  { path: '', title: 'Home | Debre Tsion', component: HomeScreen },
+  { path: 'Appointment', title: 'Appointments | Debre Tsion', component: AppointmentScreen},
+  { path: 'Contact', title: 'Contact | Debre Tsion', component: ContactScreen},
+  { path: 'Gallery', title: 'Gallery | Debre Tsion', component: GalleryScreen},
+  { path: 'Live', title: 'Lives | Debre Tsion', component: LiveScreen},
+  { path: 'VisitUs', title: 'Visit Us | Debre Tsion', component: VisitUsScreen}
 ];
 
 @NgModule({
