@@ -27,21 +27,7 @@ import { Component, OnInit } from "@angular/core";
 </div>
     `,
     styles: [`
-        .Footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            height: 200px;
-            background-color: black;
-            border-bottom: 1px solid #ccc;
-        }
-        .Footer__logo img {
-
-        }
-        .Footer__title h1 {
-
-        }
+       
     `]
 })
 export class FooterComponent implements OnInit{

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 
     <Header></Header>
     <Footer></Footer>
-
+    
 
     `,
   styleUrls: ['../app.component.css']
