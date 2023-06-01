@@ -13,7 +13,7 @@ const NewUserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    Cristina: { // Baptism Name
+    kristina: { // Baptism Name
         type: String,
         required: false,
         unique: true,
