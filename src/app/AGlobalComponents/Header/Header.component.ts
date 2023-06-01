@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
         <div id="Navbar">
             <div id="NavbarContainer">
                 <div id="NavBarImageContainer">
-                        <img src="" alt="LogoPicture">
+                        <img src="/" alt="LogoPicture"/>
                 </div>
                 <div id="NavbarTextContainer">
                     <ul id="NavbarListContainer">
@@ -33,7 +33,7 @@ import { Router } from "@angular/router";
                 </div>
                 <div id="NavbarIconContainer">
                     <div id="Youtube">
-                        <a href="/" target="blank"></a>
+                        <a href="/" target="blank"><span class="fab fa-youtube">Youtube</span></a>
                     </div>
                     <div id="Instagram">
                         <a href="/" target="blank"></a>
@@ -48,9 +48,6 @@ import { Router } from "@angular/router";
     styles: [`
 
        *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
         font-family: 'Kumbh Sans', sans-serif;
        }
 
