@@ -33,23 +33,19 @@ import { Router } from "@angular/router";
                 </div>
                 <div id="NavbarIconContainer">
                     <div id="Youtube">
-                        <a href="/" target="blank"><span class="fab fa-youtube">Youtube</span></a>
+                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-youtube"></span></a>
                     </div>
                     <div id="Instagram">
-                        <a href="/" target="blank"></a>
+                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-instagram"></span></a>
                     </div>
                     <div id="Facebook">
-                        <a href="/" target="blank"></a>
+                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-facebook"></span></a>
                     </div>
                 </div>
             </div>
         </div>
     `,
     styles: [`
-
-       *{
-        font-family: 'Kumbh Sans', sans-serif;
-       }
 
        #Navbar{
         height:80px;
@@ -75,15 +71,13 @@ import { Router } from "@angular/router";
        }
 
        #NavbarImageContainer{
-        display:flex;
         width: 0%;
         height: 0px;
-        padding-right: 10px;
        }
 
        #NavbarTextContainer{
-        display: flex;
-        padding-left: 50px;
+        padding-left: 5px;
+        padding-right: 10px;
        }
 
        #NavbarListContainer{
@@ -103,7 +97,6 @@ import { Router } from "@angular/router";
        }
 
        #NavbarListContainer li{
-        padding: 0 5px;
         height: 80px;
        }
 
@@ -156,7 +149,18 @@ import { Router } from "@angular/router";
        }
 
        #NavbarIconContainer{
-        
+        display: flex;
+        align-items: center;
+        text-align: center;
+       }
+
+       #NavbarIconContainer div a{
+        padding-right: 8px;
+        color: black;
+       }
+
+       #CustomIcon{
+        font-size: 1.3rem;
        }
     `]
 })

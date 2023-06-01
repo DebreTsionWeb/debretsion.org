@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
                     <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
                 </div>
                 <div id="ImageContainer">
-                    <img src="/" alt="DebreTsionImage">
+                    <img src="/" alt="DebreTsionImage"/>
                 </div>
             </div>
         </div>
