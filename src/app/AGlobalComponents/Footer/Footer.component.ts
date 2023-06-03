@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   <div id="FooterContainer">
     <div id="FooterTextContainer">
       <p id="FooterText">
-        <a href="/" target="blank" id="TermsLink">Terms & Conditions</a>
+        <a href="/" target="blank" id="TermsLink">Donate</a>
         " - "
         <a href="/" target="blank" id="PolicyLink">Privacy Policy</a>
       </p>
