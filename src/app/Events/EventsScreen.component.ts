@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'GalleryScreen',
+  selector: 'EventsScreen',
   template: `
 
     <Header></Header>
@@ -13,6 +13,6 @@ import { Component } from '@angular/core';
   styleUrls: ['../app.component.css']
 })
 
-export class GalleryScreen {
-  title = 'Gallery | Debre Tsion';
+export class EventsScreen {
+  title = 'Events | Debre Tsion';
 }

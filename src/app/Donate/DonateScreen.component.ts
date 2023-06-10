@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+
 @Component({
-  selector: 'AppointmentScreen',
+  selector: 'DonateScreen',
   template: `
 
     <Header></Header>
@@ -12,6 +13,6 @@ import { Component } from '@angular/core';
   styleUrls: ['../app.component.css']
 })
 
-export class AppointmentScreen {
-  title = 'Appointments | Debre Tsion';
+export class DonateScreen {
+  title = 'Donate | Debre Tsion';
 }

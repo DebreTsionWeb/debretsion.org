@@ -2,22 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { AppointmentScreen } from './AppointmentScreen.component';
+import { AboutScreen } from './AboutScreen.component';
 
-import { HeaderComponent } from '../AGlobalComponents/Header/Header.component';
-import { FooterComponent } from '../AGlobalComponents/Footer/Footer.component';
+import { HeaderComponent } from '../.GlobalComponents/Header/Header.component';
+import { FooterComponent } from '../.GlobalComponents/Footer/Footer.component';
+import { AboutBody } from './AboutComponents/AboutBody.component';
 
 @NgModule({
   declarations: [
-    AppointmentScreen,
+    AboutScreen,
     HeaderComponent,
     FooterComponent,
+    AboutBody
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppointmentScreen]
+  bootstrap: [AboutScreen]
 })
 export class AppModule { }

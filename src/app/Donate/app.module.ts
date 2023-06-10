@@ -2,24 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { GalleryScreen } from './GalleryScreen.component';
+import { DonateScreen } from './DonateScreen.component';
 
 import { HeaderComponent } from '../.GlobalComponents/Header/Header.component';
 import { FooterComponent } from '../.GlobalComponents/Footer/Footer.component';
-import { GalleryBody } from './GalleryComponents/GalleryBody.component';
+import { DonateBody } from './DonateComponents/DonateBody.component';
 
 @NgModule({
   declarations: [
-    GalleryScreen,
+    DonateScreen,
     HeaderComponent,
     FooterComponent,
-    GalleryBody
+    DonateBody
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [GalleryScreen]
+  bootstrap: [DonateScreen]
 })
 export class AppModule { }
