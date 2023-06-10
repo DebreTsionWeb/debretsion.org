@@ -14,20 +14,23 @@ import { Router } from "@angular/router";
                         <li id="Home">
                             <a (click)="navigateTo('/')">Home</a>
                         </li>
-                        <li id="VisitUs">
-                            <a (click)="navigateTo('/VisitUs')">Visit Us</a>
+                        <li id="About">
+                            <a (click)="navigateTo('/About')">About Us</a>
+                        </li>
+                        <li id="Events">
+                            <a (click)="navigateTo('/Events')">Events</a>
                         </li>
                         <li id="Live">
                             <a (click)="navigateTo('/Live')">Live</a>
                         </li>
-                        <li id="Appointment">
-                            <a (click)="navigateTo('/Appointment')">Appointment</a>
-                        </li>
                         <li id="Gallery">
                             <a (click)="navigateTo('/Gallery')">Gallery</a>
                         </li>
+                        <li id="Donate">
+                            <a (click)="navigateTo('/Donate')">Donate</a>
+                        </li>
                         <li id="Contact">
-                            <a (click)="navigateTo('/Contact')">Contact</a>
+                            <a (click)="navigateTo('/Contact')">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -108,11 +111,11 @@ import { Router } from "@angular/router";
          opacity: 0.5;
        }
 
-       #VisitUs{
+       #Events{
         
        }
 
-       #VisitUs:hover{
+       #Events:hover{
          opacity: 0.5;
        }
 
@@ -124,11 +127,11 @@ import { Router } from "@angular/router";
          opacity: 0.5;
        }
 
-       #Appointment{
+       #About{
         
        }
 
-       #Appointment:hover{
+       #About:hover{
          opacity: 0.5;
        }
 

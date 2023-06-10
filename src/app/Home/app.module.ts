@@ -2,24 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { AppComponent } from './app.component';
+import { HomeScreen } from './HomeScreen.component';
 
-import { HeaderComponent } from '../AGlobalComponents/Header/Header.component';
-import { FooterComponent } from '../AGlobalComponents/Footer/Footer.component';
-import { VisitUsBody } from './VisitUsComponents/VisitUsBody.component';
+import { HeaderComponent } from '../.GlobalComponents/Header/Header.component';
+import { FooterComponent } from '../.GlobalComponents/Footer/Footer.component';
+import { HomeBody } from './HomeComponents/HomeBody.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    HomeScreen,
     HeaderComponent,
     FooterComponent,
-    VisitUsBody
+    HomeBody
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeScreen]
 })
 export class AppModule { }

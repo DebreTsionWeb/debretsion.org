@@ -2,24 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { GalleryScreen } from './GalleryScreen.component';
+import { EventsScreen } from './EventsScreen.component';
 
 import { HeaderComponent } from '../.GlobalComponents/Header/Header.component';
 import { FooterComponent } from '../.GlobalComponents/Footer/Footer.component';
-import { GalleryBody } from './GalleryComponents/GalleryBody.component';
+import { EventsBody } from './EventsComponents/EventsBody.component';
 
 @NgModule({
   declarations: [
-    GalleryScreen,
+    EventsScreen,
     HeaderComponent,
     FooterComponent,
-    GalleryBody
+    EventsBody
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [GalleryScreen]
+  bootstrap: [EventsScreen]
 })
 export class AppModule { }

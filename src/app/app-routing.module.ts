@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeScreen } from './Home/HomeScreen.component';
-import { AppointmentScreen } from './Appointment/AppointmentScreen.component';
-import { ContactScreen } from './Contact/ContactScreen.component';
-import { GalleryScreen } from './Gallery/GalleryScreen.component';
+import { AboutScreen } from './About/AboutScreen.component';
+import { EventsScreen } from './Events/EventsScreen.component';
 import { LiveScreen } from './Live/LiveScreen.component';
-import { VisitUsScreen } from './VisitUs/VisitUsScreen.component';
-
+import { GalleryScreen } from './Gallery/GalleryScreen.component';
+import { DonateScreen } from './Donate/DonateScreen.component';
+import { ContactScreen } from './Contact/ContactScreen.component';
 
 const routes: Routes = [
   { path: '', title: 'Home | Debre Tsion', component: HomeScreen },
-  { path: 'Appointment', title: 'Appointments | Debre Tsion', component: AppointmentScreen},
-  { path: 'Contact', title: 'Contact | Debre Tsion', component: ContactScreen},
+  { path: 'About', title: 'About Us | Debre Tsion', component: AboutScreen},
+  { path: 'Events', title: 'Events | Debre Tsion', component: EventsScreen},
+  { path: 'Live', title: 'Live | Debre Tsion', component: LiveScreen},
   { path: 'Gallery', title: 'Gallery | Debre Tsion', component: GalleryScreen},
-  { path: 'Live', title: 'Lives | Debre Tsion', component: LiveScreen},
-  { path: 'VisitUs', title: 'Visit Us | Debre Tsion', component: VisitUsScreen}
+  { path: 'Donate', title: 'Donate | Debre Tsion', component: DonateScreen},
+  { path: 'Contact', title: 'Contact Us | Debre Tsion', component: ContactScreen}
 ];
 
 @NgModule({
