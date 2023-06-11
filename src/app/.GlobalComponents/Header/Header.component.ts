@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
         <div id="Navbar">
             <div id="NavbarContainer">
                 <div id="NavBarImageContainer">
-                        <img src="/" alt="LogoPicture"/>
+                        <img src="/logo.png" alt="LogoPicture"/>
                 </div>
                 <div id="NavbarTextContainer">
                     <ul id="NavbarListContainer">
