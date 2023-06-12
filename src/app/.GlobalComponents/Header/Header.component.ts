@@ -6,10 +6,11 @@ import { Router } from "@angular/router";
     template: `
         <div id="Navbar">
             <div id="NavbarContainer">
-                <div id="NavBarImageContainer">
-                        <img src="/" alt="LogoPicture"/>
+                <div id="NavbarImageContainer">
+                    <img id="logo" src="assets/logo.png" alt="LogoPicture"/>
                 </div>
                 <div id="NavbarTextContainer">
+                    <i id="bars" class="fa fa-solid fa-bars"></i>
                     <ul id="NavbarListContainer">
                         <li id="Home">
                             <a (click)="navigateTo('/')">Home</a>
@@ -34,73 +35,67 @@ import { Router } from "@angular/router";
                         </li>
                     </ul>
                 </div>
-                <div id="NavbarIconContainer">
-                    <div id="Youtube">
-                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-youtube"></span></a>
-                    </div>
-                    <div id="Instagram">
-                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-instagram"></span></a>
-                    </div>
-                    <div id="Facebook">
-                        <a href="/" target="_blank"><span id="CustomIcon" class="fab fa-facebook"></span></a>
-                    </div>
-                </div>
             </div>
         </div>
     `,
     styles: [`
 
        #Navbar{
-        height:80px;
         display: flex;
-        justify-content: center;
-        align-items:center;
-        font-size: 1rem;
         position: sticky;
-        top:0;
-        z-index:999;
+        width: 100%;
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-family: "Inter", sans-serif;
+        /* border: 1px solid red; */
        }
 
        #NavbarContainer{
         display: flex;
+        position: relative;
+        width: 95%;
+        height: 100%;
         justify-content: space-between;
-        align-items: center;
-        height: 80px;
-        z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 0 25px;
+        /* border: 1px solid blue; */
        }
 
        #NavbarImageContainer{
-        width: 0%;
-        height: 0px;
+        display: flex;
+        position: relative;
+        width: 75px;
+       }
+
+       #logo{
+        display: flex;
+        position: relative;
+        width: 100%;
        }
 
        #NavbarTextContainer{
-        padding-left: 5px;
-        padding-right: 10px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        /* border: 1px solid green; */
        }
 
        #NavbarListContainer{
         display: flex;
-        align-items: center;
-        list-style: none;
-        text-align: center;
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
        }
 
        #NavbarListContainer li a{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        padding: 0 1rem;
-        height: 100%;
+        
        }
 
        #NavbarListContainer li{
-        height: 80px;
+        list-style: none;
        }
 
        #Home{
@@ -151,20 +146,23 @@ import { Router } from "@angular/router";
          opacity: 0.5;
        }
 
-       #NavbarIconContainer{
-        display: flex;
-        align-items: center;
-        text-align: center;
+       #bars{
+        display: none; 
+       }
+       @media (max-width: 700px){
+
+        #bars{
+            display: flex;
+            position: fixed;
+            right: 10%;
+            font-size: 38px;
+        }
+
+        #NavbarListContainer{
+            display: none;
+        }
        }
 
-       #NavbarIconContainer div a{
-        padding-right: 8px;
-        color: black;
-       }
-
-       #CustomIcon{
-        font-size: 1.3rem;
-       }
     `]
 })
 export class HeaderComponent implements OnInit {
@@ -175,7 +173,6 @@ export class HeaderComponent implements OnInit {
     navigateTo(route: string): void {
         this.router.navigate([route]);
     }
-
 
     
 }
