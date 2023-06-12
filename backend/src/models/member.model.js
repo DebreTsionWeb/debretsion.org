@@ -1,30 +1,35 @@
 import mongoose from 'mongoose';
 
 /**
- * Post Schema for MongoDB
+ * Member Schema for MongoDB
  */
-const PostSchema = new mongoose.Schema({
-    title: {
+const MemberSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    name: {
         type: String,
         required: true,
     },
-    description: {
+    kristina: { // Baptism Name
+        type: String,
+        required: false,
+        unique: true,
+    },
+    password: {
         type: String,
         required: true,
     },
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
-    },
-    location: {
+    phoneNumber: {
         type: String,
-        ref: 'Location',
-        required: true,
+        required: false,
     },
-    compensation: {
+    email: {
         type: String,
         required: true,
+        unique: true,
     },
     createdAt: {
         type: Date,
@@ -36,5 +41,4 @@ const PostSchema = new mongoose.Schema({
     },
 });
 
-
-export default mongoose.model('Post', PostSchema);
+export default mongoose.model('Member', MemberSchema);
