@@ -1,20 +1,16 @@
 import mongoose from 'mongoose';
 
 /**
- * Media Schema for MongoDB
+ * Events Schema for MongoDB
  */
-const MediaSchema = new mongoose.Schema({
+const EventsSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true,
     },
-    post: {
+    adminuser: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Post',
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'AdminUser',
     },
     createdAt: {
         type: Date,
@@ -26,4 +22,4 @@ const MediaSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('Media', MediaSchema);
+export default mongoose.model('Events', EventsSchema);

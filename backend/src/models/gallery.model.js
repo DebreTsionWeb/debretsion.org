@@ -8,6 +8,10 @@ const GallerySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    adminuser: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'AdminUser',
+    },
     createdAt: {
         type: Date,
         default: Date.now,

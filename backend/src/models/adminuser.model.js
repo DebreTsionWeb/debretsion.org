@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 /**
- * NewUser Schema for MongoDB
+ * AdminUser Schema for MongoDB
  */
-const NewUserSchema = new mongoose.Schema({
+const AdminUserSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -13,18 +13,13 @@ const NewUserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    kristina: { // Baptism Name
-        type: String,
-        required: false,
-        unique: true,
-    },
     password: {
         type: String,
         required: true,
     },
     phoneNumber: {
         type: String,
-        required: false,
+        required: true,
     },
     email: {
         type: String,
@@ -41,4 +36,4 @@ const NewUserSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('NewUser', NewUserSchema);
+export default mongoose.model('AdminUser', AdminUserSchema);
