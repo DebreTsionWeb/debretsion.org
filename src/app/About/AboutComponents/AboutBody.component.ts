@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody">
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                    <p>About</p>
+                    <h1>About</h1>
                 <div id="AboutBodyTextContainer">
                     <p>This is the about paragraph for the church</p>
                 </div>
