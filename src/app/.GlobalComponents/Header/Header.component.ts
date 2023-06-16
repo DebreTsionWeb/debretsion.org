@@ -99,6 +99,7 @@ import { Router } from "@angular/router";
       }
 
       #NavbarListContainer li a {
+        cursor: pointer;
       }
 
       #NavbarListContainer li {
@@ -188,23 +189,23 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
     isNavbarOpen = false;
-  
+
     constructor(private router: Router) {}
-  
+
     ngOnInit() {}
-  
+
     navigateTo(route: string): void {
       this.router.navigate([route]);
     }
-  
+
     toggleNavbar(): void {
       this.isNavbarOpen = !this.isNavbarOpen;
-  
+
       const barsIcon = document.getElementById("bars");
       if (barsIcon) {
         barsIcon.style.display = this.isNavbarOpen ? "none" : "flex";
       }
-  
+
       const closeIcon = document.getElementById("close");
       if (closeIcon) {
         closeIcon.style.display = this.isNavbarOpen ? "flex" : "none";

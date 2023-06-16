@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
     selector: "GalleryBody",
     template: `
         <div id="GalleryBody">
+          <h1>hi</h1>
         </div>
 
     `,

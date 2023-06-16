@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'GalleryScreen',
   template: `
 
-    <Header></Header>
-
-    <Footer></Footer>
+   <GalleryBody>
 
 
     `,

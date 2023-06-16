@@ -4,10 +4,7 @@ import { Component } from '@angular/core';
   selector: 'HomeScreen',
   template: `
 
-    <Header></Header>
-
-    <Footer></Footer>
-
+<HomeBody></HomeBody> 
 
     `,
   styleUrls: ['../app.component.css']

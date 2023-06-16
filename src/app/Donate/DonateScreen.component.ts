@@ -4,10 +4,8 @@ import { Component } from '@angular/core';
   selector: 'DonateScreen',
   template: `
 
-    <Header></Header>
 
-    <Footer></Footer>
-
+  <DonateBody></DonateBody>
 
     `,
   styleUrls: ['../app.component.css']

@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
   selector: 'ContactScreen',
   template: `
 
-    <Header></Header>
-
-    <Footer></Footer>
+    <ContactBody></ContactBody>
 
 
     `,

@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'LiveScreen',
   template: `
 
-    <Header></Header>
-
-    <Footer></Footer>
+<LiveBody></LiveBody>
 
 
     `,
