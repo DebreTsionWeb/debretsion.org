@@ -18,7 +18,6 @@ import { GalleryBody } from './Gallery/GalleryComponents/GalleryBody.component';
 import { AboutBody } from './About/AboutComponents/AboutBody.component';
 import { EventsBody } from './Events/EventsComponents/EventsBody.component';
 import { DonateBody } from './Donate/DonateComponents/DonateBody.component';
-import { LiveBody } from './Live/LiveComponents/LiveBody.component';
 import { HomeBody } from './Home/HomeComponents/HomeBody.component';
 
 
@@ -39,7 +38,6 @@ import { HomeBody } from './Home/HomeComponents/HomeBody.component';
     AboutBody,
     EventsBody,
     DonateBody,
-    LiveBody,
     HomeBody
   ],
   imports: [

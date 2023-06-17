@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 
 
     `,
-  styleUrls: ['../app.component.css']
+  styles: [`
+
+  `]
 })
 
 export class AboutScreen {
