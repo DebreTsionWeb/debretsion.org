@@ -4,10 +4,12 @@ import { Component } from '@angular/core';
   selector: 'HomeScreen',
   template: `
 
-<HomeBody></HomeBody> 
+<HomeBody></HomeBody>
 
     `,
-  styleUrls: ['../app.component.css']
+  styles: [`
+
+  `]
 })
 
 export class HomeScreen {

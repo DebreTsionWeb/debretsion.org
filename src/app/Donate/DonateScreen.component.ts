@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
   <DonateBody></DonateBody>
 
     `,
-  styleUrls: ['../app.component.css']
+  styles: [`
+
+  `]
 })
 
 export class DonateScreen {
