@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: 'DonateScreen',
   template: `
 
-
+  <Header></Header>
   <DonateBody></DonateBody>
+  <Footer></Footer>
 
     `,
   styles: [`

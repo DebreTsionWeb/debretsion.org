@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: 'EventsScreen',
   template: `
 
+    <Header></Header>
     <EventsBody></EventsBody>
-
+    <Footer></Footer>
 
     `,
   styles: [`

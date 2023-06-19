@@ -45,8 +45,8 @@ export class Server {
             optionsSuccessStatus: 204,
           })
         );
-        this.app.use(cors({ origin: 'https://misplacedbackend.onrender.com' }));
-    this.app.use(cors({ origin: 'https://misplaced.app' }));
+        this.app.use(cors({ origin: 'https://debretsion.onrender.com' }));
+    this.app.use(cors({ origin: 'https://debretsion.org' }));
     this.app.use(cors({ origin: '*' }));
       }
 
@@ -54,7 +54,7 @@ export class Server {
   static async listen() {
     // api init
     this.app.get("/", (req, res) => {
-      res.json({ message: "WELCOME TO MISPLACED API." });
+      res.json({ message: "Debre Tsion API" });
     });
     this.app.listen(this.app.get("port"));
     console.log("SERVER RUNNING ON PORT", this.app.get("port"));

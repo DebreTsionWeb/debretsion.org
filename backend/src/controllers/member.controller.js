@@ -106,7 +106,24 @@ export class MemberController {
 }
 
 /**
- * A function to a user by id
+ * A function to logout a user
+ *
+ * @param {Request} req request object
+ * @param {Response} res response object
+ * @returns {User} user object
+ * @returns {Error} error object
+ */
+static async logout(req, res) {
+    try {
+        res.status(200).json({ message: 'User logged out.' });
+    }
+    catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+
+/**
+ * A function to get a user by id
  *
  * @param {Request} req request object
  * @param {Response} res response object

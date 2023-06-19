@@ -3,6 +3,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 @Component({
   selector: 'LiveScreen',
   template: `
+
+    <Header></Header>
+
     <div id='Live'>
       <div id='LiveContainer'>
         <div id='LiveTitleContainer'>
@@ -21,6 +24,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
           </div>
       </div>
     </div>
+
+    <Footer></Footer>
     `,
   styles: [`
 

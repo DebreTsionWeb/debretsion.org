@@ -19,7 +19,14 @@ import { AboutBody } from './About/AboutComponents/AboutBody.component';
 import { EventsBody } from './Events/EventsComponents/EventsBody.component';
 import { DonateBody } from './Donate/DonateComponents/DonateBody.component';
 import { HomeBody } from './Home/HomeComponents/HomeBody.component';
-
+import { AdminScreen } from './.Admin/AdminScreen.component';
+import { AdminHeader } from './.GlobalComponents/AdminHeader/AdminHeader.component';
+import { AdminFooter } from './.GlobalComponents/AdminFooter/AdminFooter.component';
+import { AdminLogin } from './.Admin/AdminComponents/AdminLogin.component';
+import { AdminHome } from './.Admin/AdminComponents/AdminHome.component';
+import { AdminEvents } from './.Admin/AdminComponents/AdminEvents.component';
+import { AdminGallery } from './.Admin/AdminComponents/AdminGallery.component';
+import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,15 @@ import { HomeBody } from './Home/HomeComponents/HomeBody.component';
     AboutBody,
     EventsBody,
     DonateBody,
-    HomeBody
+    HomeBody,
+    AdminScreen,
+    AdminHeader,
+    AdminFooter,
+    AdminLogin,
+    AdminHome,
+    AdminEvents,
+    AdminGallery,
+    AdminMember
   ],
   imports: [
     BrowserModule,

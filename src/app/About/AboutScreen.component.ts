@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: 'AboutScreen',
   template: `
 
+    <Header></Header>
     <AboutBody></AboutBody>
-
+    <Footer></Footer>
 
     `,
   styles: [`

@@ -17,6 +17,12 @@ MemberRoutes.post('/register', MemberController.register);
 MemberRoutes.post('/login', MemberController.login);
 
 /**
+ * @route GET api/Member/logout
+ * @desc Logout a Member
+ */
+MemberRoutes.get('/logout', MemberController.logout);
+
+/**
  * @route GET api/member/:id
  * @desc Get a Member
  */
