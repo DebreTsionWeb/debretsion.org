@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "ContactBody",
@@ -12,6 +12,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
               <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
               <p id="PhoneNumber">Phone: 301-570-3300</p>
               <a id='Email' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
+            </div>
+            <div id="MapsContainer">
+              <iframe id='Maps' src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3yT_4rYS-Yn7C8XucfB3jvn1tcG1dZZk&q=22222+Georgia+Ave,+Brookeville,+MD+20833"></iframe>
             </div>
           </div>
           <div id="CalendlyContainer">
@@ -49,7 +52,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         #ContactBodyContainer {
             display: flex;
             width: 40%;
-            height: 500px;
+            height: 85%;
             flex-direction: column;
             align-items: center;
         }
@@ -62,9 +65,25 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
         #InfoContainer {
           display: flex;
+          position: relative;
           width: 90%;
           flex-direction: column;
           font-size: 20px;
+        }
+        #MapsContainer {
+          display: flex;
+          position: relative;
+          width: 90%;
+          height: 70%;
+          flex-direction: column;
+          margin-top: 5%;
+
+        }
+        #Maps {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 100%;
         }
         #Address {
 
@@ -103,11 +122,20 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           align-items: center;
           border: 1px solid grey;
           border-radius: 5px;
+          overflow: hidden;
         }
         #Calendar .calendly-inline-widget {
           display: flex;
           width: 99%;
-          height: 100%;
+          height: 110%;
+        }
+        .calendly-inline-widget::-webkit-scrollbar {
+          width: 0.5em;
+          background-color: white;
+        }
+
+        .calendly-inline-widget::-webkit-scrollbar-thumb {
+          background-color: black;
         }
         @media (max-width: 700px) {
           #ContactBody {
@@ -123,6 +151,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
             width: 100%;
             justify-content: center;
           }
+          #ContactBodyContainer {
+            margin-bottom: 6%;
+          }
           #CalendlyContainer {
             width: 90%;
             text-align: center;
@@ -130,20 +161,20 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           #CalendlyHeaderContainer {
             height: 30%;
           }
-
+          #Calendar .calendly-inline-widget {
+            height: 100%;
+          }
         }
 
     `]
 })
-export class ContactBody implements OnInit, AfterViewInit {
+export class ContactBody implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {const script = document.createElement('script');
+  script.src = 'https://assets.calendly.com/assets/external/widget.js';
+  script.async = true;
+  document.body.appendChild(script);}
 
-  ngAfterViewInit() {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }
+
 }

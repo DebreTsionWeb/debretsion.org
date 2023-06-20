@@ -10,18 +10,18 @@ import { Component, OnInit } from "@angular/core";
         <p>Debre Tsion EOTC</p>
       </div>
       <div id= "AddressContainer">
-        <a href="https://www.google.com/maps/place/22222+Georgia+Ave,+Brookeville,+MD+20833/@39.2215545,-77.0628718,17z/data=!4m6!3m5!1s0x89b7d654762c9989:0x176c779f3bf5bc63!8m2!3d39.2215504!4d-77.0602915!16s%2Fg%2F11bw4j02c0?entry=ttu" target="blank">22222 Gerogia Ave, Brookeville, MD 20833</a>
+        <a id='Address' href="https://www.google.com/maps/place/22222+Georgia+Ave,+Brookeville,+MD+20833/@39.2215545,-77.0628718,17z/data=!4m6!3m5!1s0x89b7d654762c9989:0x176c779f3bf5bc63!8m2!3d39.2215504!4d-77.0602915!16s%2Fg%2F11bw4j02c0?entry=ttu" target="blank">22222 Gerogia Ave, Brookeville, MD 20833</a>
       </div>
     </div>
     <div id="BottomContainer">
       <div id="EmailContainer">
-        <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
+        <a id='Email' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
       </div>
       <div id="FooterIconContainer">
         <div id="Youtube">
           <a href="/" target="blank"><span id="Icon" class="fab fa-youtube"></span></a>
         </div>
-        <div id="Email">
+        <div id="EmailIcon">
         <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
         </div>
         <div id="Facebook">
@@ -109,10 +109,14 @@ import { Component, OnInit } from "@angular/core";
         color: white;
        }
 
+       #Address:hover, #Email:hover, #Icon:hover{
+        opacity: 0.5;
+        }
+
        #Youtube{
        }
 
-       #Email{
+       #EmailIcon{
        }
 
        #Facebook{

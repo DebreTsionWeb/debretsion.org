@@ -10,7 +10,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
             </div>
             <div id="OptionsContainer">
               <div id="Options">
-              <a target=blank href=''><img id="Paypal" src='assets/paypal.png'/></a>
+                <a target=blank href=''><img id="Paypal" src='assets/paypal.png'/></a>
+                <a target=blank href=''><img id="Paypal" src='assets/paypal.png'/></a>
+                <a target=blank href=''><img id="Paypal" src='assets/paypal.png'/></a>
               </div>
             </div>
           </div>
@@ -19,7 +21,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
               <h1 id="DonateHeader">Mission Statement</h1>
             </div>
             <div id="InfoContainer">
-              <p id="Address">Paragraph</p>
+              <p id="Info">Paragraph. This is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumhis is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumhis is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
           </div>
         </div>
@@ -46,8 +48,8 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
         #DonateBodyContainer {
             display: flex;
-            width: 30%;
-            height: 500px;
+            width: 35%;
+            height: 600px;
             flex-direction: column;
             align-items: center;
             text-align: right;
@@ -66,15 +68,18 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           width: 90%;
           flex-direction: column;
           font-size: 20px;
+          overflow-y: scroll;
         }
-        #Address {
-
+        #InfoContainer::-webkit-scrollbar {
+          width: 0.2em;
         }
-        #PhoneNumber {
-
+        #InfoContainer::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, .2);
+          border-radius: 90% / 3%;
         }
-        #Email {
-
+        #Info{
+          margin-top: 0;
+          margin-right: 1.5%;
         }
         #PaymentContainer {
           display: flex;
@@ -108,7 +113,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
         #Paypal {
           display: flex;
-          width: 25px;
+          width: 105px;
         }
         @media (max-width: 700px) {
           #DonateBody {
@@ -123,6 +128,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           #DonateHeaderContainer {
             width: 100%;
             justify-content: center;
+          }
+          #DonateHeader{
+            text-align: center;
           }
           #PaymentContainer {
             width: 90%;

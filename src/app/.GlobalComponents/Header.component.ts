@@ -60,7 +60,7 @@ import { Router } from "@angular/router";
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        background-color: white;
+        background-color: whitesmoke;
       }
 
       #NavbarContainer {
@@ -106,6 +106,10 @@ import { Router } from "@angular/router";
 
       #NavbarListContainer li a {
         cursor: pointer;
+      }
+
+      #NavbarListContainer li a:hover {
+        opacity: 0.5;
       }
 
       #NavbarListContainer li {
