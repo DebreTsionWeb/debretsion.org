@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: whitesmoke;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter';
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/Inter-Medium.ttf') format('truetype');
+}

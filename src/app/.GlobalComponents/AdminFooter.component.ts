@@ -46,7 +46,6 @@ import { Router } from "@angular/router";
         padding-bottom: 1%;
         background-color: #152238;
         color: white;
-        font-family: "Inter", sans-serif;
        }
 
        #FooterContainer{

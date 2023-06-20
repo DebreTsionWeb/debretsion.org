@@ -21,8 +21,8 @@ import { Component, OnInit } from "@angular/core";
         <div id="Youtube">
           <a href="/" target="blank"><span id="Icon" class="fab fa-youtube"></span></a>
         </div>
-        <div id="Instagram">
-          <a href="/" target="blank"><span id="Icon" class="fab fa-instagram"></span></a>
+        <div id="Email">
+        <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
         </div>
         <div id="Facebook">
           <a href="/" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>
@@ -38,12 +38,12 @@ import { Component, OnInit } from "@angular/core";
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        position: fixed;
-        bottom: 0;
+        position: relative;
         width: 100%;
         height: 80px;
-        padding-bottom: 1%;
-        font-family: "Inter", sans-serif;
+        padding-bottom: 3px;
+        background-color: black;
+        color: white;
        }
 
        #FooterContainer{
@@ -101,25 +101,35 @@ import { Component, OnInit } from "@angular/core";
         padding-left: 25%;
         padding-right: 25%;
         height: 50%;
+        font-size: 21px;
+       }
+
+       a {
+        text-decoration: none;
+        color: white;
        }
 
        #Youtube{
        }
 
-       #Instagram{
+       #Email{
        }
 
        #Facebook{
       }
 
       @media (max-width: 700px){
+        #Footer{
+          font-size: 13px;
+        }
         #FooterIconContainer{
           padding-left: 20%;
           padding-right: 20%;
+          font-size: 18px;
         }
       }
 
-       
+
     `]
 })
 export class FooterComponent implements OnInit{
