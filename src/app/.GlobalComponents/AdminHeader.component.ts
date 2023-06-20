@@ -55,7 +55,6 @@ import { Router } from "@angular/router";
         flex-direction: row;
         background-color: #152238;
         color: white;
-        font-family: "Inter", sans-serif;
       }
 
       #NavbarContainer {

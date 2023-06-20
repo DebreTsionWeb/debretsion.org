@@ -24,7 +24,6 @@ import { Component } from '@angular/core';
       align-items: center;
       justify-content: center;
       height: 90vh;
-      font-family: 'Inter', sans-serif;
     }
 
     #AdminLoginContainer {

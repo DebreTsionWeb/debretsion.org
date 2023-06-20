@@ -55,11 +55,12 @@ import { Router } from "@angular/router";
         display: flex;
         position: sticky;
         width: 100%;
-        height: 80px;
+        height: 81px;
+        border-bottom: 1px solid black;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        font-family: "Inter", sans-serif;
+        background-color: white;
       }
 
       #NavbarContainer {
@@ -74,12 +75,17 @@ import { Router } from "@angular/router";
         display: flex;
         position: relative;
         width: 75px;
+        height: 75px;
+        justify-content: center;
+        align-items: center;
       }
 
       #logo {
         display: flex;
         position: relative;
         width: 100%;
+        height: 100%;
+        margin-top: 5px;
       }
 
       #NavbarTextContainer {
