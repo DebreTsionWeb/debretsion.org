@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'GalleryScreen',
   template: `
    <Header></Header>
-   <GalleryBody>
+   <GalleryBody></GalleryBody>
    <Footer></Footer>
     `,
   styles: [`

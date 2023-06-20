@@ -11,7 +11,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
         </div>
         <div id='LivePlayerContainer'>
           <p id='LiveSubText'>View our latest live stream</p>
-          <div id="player"></div>
+          <div id="playerContainer">
+            <div id="player"></div>
+          </div>
         </div>
         <div id='LiveIconContainer'>
           <div id='LiveIconTextContainer'>
@@ -33,7 +35,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      border: 1px solid black;
       animation: fade-in 1.5s ease-in-out;
     }
     @keyframes fade-in {
@@ -50,21 +51,25 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       width: 90%;
       height: 100%;
       flex-direction: column;
-      border: 1px solid red;
     }
     #LiveHeaderContainer {
       display: flex;
       position: relative;
       width: 100%;
+      height: 15%;
+      margin-top: 3%;
+      justify-content: flex-end;
       flex-direction: column;
     }
     #LiveHeader {
-
+      font-size: 40px;
     }
     #LivePlayerContainer {
       display: flex;
       position: relative;
       width: 100%;
+      height: 70%;
+      margin-top: -3%;
       justify-content: center;
       align-items: center;
       flex-direction: column;
@@ -78,7 +83,14 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       text-align: center;
     }
     #LiveIconContainer {
-
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 15%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3%;
     }
     #LiveIconTextContainer {
 
@@ -94,14 +106,20 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
     #Icon {
 
     }
+    #playerContainer {
+      display: flex;
+      position: relative;
+      width: 60%;
+      height: 90%;
+    }
 
     @media (max-width: 720px) {
       #Live {
-        height: 100vh;
+        height: 90vh;
       }
-      #player{
-        height: 20px;
-        width: 20px;
+      #playerContainer {
+        width: 100%;
+        height: 40%;
       }
     }
 
@@ -114,14 +132,12 @@ export class LiveBody implements OnInit, AfterViewInit {
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
 
-    // Add an event listener to wait for the YouTube API script to load
-    (window as any).onYouTubeIframeAPIReady = () => {
-      this.renderPlayer();
+   (window as any).onYouTubeIframeAPIReady = () => {
+    this.renderPlayer();
     };
   }
 
   ngAfterViewInit() {
-    // Initialize and render the YouTube player once the API is loaded
     if ((window as any).YT && (window as any).YT.Player) {
       this.renderPlayer();
     }
@@ -136,8 +152,8 @@ export class LiveBody implements OnInit, AfterViewInit {
         const videoId = data.items[0].id.videoId;
 
         const player = new (window as any).YT.Player('player', {
-          height: '360',
-          width: '640',
+          height: '100%',
+          width: '100%',
           videoId: videoId,
         });
       });

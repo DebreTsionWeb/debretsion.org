@@ -4,6 +4,11 @@ import { Component, OnInit } from "@angular/core";
     selector: "EventsBody",
     template: `
         <div id="EventsBody">
+            <div id="EventsBodyContainer">
+               <div id="">
+
+               </div>
+            </div>
         </div>
 
     `,
