@@ -22,7 +22,7 @@ import { Component, OnInit } from "@angular/core";
               <h1 id="CalendlyHeader">Schedule a Meeting</h1>
             </div>
             <div id="CalendarContainer">
-              <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/coolfinn20?hide_gdpr_banner=1"></div>
+              <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
               </div>
             </div>

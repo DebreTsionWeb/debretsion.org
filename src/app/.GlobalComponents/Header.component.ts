@@ -38,8 +38,8 @@ import { Router } from "@angular/router";
             <li id="Gallery">
               <a (click)="navigateTo('/Gallery')">Gallery</a>
             </li>
-            <li id="Donate">
-              <a (click)="navigateTo('/Donate')">Donate</a>
+            <li id="Member">
+              <a (click)="navigateTo('/Member')">Member</a>
             </li>
             <li id="Contact">
               <a (click)="navigateTo('/Contact')">Contact Us</a>

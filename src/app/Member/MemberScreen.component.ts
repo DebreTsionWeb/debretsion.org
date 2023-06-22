@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'DonateScreen',
+  selector: 'MemberScreen',
   template: `
 
   <Header></Header>
-  <DonateBody></DonateBody>
+  <MemberBody></MemberBody>
   <Footer></Footer>
 
     `,
@@ -14,6 +14,6 @@ import { Component } from '@angular/core';
   `]
 })
 
-export class DonateScreen {
-  title = 'Donate | Debre Tsion';
+export class MemberScreen {
+  title = 'Member | Debre Tsion';
 }

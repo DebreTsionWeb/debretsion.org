@@ -5,7 +5,7 @@ import { AboutScreen } from './About/AboutScreen.component';
 import { EventsScreen } from './Events/EventsScreen.component';
 import { LiveScreen } from './Live/LiveScreen.component';
 import { GalleryScreen } from './Gallery/GalleryScreen.component';
-import { DonateScreen } from './Donate/DonateScreen.component';
+import { MemberScreen } from './Member/MemberScreen.component';
 import { ContactScreen } from './Contact/ContactScreen.component';
 import { AdminScreen} from './.Admin/AdminScreen.component';
 import { AdminHome } from './.Admin/AdminComponents/AdminHome.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'Events', title: 'Events | Debre Tsion', component: EventsScreen},
   { path: 'Live', title: 'Live | Debre Tsion', component: LiveScreen},
   { path: 'Gallery', title: 'Gallery | Debre Tsion', component: GalleryScreen},
-  { path: 'Donate', title: 'Donate | Debre Tsion', component: DonateScreen},
+  { path: 'Member', title: 'Member | Debre Tsion', component: MemberScreen},
   { path: 'Contact', title: 'Contact Us | Debre Tsion', component: ContactScreen},
   { path: 'Admin', title: 'Admin Portal | Debre Tsion', component: AdminScreen},
   { path: 'AdminHome', title: 'Admin Home | Debre Tsion', component: AdminHome},

@@ -21,8 +21,11 @@ import { Component, OnInit } from "@angular/core";
         <div id="Youtube">
           <a href="/" target="blank"><span id="Icon" class="fab fa-youtube"></span></a>
         </div>
-        <div id="EmailIcon">
-        <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
+        <div id="Zelle">
+          <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
+        </div>
+        <div id="Square">
+          <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
         </div>
         <div id="Facebook">
           <a href="/" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>
@@ -60,7 +63,6 @@ import { Component, OnInit } from "@angular/core";
         align-items: center;
         width: 100%;
         height: 100%;
-        /* border: 1px solid green; */
        }
 
        #ChurchNameContainer{
@@ -116,7 +118,7 @@ import { Component, OnInit } from "@angular/core";
        #Youtube{
        }
 
-       #EmailIcon{
+       #Zelle{
        }
 
        #Facebook{
