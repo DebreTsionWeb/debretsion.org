@@ -10,15 +10,17 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 
                 <ng-container *ngIf="currentView === 'signup'">
                   <MemberSignup></MemberSignup>
+                  <p>Already a member?</p>
                   <button (click)="switchToLogin()">Switch to Login</button>
                 </ng-container>
 
                 <ng-container *ngIf="currentView === 'login'">
                   <MemberLogin></MemberLogin>
+                  <p>Not a member yet?</p>
                   <button (click)="switchToSignup()">Switch to Signup</button>
                 </ng-container>
 
-                <!-- <p>Already signed in. Username</p> -->
+                <!-- <p id='LoggedIn'>Already signed in. Username</p> -->
 
               </div>
             </div>
@@ -46,7 +48,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            animation: fade-in 1.5s ease-in-out;
+            /* animation: fade-in 1.5s ease-in-out; */
         }
         @keyframes fade-in {
           0% {
@@ -58,8 +60,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
         #MemberBodyContainer {
           display: flex;
+          position: relative;
           width: 80%;
-          height: 600px;
+          height: 80%;
           flex-direction: column;
         }
         #AuthContainer {
@@ -67,15 +70,18 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           position: relative;
           width: 100%;
           height: 100%;
+          justify-content: center;
+          align-items: center;
         }
         #Auth {
           display: flex;
-          width: 100%;
+          position: relative;
+          width: 90%;
           height: 100%;
           justify-content: center;
           align-items: center;
-          flex-direction: row;
-
+          flex-direction: column;
+          border: 1px solid black;
         }
         #DonateBodyContainer {
           display: flex;
@@ -88,6 +94,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
         #DonateHeaderContainer {
           display: flex;
+          position: relative;
           width: 15%;
           justify-content: center;
           text-align: center;
