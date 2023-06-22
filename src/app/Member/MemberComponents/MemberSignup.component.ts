@@ -11,25 +11,25 @@ import { Component, OnInit } from "@angular/core";
                 <div id="SignupInputContainer">
                   <div id="NameContainer">
                     <div id="FirstNameContainer">
-                        <input type="text" id='FirstName'/>
+                        <input id='FirstName' (keyup)="setFirstName(firstValue)" placeholder="   Enter First Name" required/>
                     </div>
                     <div id="LastNameContainer">
-                        <input type="text" id='LastName' />
+                        <input id='LastName' (keyup)="setLastName(lastValue)" placeholder="   Enter Last Name" required/>
                     </div>
                   </div>
                   <div id="KristinaContainer">
-
+                        <input id='Kristina' (keyup)="setKristinaName(kristinaValue)" placeholder="   Enter Kristina" required/>
                   </div>
                   <div id="EmailContainer">
-
+                        <input id='Email' (keyup)="setEmailValue(emailValue)" placeholder="   Enter Email" required/>
                   </div>
                   <div id="PasswordContainer">
-
+                        <input id='Password' (keyup)="setPasswordValue(passwordValue)" placeholder="   Enter Password" required/>
                   </div>
-                <div id="SignupButtonContainer">
-                  <button id="SignupButton">Sign Up</button>
-                </div>
               </div>
+              <div id="SignupButtonContainer">
+                  <button id="SignupButton" (click)="submitSignup()"><b>Sign Up</b></button>
+                </div>
             </div>
          </div>
 
@@ -38,70 +38,111 @@ import { Component, OnInit } from "@angular/core";
         #MemberSignup {
           display: flex;
           position: relative;
-          width: 100%;
-          height: 90vh;
-          flex-direction: row;
+          width: 600px;
+          height: 100%;
           justify-content: center;
+          align-items: center;
           animation: fade-in 2.5s ease-in-out;
+          z-index: 3;
+          border: 1px solid red;
         }
         @keyframes fade-in {
           0% {
             opacity: 0;
+            right: 50px;
           }
           100% {
             opacity: 1;
+            right: 0;
           }
         }
         #MemberSignupContainer {
             display: flex;
             position: relative;
-            width: 60%;
+            width: 90%;
             height: 90%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
         }
         #MemberSignupHeaderContainer {
             display: flex;
             position: relative;
             width: 92%;
             height: 10%;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            text-align: center;
         }
         #MemberSignupHeader {
-
+          display: flex;
+          position: relative;
+          font-size: 40px;
         }
         #SignupInputContainer {
-
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid green;
         }
         #NameContainer {
-
+          display: flex;
+          position: relative;
+          flex-direction: row;
+          width: 95%;
+          justify-content: space-between;
+          align-items: center;
+          margin: 10px;
+          border: 1px solid blue;
         }
-        #KristinaContainer {
-
+        #KristinaContainer, #EmailContainer, #PasswordContainer {
+          display: flex;
+          position: relative;
+          width: 95%;
+          margin: 10px;
         }
-        #EmailContainer {
-
+        #FirstName, #LastName{
+          display: flex;
+          position: relative;
+          width: 240px;
+          height: 50px;
+          border-radius: 20px;
         }
-        #PasswordContainer {
-
+        #Kristina, #Email, #Password {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 50px;
+          border-radius: 20px;
         }
-        #MemberSignupTextContainer {
-
+        #SignupButtonContainer {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          margin-top: 5%;
+          border: 1px solid yellow;
         }
-        #MemberSignupText {
-
+        #SignupButton {
+          display: flex;
+          position: relative;
+          width: 30%;
+          height: 100%;
+          border-radius: 20px;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
         }
-        #MemberSignupButtonContainer {
-
-        }
-        #MemberSignupButton {
-
-        }
-        #MemberSignupButton:hover {
-
+        #SignupButton:hover {
+            opacity: 0.8;
         }
         @media (max-width: 700px) {
             #MemberSignup{
@@ -119,6 +160,49 @@ import { Component, OnInit } from "@angular/core";
     `]
 })
 export class MemberSignup implements OnInit{
+
+
+    firstValue: string = '';
+    lastValue: string = '';
+    kristinaValue: string = '';
+    emailValue: string = '';
+    passwordValue: string = '';
+
+    setFirstName(firstValue: string) {
+      console.log(firstValue);
+      this.firstValue += firstValue;
+    }
+    setLastName(lastValue: string) {
+      console.log(lastValue);
+      this.lastValue += lastValue;
+    }
+    setKristinaName(kristinaValue: string) {
+      console.log(kristinaValue);
+      this.kristinaValue += kristinaValue;
+    }
+    setEmailValue(emailValue: string) {
+      console.log(emailValue);
+      this.emailValue += emailValue;
+    }
+    setPasswordValue(passwordValue: string) {
+      console.log(passwordValue);
+      this.passwordValue += passwordValue;
+    }
+
+    submitSignup() {
+      if (
+        this.firstValue === '' ||
+        this.lastValue === '' ||
+        this.kristinaValue === '' ||
+        this.emailValue === '' ||
+        this.passwordValue === ''
+      ) {
+        console.log('Signup successful!');
+      } else {
+        console.log('Please fill out all the fields.');
+      }
+    }
+
     constructor() {}
     ngOnInit() {}
 }

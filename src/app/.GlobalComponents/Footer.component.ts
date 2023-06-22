@@ -21,14 +21,14 @@ import { Component, OnInit } from "@angular/core";
         <div id="Youtube">
           <a href="/" target="blank"><span id="Icon" class="fab fa-youtube"></span></a>
         </div>
-        <div id="Zelle">
-          <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
-        </div>
-        <div id="Square">
-          <a href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank"><span id="Icon" class=" fa fa-envelope"></span></a>
-        </div>
         <div id="Facebook">
           <a href="/" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>
+        </div>
+        <div id="Zelle">
+        <a href=""><img id='Zelle' src="assets/zelle.webp" alt=""></a>
+        </div>
+        <div id="Square">
+        <a href=""><img id='Square' src="assets/square.jpg" alt=""></a>
         </div>
       </div>
     </div>
@@ -119,6 +119,14 @@ import { Component, OnInit } from "@angular/core";
        }
 
        #Zelle{
+        width: 25px;
+        border-radius: 5px;
+       }
+       #Square{
+        width: 25px;
+        height: 25px;
+        border-radius: 3px;
+        border: 1px solid white;
        }
 
        #Facebook{
