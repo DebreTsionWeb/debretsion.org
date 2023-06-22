@@ -11,14 +11,16 @@ import { HomeScreen } from './Home/HomeScreen.component';
 import { AboutScreen } from './About/AboutScreen.component';
 import { ContactScreen } from './Contact/ContactScreen.component';
 import { EventsScreen } from './Events/EventsScreen.component';
-import { DonateScreen } from './Donate/DonateScreen.component';
+import { MemberScreen } from './Member/MemberScreen.component';
 import { LiveScreen } from './Live/LiveScreen.component';
 import { LiveBody } from './Live/LiveComponents/LiveBody.component';
 import { ContactBody } from './Contact/ContactComponents/ContactBody.component';
 import { GalleryBody } from './Gallery/GalleryComponents/GalleryBody.component';
 import { AboutBody } from './About/AboutComponents/AboutBody.component';
 import { EventsBody } from './Events/EventsComponents/EventsBody.component';
-import { DonateBody } from './Donate/DonateComponents/DonateBody.component';
+import { MemberBody } from './Member/MemberComponents/MemberBody.component';
+import { MemberLogin } from './Member/MemberComponents/MemberLogin.component';
+import { MemberSignup } from './Member/MemberComponents/MemberSignup.component';
 import { HomeBody } from './Home/HomeComponents/HomeBody.component';
 import { AdminScreen } from './.Admin/AdminScreen.component';
 import { AdminHeader } from './.GlobalComponents/AdminHeader.component';
@@ -39,14 +41,16 @@ import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
     AboutScreen,
     ContactScreen,
     EventsScreen,
-    DonateScreen,
+    MemberScreen,
     LiveScreen,
     LiveBody,
     ContactBody,
     GalleryBody,
     AboutBody,
     EventsBody,
-    DonateBody,
+    MemberBody,
+    MemberLogin,
+    MemberSignup,
     HomeBody,
     AdminScreen,
     AdminHeader,

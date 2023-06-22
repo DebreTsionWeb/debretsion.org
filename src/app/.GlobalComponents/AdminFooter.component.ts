@@ -24,8 +24,8 @@ import { Router } from "@angular/router";
             <li id="Gallery">
               <a (click)="navigateTo('/Gallery')">Go to Main Gallery</a>
             </li>
-            <li id="Donate">
-              <a (click)="navigateTo('/Donate')">Go to Main Donate</a>
+            <li id="Member">
+              <a (click)="navigateTo('/Member')">Go to Main Member</a>
             </li>
           </ul>
     </div>
