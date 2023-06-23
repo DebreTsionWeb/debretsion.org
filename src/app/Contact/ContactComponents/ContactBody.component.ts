@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     selector: "ContactBody",
     template: `
-        <div id="ContactBody" class="fade-in">
+        <div id="ContactBody">
           <div id="ContactBodyContainer">
             <div id="ContactHeaderContainer">
               <h1 id="ContactHeader">Contact Us</h1>
@@ -39,7 +39,6 @@ import { Component, OnInit } from "@angular/core";
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            animation: fade-in 1.5s ease-in-out;
         }
         @keyframes fade-in {
           0% {
@@ -49,12 +48,23 @@ import { Component, OnInit } from "@angular/core";
             opacity: 1;
           }
         }
+        @keyframes slide-in {
+          0% {
+            opacity: 0;
+            top: 100px;
+          }
+          100% {
+            opacity: 1;
+            top: 0;
+          }
+        }
         #ContactBodyContainer {
             display: flex;
             width: 40%;
             height: 85%;
             flex-direction: column;
             align-items: center;
+            animation: fade-in 1.5s ease-in-out;
         }
         #ContactHeaderContainer {
             display: flex;
@@ -99,6 +109,7 @@ import { Component, OnInit } from "@angular/core";
           width: 50%;
           height: 600px;
           flex-direction: column;
+          animation: slide-in 4s ease-in-out;
         }
         #CalendlyHeaderContainer {
             display: flex;

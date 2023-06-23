@@ -45,6 +45,7 @@ import { Component, OnInit } from "@angular/core";
         width: 100%;
         height: 80px;
         padding-bottom: 3px;
+        padding-top: 3px;
         background-color: black;
         color: white;
        }
@@ -93,6 +94,7 @@ import { Component, OnInit } from "@angular/core";
         align-items: center;
         justify-content:center;
         height: 50%;
+        padding-bottom: 1px;
        }
 
        #FooterIconContainer{
@@ -111,8 +113,8 @@ import { Component, OnInit } from "@angular/core";
         color: white;
        }
 
-       #Address:hover, #Email:hover, #Icon:hover{
-        opacity: 0.5;
+       #Address:hover, #Email:hover, #Icon:hover, #Zelle:hover, #Square:hover{
+        opacity: 0.8;
         }
 
        #Youtube{
@@ -120,11 +122,12 @@ import { Component, OnInit } from "@angular/core";
 
        #Zelle{
         width: 25px;
-        border-radius: 5px;
+        margin-top: 3px;
        }
        #Square{
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 3px;
         border-radius: 3px;
         border: 1px solid white;
        }

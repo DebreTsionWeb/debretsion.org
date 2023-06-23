@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 
 @Component({
     selector: "MemberSignup",
     template: `
-        <div id="MemberSignup" class="fade-in">
+        <div id="MemberSignup">
             <div id="MemberSignupContainer">
                 <div id="MemberSignupHeaderContainer">
                   <h1 id="MemberSignupHeader">Member Signup</h1>
@@ -11,24 +11,27 @@ import { Component, OnInit } from "@angular/core";
                 <div id="SignupInputContainer">
                   <div id="NameContainer">
                     <div id="FirstNameContainer">
-                        <input id='FirstName' (keyup)="setFirstName(firstValue)" placeholder="   Enter First Name" required/>
+                        <input id='FirstName' (keyup)="setFirstName(firstValue)" placeholder="Enter First Name" required/>
                     </div>
                     <div id="LastNameContainer">
-                        <input id='LastName' (keyup)="setLastName(lastValue)" placeholder="   Enter Last Name" required/>
+                        <input id='LastName' (keyup)="setLastName(lastValue)" placeholder="Enter Last Name" required/>
                     </div>
                   </div>
                   <div id="KristinaContainer">
-                        <input id='Kristina' (keyup)="setKristinaName(kristinaValue)" placeholder="   Enter Kristina" required/>
+                        <input id='Kristina' (keyup)="setKristinaName(kristinaValue)" placeholder="Enter Kristina Name" required/>
                   </div>
                   <div id="EmailContainer">
-                        <input id='Email' (keyup)="setEmailValue(emailValue)" placeholder="   Enter Email" required/>
+                        <input id='Email' (keyup)="setEmailValue(emailValue)" placeholder="Enter Email" required/>
                   </div>
                   <div id="PasswordContainer">
-                        <input id='Password' (keyup)="setPasswordValue(passwordValue)" placeholder="   Enter Password" required/>
+                        <input id='Password' (keyup)="setPasswordValue(passwordValue)" placeholder="Enter Password" required/>
                   </div>
-              </div>
-              <div id="SignupButtonContainer">
-                  <button id="SignupButton" (click)="submitSignup()"><b>Sign Up</b></button>
+                </div>
+                <div id="SignupErrorContainer">
+                  <p id="SignupError" #SignupError>Please Fill Out All Fields</p>
+                </div>
+                <div id="SignupButtonContainer">
+                  <button id="SignupButton" (click)="submitSignup()">Sign Up</button>
                 </div>
             </div>
          </div>
@@ -42,35 +45,22 @@ import { Component, OnInit } from "@angular/core";
           height: 100%;
           justify-content: center;
           align-items: center;
-          animation: fade-in 2.5s ease-in-out;
           z-index: 3;
-          border: 1px solid red;
-        }
-        @keyframes fade-in {
-          0% {
-            opacity: 0;
-            right: 50px;
-          }
-          100% {
-            opacity: 1;
-            right: 0;
-          }
         }
         #MemberSignupContainer {
             display: flex;
             position: relative;
             width: 90%;
-            height: 90%;
+            height: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
         }
         #MemberSignupHeaderContainer {
             display: flex;
             position: relative;
             width: 92%;
-            height: 10%;
+            height: 20%;
             flex-direction: row;
             justify-content: center;
             align-items: center;
@@ -89,7 +79,6 @@ import { Component, OnInit } from "@angular/core";
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          border: 1px solid green;
         }
         #NameContainer {
           display: flex;
@@ -99,7 +88,6 @@ import { Component, OnInit } from "@angular/core";
           justify-content: space-between;
           align-items: center;
           margin: 10px;
-          border: 1px solid blue;
         }
         #KristinaContainer, #EmailContainer, #PasswordContainer {
           display: flex;
@@ -110,8 +98,10 @@ import { Component, OnInit } from "@angular/core";
         #FirstName, #LastName{
           display: flex;
           position: relative;
-          width: 240px;
+          width: 230px;
           height: 50px;
+          font-size: 15px;
+          padding-left: 15px;
           border-radius: 20px;
         }
         #Kristina, #Email, #Password {
@@ -119,34 +109,51 @@ import { Component, OnInit } from "@angular/core";
           position: relative;
           width: 100%;
           height: 50px;
+          font-size: 15px;
+          padding-left: 15px;
           border-radius: 20px;
+        }
+        #SignupErrorContainer {
+            display: flex;
+            position: relative;
+            margin-bottom: -2%;
+        }
+        #SignupError {
+          display: none;
+          position: relative;
+          color: red;
+          font-size: 16px;
+          font-family: 'InterBold';
         }
         #SignupButtonContainer {
           display: flex;
           position: relative;
           width: 100%;
-          height: 100%;
+          height: 20%;
           justify-content: center;
           align-items: center;
-          margin-top: 5%;
-          border: 1px solid yellow;
+          margin-top: 3%;
         }
         #SignupButton {
           display: flex;
           position: relative;
-          width: 30%;
-          height: 100%;
-          border-radius: 20px;
+          width: 40%;
+          height: 60px;
+          border-radius: 35px;
           justify-content: center;
           align-items: center;
           font-size: 20px;
+          cursor: pointer;
+          font-family: 'InterSemi';
         }
         #SignupButton:hover {
-            opacity: 0.8;
+          transform: scale(1.1);
+          transition: transform 0.3s ease-in-out;
+          opacity: 0.8;
         }
         @media (max-width: 700px) {
             #MemberSignup{
-                flex-direction: column;
+                width: 350px;
             }
             #MemberSignupContainer, #MemberSignupHeaderContainer{
                 align-items: center;
@@ -156,10 +163,20 @@ import { Component, OnInit } from "@angular/core";
             #MemberSignupTextContainer {
                 text-align: center;
             }
+            #FirstName, #LastName{
+                width: 85%;
+            }
+            #SignupButton {
+                width: 60%;
+            }
           }
+
+
     `]
 })
-export class MemberSignup implements OnInit{
+export class MemberSignup implements OnInit {
+
+  @ViewChild('SignupError', { static: false }) signupErrorRef!: ElementRef;
 
 
     firstValue: string = '';
@@ -197,9 +214,13 @@ export class MemberSignup implements OnInit{
         this.emailValue === '' ||
         this.passwordValue === ''
       ) {
-        console.log('Signup successful!');
+        this.signupErrorRef.nativeElement.style.display = 'flex';
+
+    setTimeout(() => {
+      this.signupErrorRef.nativeElement.style.display = 'none';
+    }, 3000);
       } else {
-        console.log('Please fill out all the fields.');
+
       }
     }
 

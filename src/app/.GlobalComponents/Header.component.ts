@@ -106,6 +106,7 @@ import { Router } from "@angular/router";
 
       #NavbarListContainer li a {
         cursor: pointer;
+        font-family: 'InterMedium';
       }
 
       #NavbarListContainer li a:hover {
@@ -133,8 +134,7 @@ import { Router } from "@angular/router";
         #close {
           display: none;
           font-size: 38px;
-          margin-left: 10
-          px;
+          margin-left: 10px;
         }
 
         #NavbarListContainer {
