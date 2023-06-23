@@ -3,21 +3,25 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 @Component({
     selector: "MemberBody",
     template: `
-        <div id="MemberBody" class="fade-in">
+        <div id="MemberBody">
           <div id="MemberBodyContainer">
             <div id="AuthContainer">
               <div id="Auth">
 
                 <ng-container *ngIf="currentView === 'signup'">
                   <MemberSignup></MemberSignup>
-                  <p>Already a member?</p>
-                  <button (click)="switchToLogin()">Switch to Login</button>
+                  <div id="SwitchContainer">
+                    <p id='SwitchQuestion'>Already a member?</p>
+                    <button id='SwitchButton' (click)="switchToLogin()">Login</button>
+                  </div>
                 </ng-container>
 
                 <ng-container *ngIf="currentView === 'login'">
                   <MemberLogin></MemberLogin>
-                  <p>Not a member yet?</p>
-                  <button (click)="switchToSignup()">Switch to Signup</button>
+                  <div id="SwitchContainer">
+                    <p id='SwitchQuestion'>Not a member yet?</p>
+                    <button id='SwitchButton' (click)="switchToSignup()">Sign Up</button>
+                  </div>
                 </ng-container>
 
                 <!-- <p id='LoggedIn'>Already signed in. Username</p> -->
@@ -48,7 +52,17 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            /* animation: fade-in 1.5s ease-in-out; */
+            z-index: 2;
+        }
+        @keyframes slide-in {
+          0% {
+            opacity: 0;
+            right: 50px;
+          }
+          100% {
+            opacity: 1;
+            right: 0;
+          }
         }
         @keyframes fade-in {
           0% {
@@ -62,7 +76,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           display: flex;
           position: relative;
           width: 80%;
-          height: 80%;
+          height: 95%;
           flex-direction: column;
         }
         #AuthContainer {
@@ -72,6 +86,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           height: 100%;
           justify-content: center;
           align-items: center;
+          animation: slide-in 1.5s ease-in-out;
         }
         #Auth {
           display: flex;
@@ -81,16 +96,47 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          border: 1px solid black;
+        }
+        #SwitchContainer {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 20%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 4;
+        }
+        #SwitchQuestion {
+          font-family: 'InterMedium';
+        }
+        #SwitchButton {
+          display: flex;
+          position: relative;
+          width: 150px;
+          height: 50px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 30% / 100%;
+          font-size: 16px;
+          cursor: pointer;
+          font-family: 'InterSemi';
+        }
+        #SwitchButton:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease-in-out;
+          opacity: 0.8;
         }
         #DonateBodyContainer {
           display: flex;
           position: absolute;
-          width: 99%;
+          width: 97%;
           height: 450px;
+          margin-bottom: 5%;
           flex-direction: column;
           justify-content: flex-end;
           align-items: flex-end;
+          animation: fade-in 4.5s ease-in-out;
         }
         #DonateHeaderContainer {
           display: flex;
@@ -102,6 +148,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         #DonateHeader {
           text-align: right;
           font-size: 35px;
+          font-family: 'InterSemi';
         }
         #DonateIconContainer {
           display: flex;
@@ -131,40 +178,42 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
         }
-        @media (max-width: 700px) {
+        @media (max-width: 850px) {
           #MemberBody {
             flex-direction: column;
-            height: 150vh;
+            height: 110vh;
           }
           #MemberBodyContainer {
             width: 90%;
-            height: 20%;
+            height: 100%;
+            margin-top: 10%;
             text-align: center;
           }
-          #MemberHeaderContainer {
-            width: 100%;
+          #DonateBodyContainer{
+            position: relative;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
           }
-          #MemberHeader{
-            text-align: center;
+          #DonateIconContainer{
+            justify-content: center;
+            align-items: center;
+            height: 50%;
           }
-          #MemberBodyContainer {
-            width: 90%;
-            text-align: center;
-          }
-          #MemberHeaderContainer {
-            height: 30%;
+          #DonateIcon{
+            width: 60%;
+            flex-direction: row;
+            justify-content: space-around;
           }
 
         }
-
     `]
 })
 export class MemberBody implements OnInit, AfterViewInit {
   currentView: 'signup' | 'login';
 
   constructor() {
-    this.currentView = "signup";
+    this.currentView = 'signup';
   }
 
   switchToLogin() {

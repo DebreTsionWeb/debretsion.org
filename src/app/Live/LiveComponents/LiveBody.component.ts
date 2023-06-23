@@ -4,7 +4,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   selector: 'LiveBody',
   template: `
 
-    <div id='Live' class="fade-in">
+    <div id='Live'>
       <div id='LiveContainer'>
         <div id='LiveHeaderContainer'>
           <h1 id='LiveHeader'>Live</h1>
@@ -35,7 +35,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      animation: fade-in 1.5s ease-in-out;
+      animation: fade-in 2s ease-in-out;
     }
     @keyframes fade-in {
           0% {
@@ -44,7 +44,17 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
           100% {
             opacity: 1;
           }
-      }
+    }
+    @keyframes slide-in {
+          0% {
+            opacity: 0;
+            right: 50px;
+          }
+          100% {
+            opacity: 1;
+            right: 0;
+          }
+    }
     #LiveContainer {
       display: flex;
       position: relative;
@@ -60,6 +70,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       margin-top: 3%;
       justify-content: flex-end;
       flex-direction: column;
+      animation: slide-in 3s ease-in-out;
     }
     #LiveHeader {
       font-size: 40px;

@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
     selector: "AboutBody",
     template: `
-        <div id="AboutBody" class="fade-in">
+        <div id="AboutBody"  >
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
                     <h1 id='AboutHeaderText'>About</h1>
@@ -22,7 +22,7 @@ import { Component, OnInit } from "@angular/core";
     `,
     styles: [`
         #AboutBody {
-          display:flex;
+          display: flex;
           position: relative;
           width: 100%;
           height: 90vh;
@@ -36,6 +36,16 @@ import { Component, OnInit } from "@angular/core";
           }
           100% {
             opacity: 1;
+          }
+        }
+        @keyframes slide-in {
+          0% {
+            opacity: 0;
+            left: 20px;
+          }
+          100% {
+            opacity: 1;
+            left: 0px;
           }
         }
         #AboutBodyContainer {
@@ -87,6 +97,7 @@ import { Component, OnInit } from "@angular/core";
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            animation: slide-in 3s ease-in-out;
         }
         #ImageContainer {
             display: flex;
