@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "GalleryBody",
@@ -14,14 +14,14 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
                         <p id='CollectionHeader'>Christmas</p>
                     </div>
                     <div id="CollectionImagesContainer">
-                        <img id='CollectionImage' src="assets/GalleryEx2.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx3.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx4.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx5.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx6.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx7.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx8.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx9.jpg" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery2" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery3" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery4" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery5" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery6" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery7" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery8" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery9" alt="">
                     </div>
                   </div>
                   <div class="Collection" #collection>
@@ -29,14 +29,14 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
                         <p id='CollectionHeader'>Easter</p>
                     </div>
                     <div id="CollectionImagesContainer">
-                        <img id='CollectionImage' src="assets/GalleryEx2.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx3.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx4.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx5.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx6.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx7.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx8.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx9.jpg" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery2" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery3" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery4" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery5" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery6" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery7" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery8" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery9" alt="">
                     </div>
                   </div>
                   <div class="Collection" #collection>
@@ -44,14 +44,14 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
                         <p id='CollectionHeader'>Imma Bucket</p>
                     </div>
                     <div id="CollectionImagesContainer">
-                        <img id='CollectionImage' src="assets/GalleryEx2.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx3.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx4.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx5.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx6.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx7.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx8.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx9.jpg" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery2" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery3" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery4" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery5" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery6" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery7" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery8" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery9" alt="">
                     </div>
                   </div>
                   <div class="Collection" #collection>
@@ -59,19 +59,20 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
                         <p id='CollectionHeader'>Imma Bucket</p>
                     </div>
                     <div id="CollectionImagesContainer">
-                        <img id='CollectionImage' src="assets/GalleryEx2.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx3.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx4.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx5.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx6.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx7.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx8.jpg" alt="">
-                        <img id='CollectionImage' src="assets/GalleryEx9.jpg" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery2" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery3" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery4" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery5" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery6" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery7" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery8" alt="">
+                        <img id='CollectionImage' [lazyLoad]="gallery9" alt="">
                     </div>
                   </div>
               </div>
             </div>
         </div>
+        
     `,
     styles: [`
         #GalleryBody {
@@ -81,14 +82,25 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            /* animation: fade-in 1.5s ease-in-out; */
         }
-        @keyframes fade-in {
+        @keyframes slide-in {
           0% {
+            right: 20px;
             opacity: 0;
           }
           100% {
+            right: 0;
             opacity: 1;
+          }
+        }
+        @keyframes rise-up {
+          0% {
+            opacity: 0;
+            top: 20px;
+          }
+          100% {
+            opacity: 1;
+            top: 0;
           }
         }
         #GalleryBodyContainer {
@@ -109,6 +121,7 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
             flex-direction: column;
             margin-top: 5%;
             font-size: 40px;
+            animation: slide-in 1.5s ease-in-out;
         }
         #CollectionContainer {
             display: flex;
@@ -173,26 +186,23 @@ import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef }
 
     `]
 })
-export class GalleryBody implements OnInit, AfterViewInit{
-  @ViewChildren('collection') collections!: QueryList<ElementRef>;
-    constructor() {}
-    ngOnInit() {}
-    ngAfterViewInit() {
-      const collectionElements = this.collections.toArray().map(collectionRef => collectionRef.nativeElement);
+export class GalleryBody implements OnInit{
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.loadCollection(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+gallery2 = "assets/GalleryEx2.jpg"
+gallery3 = "assets/GalleryEx3.jpg"
+gallery4 = "assets/GalleryEx4.jpg"
+gallery5 = "assets/GalleryEx5.jpg"
+gallery6 = "assets/GalleryEx6.jpg"
+gallery7 = "assets/GalleryEx7.jpg"
+gallery8 = "assets/GalleryEx8.jpg"
+gallery9 = "assets/GalleryEx9.jpg"
 
-    collectionElements.forEach(collectionElement => observer.observe(collectionElement));
-  }
 
-    loadCollection(collection: Element) {
-      collection.classList.add("fade-in");
-    }
+
+constructor() {}
+
+ngOnInit() {}
+
+
+
   }
