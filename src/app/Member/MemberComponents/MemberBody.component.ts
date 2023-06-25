@@ -57,7 +57,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         @keyframes slide-in {
           0% {
             opacity: 0;
-            right: 50px;
+            right: 30px;
           }
           100% {
             opacity: 1;
@@ -86,7 +86,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
           height: 100%;
           justify-content: center;
           align-items: center;
-          animation: slide-in 1.5s ease-in-out;
+          animation: slide-in 2s ease-in-out;
         }
         #Auth {
           display: flex;

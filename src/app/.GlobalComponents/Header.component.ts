@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
         <div id="NavbarImageContainer">
           <img id="logo" src="assets/logo.png" alt="LogoPicture" />
         </div>
-        <div id="NavbarTextContainer">
+        <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
           <i
             id="bars"
             class="fa fa-solid fa-bars"
@@ -61,6 +61,7 @@ import { Router } from "@angular/router";
         align-items: center;
         flex-direction: row;
         background-color: whitesmoke;
+        z-index: 10;
       }
 
       #NavbarContainer {
@@ -93,7 +94,7 @@ import { Router } from "@angular/router";
         position: relative;
         justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 50%;
       }
 
       #NavbarListContainer {
@@ -125,70 +126,62 @@ import { Router } from "@angular/router";
         display: none;
       }
 
-      @media (max-width: 700px) {
+      @media (max-width: 1100px) {
         #bars {
           display: flex;
+          position: absolute;
+          right: 10%;
           font-size: 38px;
         }
 
         #close {
           display: none;
           font-size: 38px;
-          margin-left: 10px;
         }
 
         #NavbarListContainer {
           display: none;
         }
 
+        #NavbarTextContainer.show {
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: -2.6%;
+          width: 105%;
+          height: 300%;
+          margin-right: 0;
+          flex-direction: column;
+          background-color: grey;
+          border-radius: 0 0 20px 20px;
+        }
+
         #NavbarListContainer.show {
-          display: block;
+          display: grid;
+          position: relative;
+          width: 80%;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 10px;
+          border: 1px solid black;
+        }
+        #NavbarListContainer.show li {
+          display: flex;
+          position: relative;
+          width: 90%;
+          border: 1px solid red;
+        }
+        #NavbarListContainer.show li a {
+          position: relative;
         }
 
-        #Home {
-        }
 
-        #Home:hover {
-          opacity: 0.5;
-        }
 
-        #Events {
-        }
 
-        #Events:hover {
-          opacity: 0.5;
-        }
-        #Live {
-        }
 
-        #Live:hover {
-          opacity: 0.5;
-        }
-
-        #About {
-        }
-
-        #About:hover {
-          opacity: 0.5;
-        }
-
-        #Gallery {
-        }
-
-        #Gallery:hover {
-          opacity: 0.5;
-        }
-
-        #Contact {
-        }
-
-        #Contact:hover {
-          opacity: 0.5;
-        }
       }
 
       .show {
-        display: block !important;
+        display: flex !important;
       }
 
       .hide {

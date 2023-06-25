@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './.GlobalComponents/Header.component';
@@ -63,7 +65,8 @@ import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LazyLoadImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
