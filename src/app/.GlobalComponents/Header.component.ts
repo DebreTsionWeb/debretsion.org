@@ -132,11 +132,13 @@ import { Router } from "@angular/router";
           position: absolute;
           right: 10%;
           font-size: 38px;
+          cursor: pointer;
         }
 
         #close {
           display: none;
           font-size: 38px;
+          cursor: pointer;
         }
 
         #NavbarListContainer {

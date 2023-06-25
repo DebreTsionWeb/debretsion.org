@@ -67,7 +67,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       position: relative;
       width: 100%;
       height: 15%;
-      margin-top: 3%;
       justify-content: flex-end;
       flex-direction: column;
       animation: slide-in 3s ease-in-out;
