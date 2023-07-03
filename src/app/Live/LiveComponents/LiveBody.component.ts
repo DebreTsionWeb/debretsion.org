@@ -110,11 +110,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
       text-align: center;
     }
     #LiveIcon {
-      font-size: 21px;
+      font-size: 28px;
       text-align: center;
     }
     #Icon {
-
+      color: red;
     }
     #playerContainer {
       display: flex;

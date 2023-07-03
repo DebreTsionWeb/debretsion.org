@@ -3,27 +3,33 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 @Component({
     selector: "MemberLogin",
     template: `
-          <div id="MemberLogin">
-            <div id="MemberLoginContainer">
-                <div id="MemberLoginHeaderContainer">
-                  <h1 id="MemberLoginHeader">Member Login</h1>
-                </div>
-                <div id="LoginInputContainer">
-                  <div id="EmailContainer">
-                        <input id='Email' (keyup)="setEmailValue(emailValue)" placeholder="Enter Email" required/>
-                  </div>
-                  <div id="PasswordContainer">
-                        <input id='Password' (keyup)="setPasswordValue(passwordValue)" placeholder="Enter Password" required/>
-                  </div>
-                </div>
-                <div id="LoginErrorContainer">
-                  <p id="LoginError" #LoginError>Please Fill Out All Fields</p>
-                </div>
-                <div id="LoginButtonContainer">
-                  <button id="LoginButton" (click)="submitLogin()">Login</button>
-                </div>
-              </div>
-            </div>
+    <div id="MemberLogin">
+      <div id="MemberLoginContainer">
+        <div id="MemberLoginHeaderContainer">
+          <h1 id="MemberLoginHeader">Member Login</h1>
+        </div>
+        <div id="LoginInputContainer">
+          <div id="EmailContainer">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput id="Email" [(ngModel)]="emailValue" placeholder="Enter Email" required/>
+            </mat-form-field>
+          </div>
+          <div id="PasswordContainer">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput id="Password" [(ngModel)]="passwordValue" type="password" placeholder="Enter Password" required/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="LoginErrorContainer">
+          <p id="LoginError" #LoginError>Please Fill Out All Fields</p>
+        </div>
+        <div id="LoginButtonContainer">
+          <button mat-raised-button color="primary" id="LoginButton" (click)="submitLogin()">Login</button>
+        </div>
+      </div>
+    </div>
 
     `,
     styles: [`

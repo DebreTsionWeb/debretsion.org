@@ -4,37 +4,52 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
     selector: "MemberSignup",
     template: `
         <div id="MemberSignup">
-            <div id="MemberSignupContainer">
-                <div id="MemberSignupHeaderContainer">
-                  <h1 id="MemberSignupHeader">Member Signup</h1>
-                </div>
-                <div id="SignupInputContainer">
-                  <div id="NameContainer">
-                    <div id="FirstNameContainer">
-                        <input id='FirstName' (keyup)="setFirstName(firstValue)" placeholder="Enter First Name" required/>
-                    </div>
-                    <div id="LastNameContainer">
-                        <input id='LastName' (keyup)="setLastName(lastValue)" placeholder="Enter Last Name" required/>
-                    </div>
-                  </div>
-                  <div id="KristinaContainer">
-                        <input id='Kristina' (keyup)="setKristinaName(kristinaValue)" placeholder="Enter Kristina Name" required/>
-                  </div>
-                  <div id="EmailContainer">
-                        <input id='Email' (keyup)="setEmailValue(emailValue)" placeholder="Enter Email" required/>
-                  </div>
-                  <div id="PasswordContainer">
-                        <input id='Password' (keyup)="setPasswordValue(passwordValue)" placeholder="Enter Password" required/>
-                  </div>
-                </div>
-                <div id="SignupErrorContainer">
-                  <p id="SignupError" #SignupError>Please Fill Out All Fields</p>
-                </div>
-                <div id="SignupButtonContainer">
-                  <button id="SignupButton" (click)="submitSignup()">Sign Up</button>
-                </div>
+      <div id="MemberSignupContainer">
+        <div id="MemberSignupHeaderContainer">
+          <h1 id="MemberSignupHeader">Member Signup</h1>
+        </div>
+        <div id="SignupInputContainer">
+          <div id="NameContainer">
+            <div id="FirstNameContainer">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input id='FirstName' matInput [(ngModel)]="firstValue" placeholder="Enter First Name" required>
+              </mat-form-field>
             </div>
-         </div>
+            <div id="LastNameContainer">
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input id='LastName' matInput [(ngModel)]="lastValue" placeholder="Enter Last Name" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div id="KristinaContainer">
+            <mat-form-field appearance="outline">
+              <mat-label>Kristina Name</mat-label>
+              <input id='Kristina' matInput [(ngModel)]="kristinaValue" placeholder="Enter Kristina Name" required>
+            </mat-form-field>
+          </div>
+          <div id="EmailContainer">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input id='Email' matInput [(ngModel)]="emailValue" placeholder="Enter Email" required>
+            </mat-form-field>
+          </div>
+          <div id="PasswordContainer">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input id='Password' matInput [(ngModel)]="passwordValue" placeholder="Enter Password" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="SignupErrorContainer">
+          <p id="SignupError" #SignupError>Please Fill Out All Fields</p>
+        </div>
+        <div id="SignupButtonContainer">
+          <button id='SignupButton' mat-raised-button color="primary" (click)="submitSignup()">Sign Up</button>
+        </div>
+      </div>
+    </div>
 
     `,
     styles: [`
@@ -85,6 +100,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           position: relative;
           flex-direction: row;
           width: 95%;
+          height: 20%;
           justify-content: space-between;
           align-items: center;
           margin: 10px;
@@ -98,8 +114,8 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
         #FirstName, #LastName{
           display: flex;
           position: relative;
-          width: 230px;
-          height: 50px;
+          width: 100%;
+          height: 50%;
           font-size: 15px;
           padding-left: 15px;
           border-radius: 20px;
@@ -178,51 +194,29 @@ export class MemberSignup implements OnInit {
 
   @ViewChild('SignupError', { static: false }) signupErrorRef!: ElementRef;
 
+  firstValue: string = '';
+  lastValue: string = '';
+  kristinaValue: string = '';
+  emailValue: string = '';
+  passwordValue: string = '';
 
-    firstValue: string = '';
-    lastValue: string = '';
-    kristinaValue: string = '';
-    emailValue: string = '';
-    passwordValue: string = '';
+  submitSignup() {
+    if (
+      this.firstValue === '' ||
+      this.lastValue === '' ||
+      this.kristinaValue === '' ||
+      this.emailValue === '' ||
+      this.passwordValue === ''
+    ) {
+      this.signupErrorRef.nativeElement.style.display = 'flex';
 
-    setFirstName(firstValue: string) {
-      console.log(firstValue);
-      this.firstValue += firstValue;
-    }
-    setLastName(lastValue: string) {
-      console.log(lastValue);
-      this.lastValue += lastValue;
-    }
-    setKristinaName(kristinaValue: string) {
-      console.log(kristinaValue);
-      this.kristinaValue += kristinaValue;
-    }
-    setEmailValue(emailValue: string) {
-      console.log(emailValue);
-      this.emailValue += emailValue;
-    }
-    setPasswordValue(passwordValue: string) {
-      console.log(passwordValue);
-      this.passwordValue += passwordValue;
-    }
+      setTimeout(() => {
+        this.signupErrorRef.nativeElement.style.display = 'none';
+      }, 3000);
+    } else {
 
-    submitSignup() {
-      if (
-        this.firstValue === '' ||
-        this.lastValue === '' ||
-        this.kristinaValue === '' ||
-        this.emailValue === '' ||
-        this.passwordValue === ''
-      ) {
-        this.signupErrorRef.nativeElement.style.display = 'flex';
-
-    setTimeout(() => {
-      this.signupErrorRef.nativeElement.style.display = 'none';
-    }, 3000);
-      } else {
-
-      }
     }
+  }
 
     constructor() {}
     ngOnInit() {}

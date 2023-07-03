@@ -7,7 +7,8 @@ import { Router } from "@angular/router";
     <div id="Navbar">
       <div id="NavbarContainer">
         <div id="NavbarImageContainer">
-          <img id="logo" src="assets/logo.png" alt="LogoPicture" />
+          <img id="NavbarImage" src="assets/logo.png" alt="LogoPicture" />
+          <button id='LanguageSwitch' (click)="navigateTo('/')">Amharic</button>
         </div>
         <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
           <i
@@ -22,29 +23,16 @@ import { Router } from "@angular/router";
             (click)="toggleNavbar()"
             [ngClass]="{ hide: !isNavbarOpen }"
           ></i>
-          <ul #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
-            <li id="Home">
+          <div #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
               <a (click)="navigateTo('/')">Home</a>
-            </li>
-            <li id="About">
               <a (click)="navigateTo('/About')">About Us</a>
-            </li>
-            <li id="Events">
               <a (click)="navigateTo('/Events')">Events</a>
-            </li>
-            <li id="Live">
               <a (click)="navigateTo('/Live')">Live</a>
-            </li>
-            <li id="Gallery">
               <a (click)="navigateTo('/Gallery')">Gallery</a>
-            </li>
-            <li id="Member">
               <a (click)="navigateTo('/Member')">Member</a>
-            </li>
-            <li id="Contact">
               <a (click)="navigateTo('/Contact')">Contact Us</a>
-            </li>
-          </ul>
+              <a id='MobileLanguageSwitch' (click)="navigateTo('/')">Amharic</a>
+          </div>
         </div>
       </div>
     </div>
@@ -75,18 +63,41 @@ import { Router } from "@angular/router";
       #NavbarImageContainer {
         display: flex;
         position: relative;
-        width: 75px;
+        width: 200px;
         height: 75px;
         justify-content: center;
         align-items: center;
       }
 
-      #logo {
+      #NavbarImage {
         display: flex;
         position: relative;
         width: 100%;
         height: 100%;
         margin-top: 5px;
+      }
+
+      #LanguageSwitch {
+        display: flex;
+        position: relative;
+        width: 300px;
+        height: 60%;
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        margin-left: 20px;
+        font-family: 'InterMedium';
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      #LanguageSwitch:hover {
+        opacity: 0.8;
+      }
+
+      #MobileLanguageSwitch {
+        display: none;
       }
 
       #NavbarTextContainer {
@@ -105,17 +116,13 @@ import { Router } from "@angular/router";
         justify-content: space-between;
       }
 
-      #NavbarListContainer li a {
+      a {
         cursor: pointer;
         font-family: 'InterMedium';
       }
 
-      #NavbarListContainer li a:hover {
+      a:hover {
         opacity: 0.5;
-      }
-
-      #NavbarListContainer li {
-        list-style: none;
       }
 
       #bars {
@@ -127,6 +134,7 @@ import { Router } from "@angular/router";
       }
 
       @media (max-width: 1100px) {
+
         #bars {
           display: flex;
           position: absolute;
@@ -139,6 +147,7 @@ import { Router } from "@angular/router";
           display: none;
           font-size: 38px;
           cursor: pointer;
+          margin-bottom: 15px;
         }
 
         #NavbarListContainer {
@@ -150,35 +159,45 @@ import { Router } from "@angular/router";
           position: absolute;
           top: 0;
           left: -2.6%;
-          width: 105%;
-          height: 300%;
+          width: 105.1%;
+          height: 350%;
           margin-right: 0;
           flex-direction: column;
-          background-color: grey;
+          background-color: whitesmoke;
           border-radius: 0 0 20px 20px;
+          overflow: hidden;
+          border: 1px solid black;
         }
 
         #NavbarListContainer.show {
-          display: grid;
-          position: relative;
-          width: 80%;
-          grid-template-columns: repeat(4, 1fr);
-          grid-gap: 10px;
-          border: 1px solid black;
-        }
-        #NavbarListContainer.show li {
           display: flex;
-          position: relative;
-          width: 90%;
-          border: 1px solid red;
+          width: 100%;
+          height: 60%;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
         }
-        #NavbarListContainer.show li a {
-          position: relative;
+
+        #NavbarListContainer.show a {
+          display: flex;
+          width: 25%;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          border: 1px solid black;
+          padding: 8px 5px;
+          margin: 5px;
+          border-radius: 10px;
         }
 
+        #NavbarListContainer.show a:hover {
+          opacity: 0.7;
+        }
 
-
-
+        #MobileLanguageSwitch {
+          display: flex;
+        }
 
       }
 

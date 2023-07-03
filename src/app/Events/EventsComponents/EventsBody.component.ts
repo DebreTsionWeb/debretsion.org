@@ -55,8 +55,8 @@ import { Component, OnInit } from "@angular/core";
                   </div>
                   <div id="ArrowContainer">
                     <!-- Didnt feel like doing numbers dont judge me -->
-                    <img id="BackArrow" (click)="nextSet" [lazyLoad]="backArrow">
-                    <img id="FrontArrow" (click)="nextSet" [lazyLoad]="frontArrow">
+                    <img id="BackArrow" (click)="backSet()" [lazyLoad]="backArrow">
+                    <img id="FrontArrow" (click)="nextSet()" [lazyLoad]="frontArrow">
                   </div>
                 </div>
               </div>
@@ -261,12 +261,18 @@ import { Component, OnInit } from "@angular/core";
           }
         }
 
-        @media (930px >= width >= 746px) {
+        @media (max-width: 930px) and (min-width: 746px) {
           #EventsBody{
-            height: 100vh;
+            height: 110vh;
           }
           #ArrowContainer {
             margin-top: 5%;
+          }
+        }
+
+        @media (max-width: 1400px) and (min-width: 930px) {
+          #EventsBody{
+            height: 140vh;
           }
         }
     `]
@@ -282,6 +288,10 @@ export class EventsBody implements OnInit{
 
     nextSet() {
       console.log("nextSet");
+    }
+
+    backSet() {
+      console.log("backSet");
     }
 
     redirectFacebook() {
