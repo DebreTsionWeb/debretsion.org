@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { Router } from "@angular/router";
 
 @Component({
     selector: "HomeBody",
@@ -29,7 +29,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
                 <p id="HomeAboutSubText">This is the about section of the website. This is where you can find all the information about the website.</p>
               </div>
               <div id="HomeAboutButtonContainer">
-                <button id="HomeAboutButton">Learn More</button>
+                <button id="HomeAboutButton" (click)="navigateTo('/About')">View About Page</button>
               </div>
             </div>
 
@@ -44,7 +44,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
                   <a id='HomeLocationInfo' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
                 </div>
                 <div id="HomeLocationButtonContainer">
-                  <button id="HomeLocationButton">Learn More</button>
+                  <button id="HomeLocationButton" (click)="navigateTo('/Contact')">View Contact Page</button>
                 </div>
               </div>
               <div id="HomeLocationMapContainer">
@@ -55,31 +55,31 @@ import { DeviceDetectorService } from 'ngx-device-detector';
             <div id="HomeEventsContainer">
               <ng-container *ngIf="isMobile; else desktopView">
                 <div id="MobileHomeEventsHeaderContainer">
-                    <p id="MobileHomeEventsHeader">Events</p>
+                  <p id="MobileHomeEventsHeader">Events</p>
                 </div>
                 <div id="MobileHomeEventsImageContainer">
-                    <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
+                  <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
                 </div>
                 <div id="MobileHomeEventsParagraphContainer">
-                    <p id="MobileHomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
+                  <p id="MobileHomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
                 </div>
                 <div id="MobileHomeEventsButtonContainer">
-                    <button id="MobileHomeEventsButton">Learn More</button>
+                  <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
                 </div>
               </ng-container>
               <ng-template #desktopView>
                 <div id="HomeEventsImageContainer">
-                    <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
+                  <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
                 </div>
                 <div id="HomeEventsTextContainer">
                   <div id="HomeEventsHeaderContainer">
-                      <p id="HomeEventsHeader">Recent Event</p>
+                    <p id="HomeEventsHeader">Recent Event</p>
                   </div>
                   <div id="HomeEventsParagraphContainer">
-                      <p id="HomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
+                    <p id="HomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
                   </div>
                   <div id="HomeEventsButtonContainer">
-                      <button id="HomeEventsButton">Learn More</button>
+                    <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
                   </div>
                 </div>
               </ng-template>
@@ -107,7 +107,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
                   </div>
               </div>
               <div id="HomeGalleryButtonContainer">
-                <button id="HomeGalleryButton">Learn More</button>
+                <button id="HomeGalleryButton" (click)="navigateTo('/Gallery')">View All Galleries</button>
               </div>
             </div>
 
@@ -386,10 +386,10 @@ import { DeviceDetectorService } from 'ngx-device-detector';
         #HomeEventsTextContainer {
             display: flex;
             position: relative;
-            width: 40%;
+            width: 80%;
             height: 100%;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
             flex-direction: column;
         }
 
@@ -406,12 +406,13 @@ import { DeviceDetectorService } from 'ngx-device-detector';
             position: relative;
             font-family: 'InterBold';
             font-size: 52px;
+            text-align: right;
         }
 
         #HomeEventsParagraphContainer {
             display: flex;
             position: relative;
-            width: 80%;
+            width: 60%;
             justify-content: flex-end;
             align-items: center;
             text-align: right;
@@ -445,32 +446,21 @@ import { DeviceDetectorService } from 'ngx-device-detector';
             font-size: 17px;
         }
 
-        #MobileHomeEventsContainer {
-            display: flex;
-            position: relative;
-            width: 100%;
-            height: 80vh;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid red;
-        }
-
         #MobileHomeEventsImageContainer {
             display: flex;
             position: relative;
-            width: 10%;
-            height: 10%;
+            width: 100%;
+            height: 100%;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            border: 1px solid red;
+            overflow: hidden;
         }
 
         #MobileHomeEventsImage {
             display: flex;
             position: relative;
-            width: 100%;
+            width: 80%;
+            height: 80%;
             object-fit: contain;
         }
 
@@ -487,25 +477,33 @@ import { DeviceDetectorService } from 'ngx-device-detector';
         #MobileHomeEventsHeaderContainer {
             display: flex;
             position: relative;
-
+            width: 100%;
+            height: 20%;
+            justify-content: center;
         }
 
         #MobileHomeEventsHeader {
             display: flex;
             position: relative;
-
+            font-family: 'InterBold';
+            font-size: 40px;
         }
 
         #MobileHomeEventsParagraphContainer {
             display: flex;
             position: relative;
-
+            width: 100%;
+            height: 30%;
+            justify-content: center;
+            align-items: center;
         }
 
         #MobileHomeEventsParagraph {
             display: flex;
             position: relative;
-
+            font-family: 'InterMedium';
+            font-size: 20px;
+            text-align: center;
         }
 
         #MobileHomeEventsButtonContainer {
@@ -632,6 +630,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
           display: flex;
           position: relative;
           width: 100%;
+          height: 20%;
           justify-content: center;
           text-align: center;
         }
@@ -675,6 +674,26 @@ import { DeviceDetectorService } from 'ngx-device-detector';
           opacity: 0.8;
         }
 
+        button{
+          cursor: pointer;
+        }
+
+        button:hover {
+          animation-name: buttonAnim;
+          animation-duration: 1s;
+          animation-fill-mode: both;
+        }
+
+        @keyframes buttonAnim {
+          from {
+            background-color: gradient(#e0e0e0, #c0c0c0);
+          }
+          to {
+            background-color: #e0e0e0;
+          }
+        }
+
+
         @media (max-width: 850px) {
 
           #HomeBodyContainer {
@@ -683,7 +702,9 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 
           #HeroContainer {
             flex-direction: column;
-            height: 70vh;
+            height: 75vh;
+            margin-top: 10%;
+            margin-bottom: 10%;
           }
 
           #HeroImageContainer {
@@ -700,13 +721,119 @@ import { DeviceDetectorService } from 'ngx-device-detector';
           }
 
           #HeroHeader {
-            font-size: 35px;
+            font-size: 40px;
             text-align: center;
           }
 
           #HeroSubText {
-            font-size: 15px;
+            font-size: 20px;
             text-align: center;
+          }
+
+          #HomeAboutContainer {
+            height: 60vh;
+          }
+
+          #HomeAboutHeader {
+            font-size: 40px;
+          }
+
+          #HomeAboutSubText {
+            font-size: 20px;
+            text-align: center;
+          }
+
+          #HomeLocationContainer {
+            flex-direction: column;
+          }
+
+          #HomeLocationTextContainer {
+            width: 100%;
+            height: 90%;
+          }
+
+          #HomeLocationHeaderContainer {
+            width: 100%;
+            justify-content: center;
+          }
+
+          #HomeLocationHeader {
+            font-size: 40px;
+          }
+
+          #HomeLocationInfoContainer {
+            width: 100%;
+            align-items: center;
+          }
+
+          #HomeLocationInfo {
+            font-size: 20px;
+            text-align: center;
+          }
+
+          #HomeLocationButtonContainer {
+            width: 100%;
+            justify-content: center;
+          }
+
+          #HomeLocationMapContainer {
+            width: 100%;
+            height: 50%;
+          }
+
+          #HomeEventsContainer {
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          #HomeGalleryContainer {
+            height: 80vh;
+          }
+
+          #HomeGalleryHeaderContainer {
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+            align-items: center;
+          }
+
+          #HomeGalleryHeader {
+            font-size: 40px;
+            text-align: center;
+          }
+
+          #CollectionImage{
+            width: 300px;
+            height: 200px;
+          }
+
+          #HomeGalleryButtonContainer {
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+            align-items: center;
+          }
+
+          #HomeDonateContainer {
+            height: 40vh;
+          }
+
+          #HomeDonateHeaderContainer {
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+            text-align: center;
+          }
+
+          #HomeDonateHeader {
+            font-size: 40px;
+          }
+
+          #HomeDonateIcon {
+            width: 70%;
           }
 
         }
@@ -715,7 +842,6 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 })
 export class HomeBody implements OnInit{
 
-  isMobile: boolean = false;
   RecentEvent = "assets/ExampleAboutImg.jpg";
 
   gallery2 = "assets/GalleryEx2.jpg"
@@ -727,9 +853,13 @@ export class HomeBody implements OnInit{
   gallery8 = "assets/GalleryEx8.jpg"
   gallery9 = "assets/GalleryEx9.jpg"
 
-  constructor(private deviceService: DeviceDetectorService) {}
+  isMobile: boolean = window.innerWidth <= 850;
 
-  ngOnInit() {
-      this.isMobile = this.deviceService.isMobile();
+  constructor(private router: Router) {}
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
+
+  ngOnInit() {}
 }
