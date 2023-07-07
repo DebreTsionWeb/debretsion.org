@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
 
     `,
-  styleUrls: ['./app.component.css']
+  styles: []
 })
 
 export class AppComponent {
