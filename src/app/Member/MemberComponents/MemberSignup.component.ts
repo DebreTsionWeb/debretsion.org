@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
     selector: "MemberSignup",
@@ -200,6 +201,10 @@ export class MemberSignup implements OnInit {
   emailValue: string = '';
   passwordValue: string = '';
 
+  constructor(private afAuth: AngularFireAuth) {}
+
+  ngOnInit() {}
+
   submitSignup() {
     if (
       this.firstValue === '' ||
@@ -214,10 +219,13 @@ export class MemberSignup implements OnInit {
         this.signupErrorRef.nativeElement.style.display = 'none';
       }, 3000);
     } else {
-
+      this.afAuth.createUserWithEmailAndPassword(this.emailValue, this.passwordValue)
+        .then((userCredential) => {
+          console.log('User signed up:', userCredential.user);
+        })
+        .catch((error) => {
+          console.log('Signup error:', error);
+        });
     }
   }
-
-    constructor() {}
-    ngOnInit() {}
 }

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "debretsionweb"
+  },
+  "targets": {
+    "debretsionweb": {
+      "hosting": {
+        "DebreTsionWebsite": [
+          "debretsionweb"
+        ]
+      }
+    }
+  }
+}

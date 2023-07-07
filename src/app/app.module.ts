@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { environment } from './env';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +37,9 @@ import { AdminHome } from './.Admin/AdminComponents/AdminHome.component';
 import { AdminEvents } from './.Admin/AdminComponents/AdminEvents.component';
 import { AdminGallery } from './.Admin/AdminComponents/AdminGallery.component';
 import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,10 @@ import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

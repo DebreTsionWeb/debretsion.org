@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
     selector: "MemberLogin",
@@ -173,34 +174,28 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 export class MemberLogin implements OnInit{
   @ViewChild('LoginError', { static: false }) LoginErrorRef!: ElementRef;
 
+  emailValue: string = '';
+  passwordValue: string = '';
 
-    emailValue: string = '';
-    passwordValue: string = '';
+  constructor(private afAuth: AngularFireAuth) {}
 
-    setEmailValue(emailValue: string) {
-      console.log(emailValue);
-      this.emailValue += emailValue;
+  ngOnInit() {}
+
+  submitLogin() {
+    if (this.emailValue === '' || this.passwordValue === '') {
+      this.LoginErrorRef.nativeElement.style.display = 'flex';
+
+      setTimeout(() => {
+        this.LoginErrorRef.nativeElement.style.display = 'none';
+      }, 3000);
+    } else {
+      this.afAuth.signInWithEmailAndPassword(this.emailValue, this.passwordValue)
+        .then((userCredential) => {
+          console.log('User signed in:', userCredential.user);
+        })
+        .catch((error) => {
+          console.log('Sign-in error:', error);
+        });
     }
-    setPasswordValue(passwordValue: string) {
-      console.log(passwordValue);
-      this.passwordValue += passwordValue;
-    }
-
-    submitLogin() {
-      if (
-        this.emailValue === '' ||
-        this.passwordValue === ''
-      ) {
-        this.LoginErrorRef.nativeElement.style.display = 'flex';
-
-    setTimeout(() => {
-      this.LoginErrorRef.nativeElement.style.display = 'none';
-    }, 3000);
-      } else {
-
-      }
-    }
-
-    constructor() {}
-    ngOnInit() {}
+  }
 }
