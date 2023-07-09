@@ -8,6 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
 
@@ -37,9 +40,6 @@ import { AdminHome } from './.Admin/AdminComponents/AdminHome.component';
 import { AdminEvents } from './.Admin/AdminComponents/AdminEvents.component';
 import { AdminGallery } from './.Admin/AdminComponents/AdminGallery.component';
 import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [

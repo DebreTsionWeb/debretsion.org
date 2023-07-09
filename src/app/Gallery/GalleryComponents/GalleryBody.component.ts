@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+interface Galleries {
+  Name: string,
+  URL: string[],
+};
 
 @Component({
   selector: 'GalleryBody',
@@ -9,85 +16,34 @@ import { Component, OnInit } from '@angular/core';
           <h1 id="GalleryHeader">Gallery</h1>
         </div>
         <div id="CollectionContainer">
-          <div class="Collection" #collection>
+          <div class="Collection" *ngFor="let gallery of Gallery$ | async">
             <div id="CollectionHeaderContainer">
-              <p id="CollectionHeader">Christmas</p>
+              <p id="CollectionHeader">{{ gallery.Name }}</p>
             </div>
             <div id="CollectionImagesContainer">
-              <ng-container *ngIf="modalOpen; else smallView">
-                <div id="ModalView" (click)="closeModal()">
-                  <i
-                    id="ModalClose"
-                    class="fa fa-solid fa-times"
-                    (click)="closeModal()"
-                  ></i>
+              <ng-container *ngFor="let url of gallery.URL">
+                <ng-container *ngIf="modalOpen; else smallView">
+                  <div id="ModalView" (click)="closeModal()">
+                    <i
+                      id="ModalClose"
+                      class="fa fa-solid fa-times"
+                      (click)="closeModal()"
+                    ></i>
+                    <img
+                      id="ModalImage"
+                      [lazyLoad]="url"
+                      (click)="closeModal()"
+                    />
+                  </div>
+                </ng-container>
+                <ng-template #smallView>
                   <img
-                    id="ModalImage"
-                    [lazyLoad]="gallery2"
-                    (click)="closeModal()"
+                    id="CollectionImage"
+                    [lazyLoad]="url"
+                    (click)="showModal()"
                   />
-                </div>
+                </ng-template>
               </ng-container>
-              <ng-template #smallView>
-                <img
-                  id="CollectionImage"
-                  [lazyLoad]="gallery2"
-                  (click)="showModal()"
-                  alt=""
-                />
-              </ng-template>
-              <img id="CollectionImage" [lazyLoad]="gallery3" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery4" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery5" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery6" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery7" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery8" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery9" alt="" />
-            </div>
-          </div>
-          <div class="Collection" #collection>
-            <div id="CollectionHeaderContainer">
-              <p id="CollectionHeader">Easter</p>
-            </div>
-            <div id="CollectionImagesContainer">
-              <img id="CollectionImage" [lazyLoad]="gallery2" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery3" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery4" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery5" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery6" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery7" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery8" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery9" alt="" />
-            </div>
-          </div>
-          <div class="Collection" #collection>
-            <div id="CollectionHeaderContainer">
-              <p id="CollectionHeader">Imma Bucket</p>
-            </div>
-            <div id="CollectionImagesContainer">
-              <img id="CollectionImage" [lazyLoad]="gallery2" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery3" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery4" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery5" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery6" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery7" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery8" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery9" alt="" />
-            </div>
-          </div>
-          <div class="Collection" #collection>
-            <div id="CollectionHeaderContainer">
-              <p id="CollectionHeader">Imma Bucket</p>
-            </div>
-            <div id="CollectionImagesContainer">
-              <img id="CollectionImage" [lazyLoad]="gallery2" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery3" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery4" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery5" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery6" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery7" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery8" alt="" />
-              <img id="CollectionImage" [lazyLoad]="gallery9" alt="" />
             </div>
           </div>
         </div>
@@ -248,14 +204,17 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class GalleryBody implements OnInit {
-  gallery2 = 'assets/GalleryEx2.jpg';
-  gallery3 = 'assets/GalleryEx3.jpg';
-  gallery4 = 'assets/GalleryEx4.jpg';
-  gallery5 = 'assets/GalleryEx5.jpg';
-  gallery6 = 'assets/GalleryEx6.jpg';
-  gallery7 = 'assets/GalleryEx7.jpg';
-  gallery8 = 'assets/GalleryEx8.jpg';
-  gallery9 = 'assets/GalleryEx9.jpg';
+
+  Gallery$: Observable<Galleries[]>;
+  firestore: Firestore = inject(Firestore);
+
+  constructor() {
+    const GalleryCollection = collection(this.firestore, 'Gallery');
+    this.Gallery$ = collectionData(GalleryCollection) as Observable<Galleries[]>;
+  }
+
+  ngOnInit() {}
+  
 
   modalOpen: boolean = false;
 
@@ -266,8 +225,4 @@ export class GalleryBody implements OnInit {
   closeModal = () => {
     this.modalOpen = false;
   };
-
-  constructor() {}
-
-  ngOnInit() {}
 }
