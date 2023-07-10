@@ -1,6 +1,6 @@
 # DebreTsionWebsite
 
-This website was made to give back to our childhood church and learn MEAN stack while collaborating with other developers. 
+This website was made to give back to our childhood church and learn Angular, Firebase, and TypeScript while collaborating with other developers. Uses Firebase Auth, Firebase Cloud Storage (Images), FireStore, Google Cloud Platform (GCP) APIs, and Angular Materials. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 

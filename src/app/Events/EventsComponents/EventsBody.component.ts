@@ -1,77 +1,201 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, inject } from '@angular/core';
+import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+interface Events {
+  Name: string,
+  Desc: string,
+  URL: string,
+};
 
 @Component({
     selector: "EventsBody",
     template: `
-          <div id="EventsBody">
-            <div id="EventsBodyContainer">
-               <div id="EventsBodyHeaderContainer">
-                  <h1 id="EventsBodyHeader">Events</h1>
-               </div>
-               <div id="EventCardContainer">
-                <div id="EventCardBodyContainer">
-                    <div id="EventCard" (click)="redirectFacebook()">
-                      <div id="EventCardImageContainer">
-                        <img id="EventCardImageBackground" [src]="test">
-                        <img id="EventCardImage" [lazyLoad]="test">
-                      </div>
-                      <div id="EventCardTextContainer">
-                        <div id="EventCardTextTopContainer">
-                          <p id="EventCardTextTop">Event Name</p>
-                        </div>
-                        <div id="EventCardTextBottomContainer">
-                          <p id="EventCardTextBottom">Event Description</p>
-                        </div>
-                      </div>
+      <div id="EventsBody">
+        <div id="EventsBodyContainer">
+          <div id="EventsBodyHeaderContainer">
+            <h1 id="EventsBodyHeader">Events</h1>
+          </div>
+          <div id="EventCardContainer">
+            <div id="EventCardBodyContainer">
+
+              <div id="EventCard" *ngIf="Event$ | async as event" [style.display]="first ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[0].URL">
                     </div>
-                    <div id="EventCard" (click)="redirectFacebook()">
-                      <div id="EventCardImageContainer">
-                        <img id="EventCardImageBackground" [src]="test">
-                        <img id="EventCardImage" [lazyLoad]="test">
-                      </div>
-                      <div id="EventCardTextContainer">
-                        <div id="EventCardTextTopContainer">
-                          <p id="EventCardTextTop">Event Name</p>
-                        </div>
-                        <div id="EventCardTextBottomContainer">
-                          <p id="EventCardTextBottom">Event Description</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="EventCard" (click)="redirectFacebook()">
-                      <div id="EventCardImageContainer">
-                        <img id="EventCardImageBackground" [src]="test">
-                        <img id="EventCardImage" [lazyLoad]="test">
-                      </div>
-                      <div id="EventCardTextContainer">
-                        <div id="EventCardTextTopContainer">
-                          <p id="EventCardTextTop">Event Name</p>
-                        </div>
-                        <div id="EventCardTextBottomContainer">
-                          <p id="EventCardTextBottom">Event Description</p>
-                        </div>
-                      </div>
-                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[0].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[0].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[0].Name }}</p>
                   </div>
-                  <div id="ArrowContainer">
-                    <!-- Didnt feel like doing numbers dont judge me -->
-                    <img id="BackArrow" (click)="backSet()" [lazyLoad]="backArrow">
-                    <img id="FrontArrow" (click)="nextSet()" [lazyLoad]="frontArrow">
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[0].Desc }}</p>
                   </div>
                 </div>
               </div>
-            </div>
+              <div id="EventCard" *ngIf="Event$ | async as event" [style.display]="first ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[1].URL">
+                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[1].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[1].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[1].Name }}</p>
+                  </div>
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[1].Desc }}</p>
+                  </div>
+                </div>
+              </div>
+              <div id="EventCard" *ngIf="Event$ | async as event" [style.display]="first ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[2].URL">
+                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[2].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[2].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[2].Name }}</p>
+                  </div>
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[2].Desc }}</p>
+                  </div>
+                </div>
+              </div>
 
+              <div id="EventCardSecond" *ngIf="Event$ | async as event" [style.display]="second ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[3].URL">
+                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[3].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[3].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[3].Name }}</p>
+                  </div>
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[3].Desc }}</p>
+                  </div>
+                </div>
+              </div>
+              <div id="EventCardSecond" *ngIf="Event$ | async as event" [style.display]="second ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[4].URL">
+                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[4].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[4].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[4].Name }}</p>
+                  </div>
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[4].Desc }}</p>
+                  </div>
+                </div>
+              </div>
+              <div id="EventCardSecond" *ngIf="Event$ | async as event" [style.display]="second ? 'flex' : 'none'">
+                <div id="EventCardImageContainer">
+                  <ng-container *ngIf="modalOpen; else smallView">
+                    <div id="ModalView" (click)="closeModal()">
+                      <i
+                        id="ModalClose"
+                        class="fa fa-solid fa-times"
+                        (click)="closeModal()"
+                      ></i>
+                      <img id="ModalImage" [lazyLoad]="event[5].URL">
+                    </div>
+                  </ng-container>
+                  <ng-template #smallView>
+                    <img id="EventCardImageBackground" src={{event[5].URL}}  (click)="showModal()">
+                    <img id="EventCardImage" [lazyLoad]="event[5].URL " (click)="showModal()">
+                  </ng-template>
+                </div>
+                <div id="EventCardTextContainer" (click)="redirectFacebook()">
+                  <div id="EventCardTextTopContainer">
+                    <p id="EventCardTextTop">{{ event[5].Name }}</p>
+                  </div>
+                  <div id="EventCardTextBottomContainer">
+                    <p id="EventCardTextBottom">{{ event[5].Desc }}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div id="ArrowContainer">
+              <!-- Didnt feel like doing numbers dont judge me -->
+              <img id="BackArrow" (click)="backSet()" [lazyLoad]="backArrow" [style.display]="first ? 'none' : 'flex'">
+              <img id="FrontArrow" (click)="nextSet()" [lazyLoad]="frontArrow" [style.display]="first ? 'flex' : 'none'">
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     styles: [`
         #EventsBody {
           display: flex;
-            position: relative;
-            width: 100%;
-            height: 95vh;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+          position: relative;
+          width: 100%;
+          height: 95vh;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
         }
         @keyframes slide-in {
           0% {
@@ -95,125 +219,140 @@ import { Component, OnInit } from "@angular/core";
         }
         #EventsBodyContainer {
           display: flex;
-            position: relative;
-            width: 92%;
-            height: 95%;
-            flex-direction: column;
+          position: relative;
+          width: 92%;
+          height: 95%;
+          flex-direction: column;
         }
         #EventsBodyHeaderContainer {
           display: flex;
-            position: relative;
-            flex-direction: column;
+          position: relative;
+          flex-direction: column;
         }
         #EventsBodyHeader {
           display: flex;
-            position: relative;
-            flex-direction: column;
-            margin-top: 5%;
-            font-size: 40px;
-            animation: slide-in 1.5s ease-in-out;
+          position: relative;
+          flex-direction: column;
+          margin-top: 5%;
+          font-size: 40px;
+          animation: slide-in 1.5s ease-in-out;
         }
         #EventCardContainer {
           display: flex;
-            position: relative;
-            width: 100%;
-            flex-direction: row;
-            justify-content: center;
+          position: relative;
+          width: 100%;
+          flex-direction: row;
+          justify-content: center;
         }
         #EventCardBodyContainer {
           display: grid;
-            position: relative;
-            width: 95%;
-            height: 70%;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            grid-gap: 10px;
-            align-items: center;
-          }
-        #EventCard {
+          position: relative;
+          width: 95%;
+          height: 70%;
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          grid-gap: 10px;
+          align-items: center;
+        }
+        #First, #Second {
           display: flex;
-            position: relative;
-            width: 400px;
-            height: 480px;
-            flex-direction: column;
-            border-radius: 20px;
-            cursor: pointer;
-            animation: rise-up 2.5s ease-in-out;
-            border: 1px solid black;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        #EventCard, #EventCardSecond {
+          display: flex;
+          position: relative;
+          width: 400px;
+          height: 480px;
+          flex-direction: column;
+          border-radius: 20px;
+          cursor: pointer;
+          animation: rise-up 1.5s ease-in-out;
+          border: 1px solid black;
+        }
+        #EventCardSecond {
+          display: none;
         }
         #EventCardImageContainer {
           display: flex;
-            position: relative;
-            width: 100%;
-            height: 80%;
-            overflow: hidden;
-            border-bottom: 1px solid black;
-            border-radius: 20px 20px 0 0;
+          position: relative;
+          width: 100%;
+          height: 80%;
+          overflow: hidden;
+          border-bottom: 1px solid black;
+          border-radius: 20px 20px 0 0;
         }
         #EventCardImageBackground {
           display: flex;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            scale: 1.5;
-            background-position: center;
-            filter: blur(9px);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          scale: 1.5;
+          background-position: center;
+          filter: blur(9px);
         }
         #EventCardImage {
           display: flex;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 5px;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 5px;
+        }
+        #EventCardImage:hover, #EventCardImageBackground:hover {
+          opacity: 0.8;
         }
         #EventCardTextContainer {
           display: flex;
-            position: relative;
-            width: 100%;
-            height: 20%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+          position: relative;
+          width: 100%;
+          height: 20%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
         #EventCardTextTopContainer {
           display: flex;
-            position: relative;
-            width: 85%;
-            height: 40%;
-            align-items: center;
+          position: relative;
+          width: 85%;
+          height: 40%;
+          align-items: center;
         }
         #EventCardTextTop {
           display: flex;
-            position: relative;
-            width: 100%;
+          position: relative;
+          width: 100%;
         }
         #EventCardTextBottomContainer {
           display: flex;
-            position: relative;
-            width: 85%;
-            height: 40%;
-            align-items: center;
+          position: relative;
+          width: 85%;
+          height: 40%;
+          align-items: center;
         }
         #EventCardTextBottom {
           display: flex;
-            position: relative;
+          position: relative;
         }
         #ArrowContainer {
           display: flex;
-            position: relative;
-            width: 5%;
-            height: 480px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+          position: relative;
+          width: 5%;
+          height: 480px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         #FrontArrow, #BackArrow {
           display: flex;
-            position: relative;
-            width: 50px;
-            margin: 50% 0;
-            cursor: pointer;
+          position: relative;
+          width: 50px;
+          margin: 50% 0;
+          cursor: pointer;
         }
         #BackArrow {
           display: none;
@@ -221,6 +360,39 @@ import { Component, OnInit } from "@angular/core";
         #FrontArrow:hover, #BackArrow:hover {
           transform: scale(1.1);
           transition: transform 0.3s ease-in-out;
+          opacity: 0.5;
+        }
+        #ModalView {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.7);
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+        }
+        #ModalImage {
+          display: flex;
+          position: absolute;
+          width: 80%;
+          height: 80%;
+          object-fit: contain;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        #ModalClose {
+          display: flex;
+          position: absolute;
+          top: 5%;
+          left: 5%;
+          font-size: 40px;
+          color: white;
+          cursor: pointer;
+        }
+        #ModalClose:hover {
           opacity: 0.5;
         }
         @media (max-width: 930px) {
@@ -281,20 +453,42 @@ export class EventsBody implements OnInit{
 
   frontArrow = "assets/rightArrow.png";
   backArrow = "assets/leftArrow.png";
-  test = "assets/testEvent.jpg";
 
-    constructor() {}
-    ngOnInit() {}
+  Event$: Observable<Events[]>;
+  firestore: Firestore = inject(Firestore);
 
-    nextSet() {
-      console.log("nextSet");
-    }
+  constructor() {
+    const EventCollection = collection(this.firestore, 'Events');
+    this.Event$ = collectionData(EventCollection) as Observable<Events[]>;
+  }
+  ngOnInit() {}
 
-    backSet() {
-      console.log("backSet");
-    }
 
-    redirectFacebook() {
-      window.open("https://www.facebook.com/DTKMariamGebriel");
-    }
+  modalOpen: boolean = false;
+  first: boolean = true;
+  second: boolean = false;
+
+
+
+  showModal = () => {
+    this.modalOpen = true;
+  };
+
+  closeModal = () => {
+    this.modalOpen = false;
+  };
+
+  nextSet() {
+    this.first = false;
+    this.second = true;
+  }
+
+  backSet() {
+    this.first = true;
+    this.second = false;
+  }
+
+  redirectFacebook() {
+    window.open("https://www.facebook.com/DTKMariamGebriel");
+  }
 }
