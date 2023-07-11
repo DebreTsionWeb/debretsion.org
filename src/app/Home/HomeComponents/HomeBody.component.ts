@@ -1,5 +1,19 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
 import { Router } from "@angular/router";
+import { Firestore, collectionData, collection, orderBy, query, limit} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+interface Events {
+  Name: string,
+  Desc: string,
+  URL: string,
+  Date: string
+};
+
+interface Galleries {
+  Name: string;
+  URL: string[];
+}
 
 @Component({
     selector: "HomeBody",
@@ -57,8 +71,8 @@ import { Router } from "@angular/router";
                 <div id="MobileHomeEventsHeaderContainer">
                   <p id="MobileHomeEventsHeader">Events</p>
                 </div>
-                <div id="MobileHomeEventsImageContainer">
-                  <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
+                <div id="MobileHomeEventsImageContainer" *ngIf="Event$ | async as event">
+                  <img id="HomeEventsImage" [lazyLoad]="event[0].URL" />
                 </div>
                 <div id="MobileHomeEventsParagraphContainer">
                   <p id="MobileHomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
@@ -68,8 +82,8 @@ import { Router } from "@angular/router";
                 </div>
               </ng-container>
               <ng-template #desktopView>
-                <div id="HomeEventsImageContainer">
-                  <img [lazyLoad]="RecentEvent" id="HomeEventsImage" />
+                <div id="HomeEventsImageContainer" *ngIf="Event$ | async as event">
+                  <img [lazyLoad]="event[0].URL" id="HomeEventsImage" (click)="redirectFB()"/>
                 </div>
                 <div id="HomeEventsTextContainer">
                   <div id="HomeEventsHeaderContainer">
@@ -90,21 +104,36 @@ import { Router } from "@angular/router";
                 <p id="HomeGalleryHeader">Recent Gallery</p>
               </div>
               <div id="HomeGalleryImageContainer">
-              <div class="Collection" #collection>
-                    <div id="CollectionHeaderContainer">
-                        <p id='CollectionHeader'>Christmas</p>
-                    </div>
-                    <div id="CollectionImagesContainer">
-                        <img id='CollectionImage' [lazyLoad]="gallery2" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery3" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery4" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery5" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery6" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery7" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery8" alt="">
-                        <img id='CollectionImage' [lazyLoad]="gallery9" alt="">
-                    </div>
+                <div class="Collection" *ngFor="let gallery of Gallery$ | async">
+                  <div id="CollectionHeaderContainer">
+                    <p id="CollectionHeader">{{ gallery.Name }}</p>
                   </div>
+                  <div id="CollectionImagesContainer">
+                    <ng-container *ngFor="let url of gallery.URL">
+                      <ng-container *ngIf="modalOpen; else smallView">
+                        <div id="ModalView" (click)="closeModal()">
+                          <i
+                            id="ModalClose"
+                            class="fa fa-solid fa-times"
+                            (click)="closeModal()"
+                          ></i>
+                          <img
+                            id="ModalImage"
+                            [lazyLoad]="selectedImage"
+                            (click)="closeModal()"
+                          />
+                        </div>
+                      </ng-container>
+                      <ng-template #smallView>
+                        <img
+                          id="CollectionImage"
+                          [lazyLoad]="url"
+                          (click)="showModal(selectedImage = url)"
+                        />
+                      </ng-template>
+                    </ng-container>
+                  </div>
+                </div>
               </div>
               <div id="HomeGalleryButtonContainer">
                 <button id="HomeGalleryButton" (click)="navigateTo('/Gallery')">View All Galleries</button>
@@ -381,6 +410,7 @@ import { Router } from "@angular/router";
             position: relative;
             height: 100%;
             object-fit: contain;
+            cursor: pointer;
         }
 
         #HomeEventsTextContainer {
@@ -462,6 +492,7 @@ import { Router } from "@angular/router";
             width: 80%;
             height: 80%;
             object-fit: contain;
+            cursor: pointer;
         }
 
         #MobileHomeEventsTextContainer {
@@ -598,12 +629,16 @@ import { Router } from "@angular/router";
             border-radius: 10px;
             width: 450px;
             height: 300px;
+            cursor: pointer;
+        }
+        
+        #CollectionImage:hover {
+          opacity: 0.8;
         }
 
         #HomeGalleryButtonContainer {
             display: flex;
             position: relative;
-
         }
 
         #HomeGalleryButton {
@@ -668,6 +703,14 @@ import { Router } from "@angular/router";
             width: 100px;
         }
 
+        #Zelle {
+          margin-right: 15px;
+        }
+
+        #Square {
+          margin-left: 15px;
+        }
+
         #Zelle:hover, #Square:hover {
           transform: scale(1.1);
           transition: transform 0.3s ease-in-out;
@@ -682,6 +725,43 @@ import { Router } from "@angular/router";
           animation-name: buttonAnim;
           animation-duration: 1s;
           animation-fill-mode: both;
+        }
+
+        #ModalView {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.7);
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+        }
+
+        #ModalImage {
+          display: flex;
+          position: absolute;
+          width: 80%;
+          height: 80%;
+          object-fit: contain;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+
+        #ModalClose {
+          display: flex;
+          position: absolute;
+          top: 5%;
+          left: 5%;
+          font-size: 40px;
+          color: white;
+          cursor: pointer;
+        }
+
+        #ModalClose:hover {
+          opacity: 0.5;
         }
 
         @keyframes buttonAnim {
@@ -842,24 +922,41 @@ import { Router } from "@angular/router";
 })
 export class HomeBody implements OnInit{
 
-  RecentEvent = "assets/ExampleAboutImg.jpg";
+  Event$: Observable<Events[]>;
+  Gallery$: Observable<Galleries[]>;
+  firestore: Firestore = inject(Firestore);
 
-  gallery2 = "assets/GalleryEx2.jpg"
-  gallery3 = "assets/GalleryEx3.jpg"
-  gallery4 = "assets/GalleryEx4.jpg"
-  gallery5 = "assets/GalleryEx5.jpg"
-  gallery6 = "assets/GalleryEx6.jpg"
-  gallery7 = "assets/GalleryEx7.jpg"
-  gallery8 = "assets/GalleryEx8.jpg"
-  gallery9 = "assets/GalleryEx9.jpg"
+  constructor(private router: Router) {
+    const EventCollection = collection(this.firestore, 'Events');
+    const EventQuerySnapshot = collectionData(query(EventCollection, orderBy('Date', 'desc')));
+    this.Event$ = EventQuerySnapshot as Observable<Events[]>;
+
+    const GalleryCollection = collection(this.firestore, 'Gallery');
+    const GalleryQuerySnapshot = collectionData(query(GalleryCollection, orderBy('Date', 'desc'), limit(1)));
+    this.Gallery$ = GalleryQuerySnapshot as Observable<Galleries[]>;
+  }
+
+  ngOnInit() {}
 
   isMobile: boolean = window.innerWidth <= 850;
-
-  constructor(private router: Router) {}
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
   }
 
-  ngOnInit() {}
+  modalOpen: boolean = false;
+  selectedImage: string = '';
+
+  closeModal = () => {
+    this.modalOpen = false;
+  };
+
+  showModal = (selectedImage: string) => {
+    this.selectedImage = selectedImage;
+    this.modalOpen = true;
+  };
+
+  redirectFB() {
+    window.open("https://www.facebook.com/DTKMariamGebriel");
+  }
 }
