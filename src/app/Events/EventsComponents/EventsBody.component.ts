@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, orderBy, query} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 interface Events {
   Name: string,
   Desc: string,
   URL: string,
+  Date: string
 };
 
 @Component({
@@ -28,12 +29,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[0].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[0].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[0].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[0].URL}}  (click)="showModal(selectedEvent = event[0].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[0].URL" (click)="showModal(selectedEvent = event[0].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -54,12 +55,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[1].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[1].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[1].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[1].URL}}  (click)="showModal(selectedEvent = event[1].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[1].URL " (click)="showModal(selectedEvent = event[1].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -80,12 +81,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[2].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[2].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[2].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[2].URL}}  (click)="showModal(selectedEvent = event[2].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[2].URL " (click)="showModal(selectedEvent = event[2].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -107,12 +108,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[3].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[3].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[3].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[3].URL}}  (click)="showModal(selectedEvent = event[3].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[3].URL " (click)="showModal(selectedEvent = event[3].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -133,12 +134,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[4].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[4].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[4].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[4].URL}}  (click)="showModal(selectedEvent = event[4].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[4].URL" (click)="showModal(selectedEvent = event[4].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -159,12 +160,12 @@ interface Events {
                         class="fa fa-solid fa-times"
                         (click)="closeModal()"
                       ></i>
-                      <img id="ModalImage" [lazyLoad]="event[5].URL">
+                      <img id="ModalImage" [lazyLoad]="selectedEvent">
                     </div>
                   </ng-container>
                   <ng-template #smallView>
-                    <img id="EventCardImageBackground" src={{event[5].URL}}  (click)="showModal()">
-                    <img id="EventCardImage" [lazyLoad]="event[5].URL " (click)="showModal()">
+                    <img id="EventCardImageBackground" src={{event[5].URL}}  (click)="showModal(selectedEvent = event[5].URL)">
+                    <img id="EventCardImage" [lazyLoad]="event[5].URL " (click)="showModal(selectedEvent = event[5].URL)">
                   </ng-template>
                 </div>
                 <div id="EventCardTextContainer" (click)="redirectFacebook()">
@@ -415,7 +416,7 @@ interface Events {
           #EventCardBodyContainer {
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
           }
-          #EventCard{
+          #EventCard, #EventCardSecond {
             width: 100%;
             height: 100%;
           }
@@ -459,7 +460,8 @@ export class EventsBody implements OnInit{
 
   constructor() {
     const EventCollection = collection(this.firestore, 'Events');
-    this.Event$ = collectionData(EventCollection) as Observable<Events[]>;
+    const querySnapshot = collectionData(query(EventCollection, orderBy('Date', 'desc')));
+    this.Event$ = querySnapshot as Observable<Events[]>;
   }
   ngOnInit() {}
 
@@ -467,10 +469,11 @@ export class EventsBody implements OnInit{
   modalOpen: boolean = false;
   first: boolean = true;
   second: boolean = false;
+  selectedEvent: string = '';
 
 
-
-  showModal = () => {
+  showModal = (selectedEvent: string) => {
+    this.selectedEvent = selectedEvent;
     this.modalOpen = true;
   };
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "MemberBody",
@@ -8,7 +8,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
             <div id="AuthContainer">
               <div id="Auth">
 
-                <ng-container *ngIf="currentView === 'signup'">
+                <ng-container *ngIf="signup === true">
                   <MemberSignup></MemberSignup>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Already a member?</p>
@@ -16,7 +16,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
                   </div>
                 </ng-container>
 
-                <ng-container *ngIf="currentView === 'login'">
+                <ng-container *ngIf="login === true">
                   <MemberLogin></MemberLogin>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Not a member yet?</p>
@@ -209,27 +209,22 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
         }
     `]
 })
-export class MemberBody implements OnInit, AfterViewInit {
-  currentView: 'signup' | 'login';
+export class MemberBody implements OnInit {
 
-  constructor() {
-    this.currentView = 'signup';
-  }
+  signup: boolean = true;
+  login: boolean = false;
 
-  switchToLogin() {
-    this.currentView = 'login';
-  }
-
-  switchToSignup() {
-    this.currentView = 'signup';
-  }
+  constructor() {}
 
   ngOnInit() {}
 
-  ngAfterViewInit() {
-    const script = document.createElement('script');
-    script.src = 'https://assets.Member.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
+  switchToLogin() {
+    this.signup = false;
+    this.login = true;
+  }
+
+  switchToSignup() {
+    this.signup = true;
+    this.login = false;
   }
 }

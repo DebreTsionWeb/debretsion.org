@@ -3,9 +3,9 @@ import { Firestore, collectionData, collection} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 interface Galleries {
-  Name: string,
-  URL: string[],
-};
+  Name: string;
+  URL: string[];
+}
 
 @Component({
   selector: 'GalleryBody',
@@ -31,7 +31,7 @@ interface Galleries {
                     ></i>
                     <img
                       id="ModalImage"
-                      [lazyLoad]="url"
+                      [lazyLoad]="selectedImage"
                       (click)="closeModal()"
                     />
                   </div>
@@ -40,7 +40,7 @@ interface Galleries {
                   <img
                     id="CollectionImage"
                     [lazyLoad]="url"
-                    (click)="showModal()"
+                    (click)="showModal(selectedImage = url)"
                   />
                 </ng-template>
               </ng-container>
@@ -214,15 +214,17 @@ export class GalleryBody implements OnInit {
   }
 
   ngOnInit() {}
-  
+
 
   modalOpen: boolean = false;
-
-  showModal = () => {
-    this.modalOpen = true;
-  };
+  selectedImage: string = '';
 
   closeModal = () => {
     this.modalOpen = false;
+  };
+
+  showModal = (selectedImage: string) => {
+    this.selectedImage = selectedImage;
+    this.modalOpen = true;
   };
 }
