@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
     selector: "MemberSignup",
@@ -12,32 +11,38 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
         <div id="SignupInputContainer">
           <div id="NameContainer">
             <div id="FirstNameContainer">
-              <mat-form-field appearance="outline">
+              <mat-form-field appearance="outline" id='FirstNameForm'>
                 <mat-label>First Name</mat-label>
                 <input id='FirstName' matInput [(ngModel)]="firstValue" placeholder="Enter First Name" required>
               </mat-form-field>
             </div>
             <div id="LastNameContainer">
-              <mat-form-field appearance="outline">
+              <mat-form-field appearance="outline" id='LastNameForm'>
                 <mat-label>Last Name</mat-label>
                 <input id='LastName' matInput [(ngModel)]="lastValue" placeholder="Enter Last Name" required>
               </mat-form-field>
             </div>
           </div>
           <div id="KristinaContainer">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" id='KristinaForm'>
               <mat-label>Kristina Name</mat-label>
               <input id='Kristina' matInput [(ngModel)]="kristinaValue" placeholder="Enter Kristina Name" required>
             </mat-form-field>
           </div>
+          <div id="PhoneContainer">
+            <mat-form-field appearance="outline" id='PhoneForm'>
+              <mat-label>Phone Number</mat-label>
+              <input id='Phone' matInput [(ngModel)]="phoneValue" placeholder="Enter Phone Number" required>
+            </mat-form-field>
+          </div>
           <div id="EmailContainer">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" id='EmailForm'>
               <mat-label>Email</mat-label>
               <input id='Email' matInput [(ngModel)]="emailValue" placeholder="Enter Email" required>
             </mat-form-field>
           </div>
           <div id="PasswordContainer">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" id='PasswordForm'>
               <mat-label>Password</mat-label>
               <input id='Password' matInput [(ngModel)]="passwordValue" placeholder="Enter Password" required>
             </mat-form-field>
@@ -101,39 +106,59 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
           position: relative;
           flex-direction: row;
           width: 95%;
-          height: 20%;
+          height: 100%;
           justify-content: space-between;
           align-items: center;
-          margin: 10px;
+          margin: 5px;
         }
-        #KristinaContainer, #EmailContainer, #PasswordContainer {
+        #KristinaContainer, #PhoneContainer, #EmailContainer, #PasswordContainer {
           display: flex;
           position: relative;
           width: 95%;
-          margin: 10px;
+          height: 100%;
+          margin: 5px;
         }
-        #FirstName, #LastName{
+        #FirstNameContainer, #LastNameContainer {
+          display: flex;
+          position: relative;
+          width: 45%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+        #FirstNameForm, #LastNameForm {
           display: flex;
           position: relative;
           width: 100%;
-          height: 50%;
-          font-size: 15px;
-          padding-left: 15px;
-          border-radius: 20px;
+          height: 100%;
         }
-        #Kristina, #Email, #Password {
+        #FirstName, #LastName{
           display: flex;
           position: relative;
           width: 100%;
           height: 50px;
           font-size: 15px;
           padding-left: 15px;
-          border-radius: 20px;
+        }
+        #KristinaForm, #PhoneForm, #EmailForm, #PasswordForm {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+        #Kristina, #Phone, #Email, #Password {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 50px;
+          font-size: 15px;
+          padding-left: 15px;
         }
         #SignupErrorContainer {
             display: flex;
             position: relative;
-            margin-bottom: -2%;
+            margin-top: -5px;
+            margin-bottom: -5px;
         }
         #SignupError {
           display: none;
@@ -155,16 +180,17 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
           display: flex;
           position: relative;
           width: 40%;
-          height: 60px;
+          height: 55px;
           border-radius: 35px;
           justify-content: center;
           align-items: center;
           font-size: 20px;
           cursor: pointer;
           font-family: 'InterSemi';
+          border: 1px solid black;
         }
         #SignupButton:hover {
-          transform: scale(1.1);
+          transform: scale(1.01);
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
         }
@@ -198,10 +224,11 @@ export class MemberSignup implements OnInit {
   firstValue: string = '';
   lastValue: string = '';
   kristinaValue: string = '';
+  phoneValue: string = '';
   emailValue: string = '';
   passwordValue: string = '';
 
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor() {}
 
   ngOnInit() {}
 
@@ -210,6 +237,7 @@ export class MemberSignup implements OnInit {
       this.firstValue === '' ||
       this.lastValue === '' ||
       this.kristinaValue === '' ||
+      this.phoneValue === '' ||
       this.emailValue === '' ||
       this.passwordValue === ''
     ) {
@@ -219,13 +247,13 @@ export class MemberSignup implements OnInit {
         this.signupErrorRef.nativeElement.style.display = 'none';
       }, 3000);
     } else {
-      this.afAuth.createUserWithEmailAndPassword(this.emailValue, this.passwordValue)
-        .then((userCredential) => {
-          console.log('User signed up:', userCredential.user);
-        })
-        .catch((error) => {
-          console.log('Signup error:', error);
-        });
+      // this.afAuth.createUserWithEmailAndPassword(this.emailValue, this.passwordValue)
+      //   .then((userCredential) => {
+      //     console.log('User signed up:', userCredential.user);
+      //   })
+      //   .catch((error) => {
+      //     console.log('Signup error:', error);
+      //   });
     }
   }
 }

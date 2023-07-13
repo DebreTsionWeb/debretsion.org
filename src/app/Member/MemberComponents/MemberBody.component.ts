@@ -24,7 +24,10 @@ import { Component, OnInit } from "@angular/core";
                   </div>
                 </ng-container>
 
-                <!-- <p id='LoggedIn'>Already signed in. Username</p> -->
+                <ng-container *ngIf="loggedIn === true">
+                  <p id='LoggedIn'>Already signed in. Username</p>
+                  <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+                </ng-container>
 
               </div>
             </div>
@@ -41,14 +44,13 @@ import { Component, OnInit } from "@angular/core";
             </div>
           </div>
         </div>
-
     `,
     styles: [`
         #MemberBody {
             display: flex;
             position: relative;
             width: 100%;
-            height: 90vh;
+            height: 95vh;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -86,7 +88,7 @@ import { Component, OnInit } from "@angular/core";
           height: 100%;
           justify-content: center;
           align-items: center;
-          animation: slide-in 2s ease-in-out;
+          /* animation: slide-in 0.1s ease-in-out; */
         }
         #Auth {
           display: flex;
@@ -136,7 +138,7 @@ import { Component, OnInit } from "@angular/core";
           flex-direction: column;
           justify-content: flex-end;
           align-items: flex-end;
-          animation: fade-in 4.5s ease-in-out;
+          animation: fade-in 2s ease-in-out;
         }
         #DonateHeaderContainer {
           display: flex;
@@ -213,6 +215,7 @@ export class MemberBody implements OnInit {
 
   signup: boolean = true;
   login: boolean = false;
+  loggedIn: boolean = false;
 
   constructor() {}
 
@@ -227,4 +230,10 @@ export class MemberBody implements OnInit {
     this.signup = true;
     this.login = false;
   }
+
+  isloggedIn() {
+    this.loggedIn = true;
+  }
+
+  logOut() {}
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
     selector: "MemberLogin",
@@ -10,14 +9,22 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
           <h1 id="MemberLoginHeader">Member Login</h1>
         </div>
         <div id="LoginInputContainer">
-          <div id="EmailContainer">
-            <mat-form-field appearance="fill">
+          <ng-container id="EmailContainer" *ngIf="email === true">
+            <mat-form-field appearance="outline" id='EmailForm'>
               <mat-label>Email</mat-label>
               <input matInput id="Email" [(ngModel)]="emailValue" placeholder="Enter Email" required/>
             </mat-form-field>
-          </div>
+            <button id='Switch' (click)="switchToPhone()">Switch to Phone Number</button>
+          </ng-container>
+          <ng-container id="PhoneContainer" *ngIf="phone === true">
+            <mat-form-field appearance="outline" id='PhoneForm'>
+              <mat-label>Phone Number</mat-label>
+              <input matInput id="Phone" [(ngModel)]="phoneValue" placeholder="Enter Phone Number" required/>
+            </mat-form-field>
+            <button id='Switch' (click)="switchToEmail()">Switch to Email</button>
+          </ng-container>
           <div id="PasswordContainer">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline" id='PasswordForm'>
               <mat-label>Password</mat-label>
               <input matInput id="Password" [(ngModel)]="passwordValue" type="password" placeholder="Enter Password" required/>
             </mat-form-field>
@@ -76,39 +83,44 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          margin-top: 5%;
         }
-        #NameContainer {
+        #PhoneContainer, #EmailContainer, #PasswordContainer {
           display: flex;
           position: relative;
-          flex-direction: row;
-          width: 95%;
-          justify-content: space-between;
-          align-items: center;
+          width: 100%;
+          height: 100%;
           margin: 10px;
         }
-        #KristinaContainer, #EmailContainer, #PasswordContainer {
+        #PhoneForm, #EmailForm, #PasswordForm {
           display: flex;
           position: relative;
-          width: 95%;
-          margin: 10px;
+          width: 100%;
+          height: 100%;
         }
-        #FirstName, #LastName{
+        #Phone, #Email, #Password {
           display: flex;
           position: relative;
-          width: 230px;
-          height: 50px;
+          width: 100%;
+          height: 30px;
           font-size: 15px;
           padding-left: 15px;
-          border-radius: 20px;
+          padding-top: 20px;
         }
-        #Kristina, #Email, #Password {
+        #Switch {
           display: flex;
           position: relative;
           width: 100%;
           height: 50px;
           font-size: 15px;
-          padding-left: 15px;
-          border-radius: 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          font-family: 'InterSemi';
+          border: none;
+          background-color: transparent;
+          color: blue;
+          text-decoration: underline;
         }
         #LoginErrorContainer {
             display: flex;
@@ -135,13 +147,14 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
           display: flex;
           position: relative;
           width: 40%;
-          height: 60px;
+          height: 55px;
           border-radius: 35px;
           justify-content: center;
           align-items: center;
           font-size: 20px;
           cursor: pointer;
           font-family: 'InterSemi';
+          border: 1px solid black;
         }
         #LoginButton:hover {
           transform: scale(1.1);
@@ -176,10 +189,23 @@ export class MemberLogin implements OnInit{
 
   emailValue: string = '';
   passwordValue: string = '';
+  phoneValue: string = '';
+  email: boolean = true;
+  phone: boolean = false;
 
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor() {}
 
   ngOnInit() {}
+
+  switchToEmail() {
+    this.phone = false;
+    this.email = true;
+  }
+
+  switchToPhone() {
+    this.phone = true;
+    this.email = false;
+  }
 
   submitLogin() {
     if (this.emailValue === '' || this.passwordValue === '') {
@@ -189,13 +215,13 @@ export class MemberLogin implements OnInit{
         this.LoginErrorRef.nativeElement.style.display = 'none';
       }, 3000);
     } else {
-      this.afAuth.signInWithEmailAndPassword(this.emailValue, this.passwordValue)
-        .then((userCredential) => {
-          console.log('User signed in:', userCredential.user);
-        })
-        .catch((error) => {
-          console.log('Sign-in error:', error);
-        });
+      // this.afAuth.signInWithEmailAndPassword(this.emailValue, this.passwordValue)
+      //   .then((userCredential) => {
+      //     console.log('User signed in:', userCredential.user);
+      //   })
+      //   .catch((error) => {
+      //     console.log('Sign-in error:', error);
+      //   });
     }
   }
 }

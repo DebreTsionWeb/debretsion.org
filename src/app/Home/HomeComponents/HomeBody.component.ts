@@ -62,7 +62,7 @@ interface Galleries {
                 </div>
               </div>
               <div id="HomeLocationMapContainer">
-                <img src="/" id="HomeLocationMap"/>
+                <iframe id='HomeLocationMap' src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3yT_4rYS-Yn7C8XucfB3jvn1tcG1dZZk&q=22222+Georgia+Ave,+Brookeville,+MD+20833"></iframe>
               </div>
             </div>
 
@@ -376,13 +376,16 @@ interface Galleries {
             display: flex;
             position: relative;
             width: 60%;
+            height: 80%;
+            justify-content: center;
+            align-items: center;
         }
 
         #HomeLocationMap {
             display: flex;
             position: relative;
-            width: 100%;
-            height: 50%;
+            width: 70%;
+            height: 90%;
         }
 
         #HomeEventsContainer {
@@ -540,7 +543,6 @@ interface Galleries {
         #MobileHomeEventsButtonContainer {
             display: flex;
             position: relative;
-
         }
 
         #MobileHomeEventsButton {
@@ -631,7 +633,7 @@ interface Galleries {
             height: 300px;
             cursor: pointer;
         }
-        
+
         #CollectionImage:hover {
           opacity: 0.8;
         }
