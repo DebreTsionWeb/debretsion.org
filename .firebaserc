@@ -4,11 +4,6 @@
   },
   "targets": {
     "debretsionweb": {
-      "hosting": {
-        "DebreTsionWebsite": [
-          "debretsionweb"
-        ]
-      }
     }
   }
 }
