@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
         <div id="MemberSignup">
       <div id="MemberSignupContainer">
         <div id="MemberSignupHeaderContainer">
-          <h1 id="MemberSignupHeader">Member Signup</h1>
+          <h1 id="MemberSignupHeader">አባልነት  Signup</h1>
         </div>
         <div id="SignupInputContainer">
           <div id="NameContainer">

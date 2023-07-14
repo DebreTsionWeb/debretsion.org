@@ -6,9 +6,46 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody"  >
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                    <h1 id='AboutHeaderText'>About</h1>
+                    <h1 id='AboutHeaderText'>የቤተ ክርስቲያኒቱ የእድገት ጉዞ</h1>
                 <div id="AboutBodyTextContainer">
-                    <p id='AboutText'>This is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumhis is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumhis is the about paragraph for the church. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p id='AboutText'>ቤተ ክርስቲያናችን ለመጀመሪያ ጊዜ የእመቤታችን ቅዳሴ ቤቷ በሚከበርበት ዓመታዊ በዓል እንደ
+ኢትዮጵያውያን አቆጣጠር ዕለተ ቅዳሜ ሰኔ 21 ቀን 2006 ዓ.ም (ጁን 28/2014) በደማቅ ሥርዓተ
+ንግሥ ለአንድ ቀን ብቻ በተከራየነው በኒው ሐምሻየር ላይ በሚገኘው የኡክሬኒያን ኦርቶዶክስ ቤተክርስቲያን
+ውስጥ ብጹዕ አቡነ ፋኑኤል ፣ የአካባቢው አብያተ ክርስቲያናት ካህናትና እጅግ በርካታ የሚሆኑ ምዕመናን
+በተገኙበት በታላቅ ድምቀት ተከብራ አገልግሎቷን ጀመረች::
+በመቀጠልም በሳምንቱ ቅዳሜ ሰኔ 28 / 2006 ዓ.ም (ጁላይ 3/2014) በቋሚነት በሳምንት አንድ ቀን ቅዳሜ
+ዕለት ብቻ ልንገለገል ወደተከራየነው በ Old Columbia pike, Silver Spring MD 20904 ላይ በሚገኘው
+የኤፒስኮፓል ቤተ ክርስቲያን ተዛወርን:: በነገራችን ላይ የዕሁድ ቦታ በማጣታችን ነበር ቅዳሜ ለማድረግ
+የተገደድነው::
+<br>
+<br>
+በዚህ ሁኔታ በአንድ ካህንና በአንድ ዲያቆን የተጀመረው መንፈሳዊ የቅዳሜ አገልግሎት ምንም እንኳን እንደ
+ዕሁድ ሰንበት በርካታ ምዕመናን አባላትን ለማሰባሰብ ጊዜ የፈጀ ቢሆንም ካህናትንና ዲያቆናትን ለዕለት
+አገልግሎት በማስተባበር ለስድስት ዓመታት ዘለቀ::
+በዚሁ የቀጠለው መንፈሳዊ አገልግሎት የህፃናት ትምህርትና ቀልጣፋ አሰራርን እየተከተለ ሄዶ የኮቪድ 19
+ወረርሺኝ በመላው አሜሪካ ባስከተለው እልቂት ሳቢያ አብያተ ክርስቲያናት በሙሉ ሲዘጉ የእኛ
+የመጀመሪያው ሆኖ ተገኘ::
+<br>
+<br>
+ይሁንና ቤተ ክርስቲያን በተዘጋችበት የአንድ ዓመት ተኩል ጊዜ ውስጥ በእግዚአብሔር ፈቃድ ፣
+በእመቤታችን ቸርነት ፣ በአገልጋዮቹ ያላሰለሰ ጥረትና በምዕመናን ህብረት ዛሬ እየተገለገልንበት ያለውን በ
+22222 Georgia Avenue, Brookeville MD 20833 ላይ የሚገኘውን ህንፃ ቤተ ክርስቲያን ገዝተን
+ውስጡንም እንደ ቤተ ክርስቲያናችን ሥርዓትና ትውፊት አድሰንና አዘጋጅተን በብጹአን ሊቃነ ጳጳሳት
+ተባርኮልን ሰፊ መንፈሳዊ አገልግሎት በመስጠት ላይ እንገኛለን::
+ደብራችን ባደረገችው መንፈሳዊ ጉዞ ሁሉ እጅግ በርካታ በሆኑ ብጹአን ሊቃነ ጳጳሳት ፣ ሊቃውንተ
+ቤተክርስቲያን አባቶች ፣ ታዋቂ ሰባክያነ ወንጌል መምህራንና መዘምራን በየጊዜው በሰፊው አገልግሎታቸው
+ተባርካለች::
+<br>
+<br>
+በአንድ ካህንና በአንድ ዲያቆን የተመሰረተችው ቤተ ክርስቲያናችን የአብነት ት/ት በማስተማር ሰባት
+ወጣቶችን በድቁና ማዕረግ ያሾመች ሲሆን ካህናቱም ወደ ሦስት አድገው ሙሉ አገልግሎት በማበርከት ላይ
+ትገኛለች::
+<br>
+<br>
+በተአምራት የተሞላችውና ለዓይን በሚማርክ ገጠራማ ጉብታ ሥፍራ ላይ የተተከለችው ደብረ ጽዮን
+ቅድስት ማርያም ወቅዱስ ገብርኤል የኢ.ኦ.ተ.ቤን ከህንፃ ቤተ ክርስቲያኑ ሥር በፈለቀ ጸበል እጅግ
+የተባረከች በመሆኗ እነሆ በአሁን ሰዓት የጸበል ጥምቀት አገልግሎት ለመጀመር ዝግጅቷን እያጠናቀቀች ነው::
+ቤተ ክርስቲያናችን ሰፊ የመኪና ማቆሚያ ሥፍራና አንድ ሁለገብ የመገልገያ አዳራሽ አላት:</p>
                 </div>
                 </div>
             </div>
@@ -74,7 +111,7 @@ import { Component, OnInit } from "@angular/core";
             display: flex;
             position: relative;
             width: 90%;
-            height: 300px;
+            height: 330px;
             justify-content: center;
         }
         #AboutText {

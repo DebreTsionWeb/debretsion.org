@@ -15,7 +15,7 @@ interface Events {
       <div id="EventsBody">
         <div id="EventsBodyContainer">
           <div id="EventsBodyHeaderContainer">
-            <h1 id="EventsBodyHeader">Events</h1>
+            <h1 id="EventsBodyHeader">ክስተቶች</h1>
           </div>
           <div id="EventCardContainer">
             <div id="EventCardBodyContainer">
@@ -42,7 +42,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[0].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[0].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[0].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[1].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[1].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[1].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[2].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[2].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[2].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[3].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[3].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[3].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[4].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[4].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[4].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ interface Events {
                     <p id="EventCardTextTop">{{ event[5].Name }}</p>
                   </div>
                   <div id="EventCardTextBottomContainer">
-                    <p id="EventCardTextBottom">{{ event[5].Desc }}</p>
+                    <p id="EventCardTextBottom"><a href="https://facebook.com/DTKMariamGebriel" target="blank"><span id="Icon" class="fab fa-facebook"></span></a>{{ event[5].Desc }}</p>
                   </div>
                 </div>
               </div>
@@ -338,6 +338,9 @@ interface Events {
         #EventCardTextBottom {
           display: flex;
           position: relative;
+        }
+        #Icon {
+          margin-right: 5px;
         }
         #ArrowContainer {
           display: flex;
