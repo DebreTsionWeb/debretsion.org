@@ -22,25 +22,34 @@ interface Galleries {
           <div id="HomeBodyContainer">
 
             <div id="HeroContainer">
-              <div id="HeroImageContainer">
-                <img src="assets/ExampleAboutImg.jpg" id="HeroImage"/>
-              </div>
-              <div id="HeroTextContainer">
-                <div id="HeroHeaderContainer">
-                  <p id="HeroHeader">Welcome to the home page!</p>
+              <div id="HeroVideoContainer">
+                <img id='BackgroundVideo' src=''>
+                <div id="HeroImageContainer">
+                  <img src="assets/ExampleAboutImg.jpg" id="HeroImage"/>
                 </div>
-                <div id="HeroSubHeaderContainer">
-                  <p id="HeroSubText">This is the home page of the website. This is where you can find all the information about the website.</p>
+                <div id="HeroTextContainer">
+                  <div id="HeroHeaderContainer">
+                    <p id="HeroHeader">ደብረ ጽዮን ቅ/ማርያም ወ ቅ/ገብርኤል ኢ.ኦ.ተ.ቤ ብሩክቪል ሜሪላንድ</p>
+                  </div>
+                  <div id="HeroSubHeaderContainer">
+                    <p id="HeroSubText">መዝሙር ፸፯÷፷፰
+                    "የወደደውን የጽዮንን ተራራ።
+                    መቅደሱን እንደ አርያም ሠራ፥
+                    ለዘላለምም በምድር ውስጥ መሠረታት።
+                    <br>
+                    የተለያዩ ድኅረ ገጾችን ለማየት ወደ ታች ይሸብልሉ(ክስተቶች፣ አካባቢ፣ ቀጥታ ሥርጭት፣ አባልነት/ልገሳ)!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div id="HomeAboutContainer">
               <div id="HomeAboutHeaderContainer">
-                <p id="HomeAboutHeader">About</p>
+                <p id="HomeAboutHeader">አመሠራረት</p>
               </div>
               <div id="HomeAboutSubTextContainer">
-                <p id="HomeAboutSubText">This is the about section of the website. This is where you can find all the information about the website.</p>
+                <p id="HomeAboutSubText">አስተዳዳራዊ መዋቅር ደብረ ጽዮን ቅድሰት ማርያም ወቅዱስ ገብርኤል የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርሰቲያን በሊቀ ኅሩያን ቄስ ከፈለኝ ወልደ ጊዮርጊስ ሰኔ 21 ቀን 2006 ዓ.ም ( እ.ኤ.አ ጁን 28 / 2014 ) በሜሪላንድ ስቴት በሲልቨር ስፕሪንግ ከተማ በኪራይ ቤተ ክርስቲያን ውስጥ ተመሰረተች። የደብረ ጽዮን ቅድስት ማርያም ወቅዱስ ገብርኤል ቤተ ክርስቲያን በዋሽንግተን ዲሲና አካባቢው ሀገረ ስብከት ሊቀ ጳጳስ በብጹዕ አቡነ ፋኑኤል ተባርካ አገልግሎት መስጠት ከጀመረችበት ጊዜ ጀምሮ ከጊዜ ወደ ጊዜ በምታሳየው ፈጣን ለውጥ፣ በንብረትና በምዕመናን ብዛት እንዲሁም በመንፈሳዊ አገልግሎት እያደገች በመምጣቷ በስድስት ዓመት ዕድሜዋ ሰኔ 3 / 2012 ዓ.ም ( እ.ኤ.አ. ጁን 10 / 2020 ) የራሷን ህንፃ ቤተክርስቲያን በመግዛት እዚህ ላይ ደርሳለች::</p>
               </div>
               <div id="HomeAboutButtonContainer">
                 <button id="HomeAboutButton" (click)="navigateTo('/About')">View About Page</button>
@@ -75,7 +84,7 @@ interface Galleries {
                   <img id="HomeEventsImage" [lazyLoad]="event[0].URL" />
                 </div>
                 <div id="MobileHomeEventsParagraphContainer">
-                  <p id="MobileHomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
+                  <p id="MobileHomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
                 </div>
                 <div id="MobileHomeEventsButtonContainer">
                   <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
@@ -87,10 +96,10 @@ interface Galleries {
                 </div>
                 <div id="HomeEventsTextContainer">
                   <div id="HomeEventsHeaderContainer">
-                    <p id="HomeEventsHeader">Recent Event</p>
+                    <p id="HomeEventsHeader">ያለፉት በዓላት</p>
                   </div>
                   <div id="HomeEventsParagraphContainer">
-                    <p id="HomeEventsParagraph">This is the events section of the website. This is where you can find all the information about the website.</p>
+                    <p id="HomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
                   </div>
                   <div id="HomeEventsButtonContainer">
                     <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
@@ -101,7 +110,7 @@ interface Galleries {
 
             <div id="HomeGalleryContainer">
               <div id="HomeGalleryHeaderContainer">
-                <p id="HomeGalleryHeader">Recent Gallery</p>
+                <p id="HomeGalleryHeader">በቅርብ የወጡ</p>
               </div>
               <div id="HomeGalleryImageContainer">
                 <div class="Collection" *ngFor="let gallery of Gallery$ | async">
@@ -142,7 +151,7 @@ interface Galleries {
 
             <div id="HomeDonateContainer">
               <div id="HomeDonateHeaderContainer">
-                  <p id="HomeDonateHeader">Donate</p>
+                  <p id="HomeDonateHeader">ለግሱ</p>
               </div>
               <div id="HomeDonateIconContainer">
                 <div id="HomeDonateIcon">
@@ -154,7 +163,6 @@ interface Galleries {
 
           </div>
         </div>
-
     `,
     styles: [`
 
@@ -188,6 +196,24 @@ interface Galleries {
             align-items: center;
         }
 
+        #HeroVideoContainer {
+            display: flex;
+            position: absolute;
+            width: 99.5vw;
+            height: 94vh;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
+        }
+
+        #BackgroundVideo {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            filter: brightness(50%);
+        }
+
         #HeroImageContainer {
             display: flex;
             position: relative;
@@ -195,6 +221,7 @@ interface Galleries {
             height: 95%;
             justify-content: center;
             align-items: center;
+            z-index: 3;
         }
 
         #HeroImage {
@@ -212,6 +239,7 @@ interface Galleries {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            z-index: 3;
         }
 
         #HeroHeaderContainer {

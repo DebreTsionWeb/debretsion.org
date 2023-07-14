@@ -24,13 +24,13 @@ import { Router } from "@angular/router";
             [ngClass]="{ hide: !isNavbarOpen }"
           ></i>
           <div #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
-              <a (click)="navigateTo('/')">Home</a>
-              <a (click)="navigateTo('/About')">About Us</a>
-              <a (click)="navigateTo('/Events')">Events</a>
-              <a (click)="navigateTo('/Live')">Live</a>
-              <a (click)="navigateTo('/Gallery')">Gallery</a>
-              <a (click)="navigateTo('/Member')">Member</a>
-              <a (click)="navigateTo('/Contact')">Contact Us</a>
+              <a (click)="navigateTo('/')">መግቢያ</a>
+              <a (click)="navigateTo('/About')">ስለ እኛ</a>
+              <a (click)="navigateTo('/Events')">ክስተቶች</a>
+              <a (click)="navigateTo('/Live')">ቀጥታ ሥርጭት</a>
+              <a (click)="navigateTo('/Gallery')">ፎቶግራፎች</a>
+              <a (click)="navigateTo('/Member')">አባልነት</a>
+              <a (click)="navigateTo('/Contact')">አግኙን</a>
               <a id='MobileLanguageSwitch' (click)="navigateTo('/')">Amharic</a>
           </div>
         </div>

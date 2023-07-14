@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, orderBy, query} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 interface Galleries {
@@ -13,7 +13,7 @@ interface Galleries {
     <div id="GalleryBody">
       <div id="GalleryBodyContainer">
         <div id="GalleryHeaderContainer">
-          <h1 id="GalleryHeader">Gallery</h1>
+          <h1 id="GalleryHeader">ፎቶግራፎች</h1>
         </div>
         <div id="CollectionContainer">
           <div class="Collection" *ngFor="let gallery of Gallery$ | async">
@@ -210,11 +210,11 @@ export class GalleryBody implements OnInit {
 
   constructor() {
     const GalleryCollection = collection(this.firestore, 'Gallery');
-    this.Gallery$ = collectionData(GalleryCollection) as Observable<Galleries[]>;
+    const GalleryQuerySnapshot = collectionData(query(GalleryCollection, orderBy('Date', 'desc')));
+    this.Gallery$ = GalleryQuerySnapshot as Observable<Galleries[]>;
   }
 
   ngOnInit() {}
-
 
   modalOpen: boolean = false;
   selectedImage: string = '';

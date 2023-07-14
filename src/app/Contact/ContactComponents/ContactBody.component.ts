@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="ContactBody">
           <div id="ContactBodyContainer">
             <div id="ContactHeaderContainer">
-              <h1 id="ContactHeader">Contact Us</h1>
+              <h1 id="ContactHeader">አግኙን</h1>
             </div>
             <div id="InfoContainer">
               <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="CalendlyContainer">
             <div id="CalendlyHeaderContainer">
-              <h1 id="CalendlyHeader">Schedule a Meeting</h1>
+              <h1 id="CalendlyHeader">ቀጠሮ ይያዙ</h1>
             </div>
             <div id="CalendarContainer">
               <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>

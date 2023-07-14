@@ -34,7 +34,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="DonateBodyContainer">
             <div id="DonateHeaderContainer">
-              <p id="DonateHeader">Donate</p>
+              <p id="DonateHeader">ለግሱ</p>
             </div>
             <div id="DonateIconContainer">
               <div id="DonateIcon">
