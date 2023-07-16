@@ -22,7 +22,7 @@ import { Router } from "@angular/router";
           ></i>
           <ul #navbar id="NavbarListContainer" >
             <li id="Home">
-              <a (click)="navigateTo('/AdminHome')">Home</a>
+              <a (click)="navigateTo('/Admin')">Home</a>
             </li>
             <li id="Events">
               <a (click)="navigateTo('/AdminEvents')">Events</a>

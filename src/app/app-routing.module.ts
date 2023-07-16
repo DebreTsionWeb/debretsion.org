@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'Member', title: 'Member | Debre Tsion', component: MemberScreen},
   { path: 'Contact', title: 'Contact Us | Debre Tsion', component: ContactScreen},
   { path: 'Admin', title: 'Admin Portal | Debre Tsion', component: AdminScreen},
-  { path: 'AdminHome', title: 'Admin Home | Debre Tsion', component: AdminHome},
   { path: 'AdminLogin', title: 'Admin Login | Debre Tsion', component: AdminLogin},
   { path: 'AdminEvents', title: 'Admin Events | Debre Tsion', component: AdminEvents},
   { path: 'AdminGallery', title: 'Admin Gallery | Debre Tsion', component: AdminGallery},
