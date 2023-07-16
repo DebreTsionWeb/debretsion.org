@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Auth } from '@angular/fire/auth';
 
 @Component({
     selector: "MemberBody",
@@ -25,7 +26,9 @@ import { Component, OnInit } from "@angular/core";
                 </ng-container>
 
                 <ng-container *ngIf="loggedIn === true">
-                  <p id='LoggedIn'>Already signed in. Username</p>
+                  <div id="LoggedInContainer">
+                    <p id='LoggedIn'>Welcome Back {{ firstName }}! <br><br> Email: {{ email }} <br><br> Member Name: {{ firstName }} {{ lastName }} <br><br> Kristina Name: {{ kristina }}</p>
+                  </div>
                   <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
                 </ng-container>
 
@@ -129,6 +132,30 @@ import { Component, OnInit } from "@angular/core";
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
         }
+        #LoggedInContainer {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 30%;
+          justify-content: center;
+          align-items: center;
+        }
+        #LoggedIn {
+          text-align: center;
+        }
+        #LogoutButton {
+          display: flex;
+          position: relative;
+          width: 40%;
+          height: 55px;
+          border-radius: 35px;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+          cursor: pointer;
+          font-family: 'InterSemi';
+          border: 1px solid black;
+        }
         #DonateBodyContainer {
           display: flex;
           position: absolute;
@@ -183,7 +210,7 @@ import { Component, OnInit } from "@angular/core";
         @media (max-width: 850px) {
           #MemberBody {
             flex-direction: column;
-            height: 110vh;
+            height: 120vh;
           }
           #MemberBodyContainer {
             width: 90%;
@@ -216,10 +243,16 @@ export class MemberBody implements OnInit {
   signup: boolean = true;
   login: boolean = false;
   loggedIn: boolean = false;
+  firstName: string = '';
+  lastName: string = '';
+  email: string = '';
+  kristina: string = '';
 
-  constructor() {}
+  constructor(private afAuth: Auth) {}
 
-  ngOnInit() {}
+  ngOnInit() {this.isloggedIn();}
+
+
 
   switchToLogin() {
     this.signup = false;
@@ -231,9 +264,30 @@ export class MemberBody implements OnInit {
     this.login = false;
   }
 
-  isloggedIn() {
-    this.loggedIn = true;
+  async isloggedIn() {
+    const token = localStorage.getItem("user");
+
+    if (token) {
+      this.loggedIn = true;
+      this.login = false;
+      this.signup = false;
+      console.log("logged in");
+      this.firstName = JSON.parse(localStorage.getItem("user")!)['FirstName'];
+      this.lastName = JSON.parse(localStorage.getItem("user")!)['LastName'];
+      this.email = JSON.parse(localStorage.getItem("user")!)['Email'];
+      this.kristina = JSON.parse(localStorage.getItem("user")!)['Kristina'];
+
+    } else {
+      this.loggedIn = false;
+    }
   }
 
-  logOut() {}
+  logOut() {
+    this.afAuth.signOut();
+    localStorage.removeItem("user");
+    localStorage.removeItem("loggedIn");
+    this.loggedIn = false;
+    this.login = false;
+    this.signup = true;
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef, inject } from "@angular/core";
+import { Firestore, collection, addDoc} from '@angular/fire/firestore';
 
 @Component({
     selector: "MemberSignup",
@@ -6,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
         <div id="MemberSignup">
       <div id="MemberSignupContainer">
         <div id="MemberSignupHeaderContainer">
-          <h1 id="MemberSignupHeader">አባልነት  Signup</h1>
+          <h1 id="MemberSignupHeader">አባልነት Signup</h1>
         </div>
         <div id="SignupInputContainer">
           <div id="NameContainer">
@@ -44,7 +45,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           <div id="PasswordContainer">
             <mat-form-field appearance="outline" id='PasswordForm'>
               <mat-label>Password</mat-label>
-              <input id='Password' matInput [(ngModel)]="passwordValue" placeholder="Enter Password" required>
+              <input id='Password' matInput [(ngModel)]="passwordValue" type='password' placeholder="Enter Password" required>
             </mat-form-field>
           </div>
         </div>
@@ -220,6 +221,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 export class MemberSignup implements OnInit {
 
   @ViewChild('SignupError', { static: false }) signupErrorRef!: ElementRef;
+  private firestore: Firestore = inject(Firestore);
 
   firstValue: string = '';
   lastValue: string = '';
@@ -247,13 +249,15 @@ export class MemberSignup implements OnInit {
         this.signupErrorRef.nativeElement.style.display = 'none';
       }, 3000);
     } else {
-      // this.afAuth.createUserWithEmailAndPassword(this.emailValue, this.passwordValue)
-      //   .then((userCredential) => {
-      //     console.log('User signed up:', userCredential.user);
-      //   })
-      //   .catch((error) => {
-      //     console.log('Signup error:', error);
-      //   });
+      console.log('Signup submitted:', this.firstValue, this.lastValue, this.kristinaValue, this.phoneValue, this.emailValue, this.passwordValue);
+      addDoc(collection(this.firestore, 'Members'), {
+        firstValue: this.firstValue,
+        lastValue: this.lastValue,
+        kristinaValue: this.kristinaValue,
+        phoneValue: this.phoneValue,
+        emailValue: this.emailValue,
+        passwordValue: this.passwordValue,
+      });
     }
   }
 }
