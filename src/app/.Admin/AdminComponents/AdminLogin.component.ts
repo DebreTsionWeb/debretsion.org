@@ -12,7 +12,7 @@ import { Auth } from '@angular/fire/auth';
           <div id="AdminLogin">
             <div id="AdminLoginContainer">
               <div id="AdminLoginHeaderContainer">
-                <h1 id="AdminLoginHeader">አባልነት Login</h1>
+                <h1 id="AdminLoginHeader">Admin Login</h1>
               </div>
               <div id="LoginInputContainer">
                 <ng-container id="NameContainer" >
@@ -41,6 +41,7 @@ import { Auth } from '@angular/fire/auth';
 
         <ng-container *ngIf="login === false">
           <div id="LogoutButtonContainer">
+            <p id='LogoutText'>Hello Mr.Admin!</p>
             <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
           </div>
         </ng-container>
@@ -49,6 +50,14 @@ import { Auth } from '@angular/fire/auth';
 
     `,
   styles: [`
+        #AuthContainer {
+          display: flex;
+          position: relative;
+          width: 100%;
+          margin-top: 25vh;
+          justify-content: center;
+          align-items: center;
+        }
         #AdminLogin {
           display: flex;
           position: relative;
@@ -112,7 +121,8 @@ import { Auth } from '@angular/fire/auth';
           height: 30px;
           font-size: 15px;
           padding-left: 15px;
-          padding-top: 25px;
+          padding-top: 15px;
+          padding-bottom: 15px;
         }
         #Switch {
           display: flex;
@@ -170,13 +180,24 @@ import { Auth } from '@angular/fire/auth';
         }
         #LogoutButtonContainer {
           display: flex;
-          position: fixed;
-          top: 50%;
-          left: 50%;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
         #LogoutButton {
           display: flex;
           position: relative;
+          border: 1px solid black;
+          border-radius: 35px;
+          cursor: pointer;
+        }
+        #LogoutButton:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease-in-out;
+          opacity: 0.8;
         }
         @media (max-width: 700px) {
             #AdminLogin{

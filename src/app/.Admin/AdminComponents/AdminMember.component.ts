@@ -5,8 +5,8 @@ import { Auth } from '@angular/fire/auth';
   selector: 'AdminMember',
   template: `
 
-<AdminHeader></AdminHeader>
-<div id='AuthContainer'>
+  <AdminHeader></AdminHeader>
+    <div id='AuthContainer'>
         <ng-container *ngIf="login === true">
           <AdminLogin></AdminLogin>
         </ng-container>
@@ -15,7 +15,7 @@ import { Auth } from '@angular/fire/auth';
           <p>hi</p>
         </ng-container>
       </div>
-<AdminFooter></AdminFooter>
+  <AdminFooter></AdminFooter>
 
 
     `,
