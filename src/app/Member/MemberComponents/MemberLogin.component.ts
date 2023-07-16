@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef, inject } from "@angular/core";
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
+import { Auth } from '@angular/fire/auth';
 
 @Component({
     selector: "MemberLogin",
@@ -26,12 +28,13 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           <div id="PasswordContainer">
             <mat-form-field appearance="outline" id='PasswordForm'>
               <mat-label>Password</mat-label>
-              <input matInput id="Password" [(ngModel)]="passwordValue" type="password" placeholder="Enter Password" required/>
+              <input matInput id="Password" [(ngModel)]="passwordValue" type='Password' placeholder="Enter Password" required/>
             </mat-form-field>
           </div>
         </div>
         <div id="LoginErrorContainer">
           <p id="LoginError" #LoginError>Please Fill Out All Fields</p>
+          <p id="AuthError" #AuthError>Invalid Credentials</p>
         </div>
         <div id="LoginButtonContainer">
           <button mat-raised-button color="primary" id="LoginButton" (click)="submitLogin()">Login</button>
@@ -51,24 +54,23 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           z-index: 3;
         }
         #MemberLoginContainer {
-            display: flex;
-            position: relative;
-            width: 90%;
-            height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
+          display: flex;
+          position: relative;
+          width: 90%;
+          height: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
         #MemberLoginHeaderContainer {
-            display: flex;
-            position: relative;
-            width: 92%;
-            height: 20%;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+          display: flex;
+          position: relative;
+          width: 92%;
+          height: 20%;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
         }
         #MemberLoginHeader {
           display: flex;
@@ -105,7 +107,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           height: 30px;
           font-size: 15px;
           padding-left: 15px;
-          padding-top: 20px;
+          padding-top: 25px;
         }
         #Switch {
           display: flex;
@@ -123,11 +125,11 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
           text-decoration: underline;
         }
         #LoginErrorContainer {
-            display: flex;
-            position: relative;
-            margin-bottom: -2%;
+          display: flex;
+          position: relative;
+          margin-bottom: -2%;
         }
-        #LoginError {
+        #LoginError, #AuthError {
           display: none;
           position: relative;
           color: red;
@@ -186,6 +188,8 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 })
 export class MemberLogin implements OnInit{
   @ViewChild('LoginError', { static: false }) LoginErrorRef!: ElementRef;
+  @ViewChild('AuthError', { static: false }) AuthErrorRef!: ElementRef;
+  private firestore: Firestore = inject(Firestore);
 
   emailValue: string = '';
   passwordValue: string = '';
@@ -193,7 +197,7 @@ export class MemberLogin implements OnInit{
   email: boolean = true;
   phone: boolean = false;
 
-  constructor() {}
+  constructor(private afAuth: Auth) {}
 
   ngOnInit() {}
 
@@ -207,21 +211,36 @@ export class MemberLogin implements OnInit{
     this.email = false;
   }
 
-  submitLogin() {
-    if (this.emailValue === '' || this.passwordValue === '') {
+  async submitLogin() {
+    if (this.emailValue === '' && this.phoneValue === '' || this.passwordValue === '') {
       this.LoginErrorRef.nativeElement.style.display = 'flex';
-
       setTimeout(() => {
         this.LoginErrorRef.nativeElement.style.display = 'none';
       }, 3000);
     } else {
-      // this.afAuth.signInWithEmailAndPassword(this.emailValue, this.passwordValue)
-      //   .then((userCredential) => {
-      //     console.log('User signed in:', userCredential.user);
-      //   })
-      //   .catch((error) => {
-      //     console.log('Sign-in error:', error);
-      //   });
+      try {
+        const membersCollection = collection(this.firestore, 'Members');
+        const querySnapshot = await getDocs(query(membersCollection, where('Email', '==', this.emailValue), where('Password', '==', this.passwordValue)));
+
+        if (querySnapshot.empty) {
+          this.AuthErrorRef.nativeElement.style.display = 'flex';
+          setTimeout(() => {
+            this.AuthErrorRef.nativeElement.style.display = 'none';
+          }, 3000);
+        } else {
+          querySnapshot.forEach((doc) => {
+            const member = doc.data();
+            delete member['Password'];
+            if (member) {
+              localStorage.setItem('user', JSON.stringify(member));
+              localStorage.setItem('loggedIn', 'true');
+              window.location.reload();
+            }
+          });
+        }
+      } catch (error) {
+        console.log('Login failed:', error);
+      }
     }
   }
 }
