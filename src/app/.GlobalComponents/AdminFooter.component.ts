@@ -41,7 +41,6 @@ import { Router } from "@angular/router";
         position: relative;
         width: 100vw;
         height: 10vh;
-        padding-bottom: 1%;
         background-color: #152238;
         color: white;
        }
@@ -55,61 +54,47 @@ import { Router } from "@angular/router";
        }
 
        #TopContainer{
-        display: block;
-        position: relative;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-       }
-
-       #ChurchNameContainer{
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: center;
-        height: 50%;
-       }
-
-       #AddressContainer{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content:center;
-        height: 50%
-       }
-
-       #BottomContainer{
-        display: block;
-        position: relative;
-        align-items: center;
         width: 100%;
         height: 100%;
        }
 
-
-
-      @media (max-width: 700px){
-        #FooterIconContainer{
-          padding-left: 20%;
-          padding-right: 20%;
-        }
+      #BottomContainer {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
       }
 
       #NavbarListContainer {
-        list-style: none;
         display: flex;
+        position: relative;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
       }
 
       #NavbarListContainer li {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
         margin: 2px;
       }
 
       #NavbarListContainer li a {
         cursor: pointer;
+        font-size: 0.9em;
       }
-
     `]
 })
 export class AdminFooter implements OnInit{

@@ -26,10 +26,8 @@ import { Auth } from '@angular/fire/auth';
                   <div id="AddGalleryImgURLContainer">
                     <button id='AddGalleryImgURL' mat-raised-button color="primary" (click)="addGallery()">Add Another Image</button>
                   </div>
-                  <div *ngFor="let i of count">
-                    <div id="CreateGalleryImgURLContainer">
-                      <input id='CreateGalleryImgURL' matInput [(ngModel)]="Gallery[i]" placeholder="Enter Gallery Img URL" required>
-                    </div>
+                  <div id="CreateGalleryImgURLContainer" >
+                    <input id='CreateGalleryImgURL' *ngFor="let i of count" matInput [(ngModel)]="Gallery[i]" placeholder="Enter Gallery Img URL" required>
                   </div>
                 </div>
                 <div id="SubmitErrorContainer">
@@ -115,7 +113,7 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           width: 50%;
-          height: 50%;
+          height: 80%;
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -129,6 +127,8 @@ import { Auth } from '@angular/fire/auth';
           align-items: center;
         }
         #CreateGalleryHeader {
+          font-size: 30px;
+          font-family: 'InterBold';
         }
         #CreateGalleryForm {
           display: flex;
@@ -139,7 +139,7 @@ import { Auth } from '@angular/fire/auth';
           justify-content: center;
           align-items: center;
         }
-        #CreateGalleryTitleContainer, #CreateGalleryImgURLContainer {
+        #CreateGalleryTitleContainer {
           display: flex;
           position: relative;
           width: 100%;
@@ -148,7 +148,7 @@ import { Auth } from '@angular/fire/auth';
           justify-content: center;
           align-items: center;
         }
-        #CreateGalleryTitle, #CreateGalleryImgURL {
+        #CreateGalleryTitle {
           display: flex;
           position: relative;
           width: 80%;
@@ -157,6 +157,38 @@ import { Auth } from '@angular/fire/auth';
           border: 1px solid black;
           padding-left: 10px;
           font-size: 18px;
+          font-family: 'Inter';
+        }
+        #CreateGalleryImgURLContainer {
+          display: flex;
+          position: relative;
+          width: 380px;
+          height: 250px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          flex-direction: column;
+          align-items: center;
+          overflow-y: scroll;
+          border: 1px solid black;
+        }
+        #CreateGalleryImgURLContainer::-webkit-scrollbar {
+          width: 0.5em;
+          background-color: white;
+        }
+        #CreateGalleryImgURLContainer::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: 1% / 90%;
+        }
+        #CreateGalleryImgURL {
+          display: flex;
+          position: relative;
+          width: 90%;
+          height: 20px;
+          border-radius: 5px;
+          border: 1px solid black;
+          padding: 15px;
+          margin-bottom: 10px;
+          font-size: 16px;
           font-family: 'Inter';
         }
         #AddGalleryImgURLContainer {
@@ -171,7 +203,7 @@ import { Auth } from '@angular/fire/auth';
         #AddGalleryImgURL {
           display: flex;
           position: relative;
-          width: 80%;
+          width: 50%;
           height: 100%;
           border-radius: 5px;
           border: 1px solid black;
@@ -181,7 +213,7 @@ import { Auth } from '@angular/fire/auth';
         #SubmitErrorContainer {
           display: flex;
           position: relative;
-          width: 100%;
+          width: 50%;
           height: 10%;
           justify-content: center;
           align-items: center;
@@ -189,8 +221,7 @@ import { Auth } from '@angular/fire/auth';
         #SubmitError {
           display: none;
           position: relative;
-          width: 80%;
-          height: 100%;
+          font-size: 18px;
           justify-content: center;
           align-items: center;
           color: red;
@@ -238,16 +269,14 @@ import { Auth } from '@angular/fire/auth';
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          border: 1px solid black;
         }
         #Collection {
           display: flex;
           position: relative;
           flex-direction: column;
           width: 100%;
-          height: 70%;
+          height: 390px;
           overflow-x: hidden;
-          border: 1px solid red;
         }
         #CollectionHeaderContainer {
           display: flex;
@@ -320,6 +349,35 @@ import { Auth } from '@angular/fire/auth';
           color: white;
           cursor: pointer;
         }
+        @media (max-width: 1050px) {
+          #AuthContainer {
+            height: 135vh;
+            justify-content: center;
+            margin-top: -28px;
+          }
+          #AdminGalleryContainer {
+            flex-direction: column;
+            margin-top: 100px;
+            margin-bottom: 100px;
+          }
+          #CreateGalleryContainer {
+            width: 90%;
+          }
+          #GalleryPreviewContainer {
+            width: 380px;
+            height: 300px;
+          }
+          #Collection {
+            width: 380px;
+            height: 300px;
+          }
+          #CollectionImagesContainer {
+            height: 250px;
+          }
+          #CollectionImage {
+            height: 200px;
+          }
+        }
   `]
 })
 
@@ -361,17 +419,17 @@ export class AdminGallery implements OnInit {
   };
 
   submitGallery() {
-    if (this.Title === "" || this.ImgURL.length === 0) {
+    if (this.Title === "" || this.Gallery.length === 0) {
       this.SubmitErrorRef.nativeElement.style.display = "flex";
       setTimeout(() => {
         this.SubmitErrorRef.nativeElement.style.display = "none";
       }, 3000);
     } else {
-      // addDoc(collection(this.firestore, "Gallery"), {
-      //   Name: this.Title,
-      //   URL: this.Gallery.filter(url => url !== ''),
-      //   Date: new Date()
-      // });
+      addDoc(collection(this.firestore, "Gallery"), {
+        Name: this.Title,
+        URL: this.Gallery.filter(url => url !== ''),
+        Date: new Date()
+      });
 
       this.successRef.nativeElement.style.display = "flex";
       setTimeout(() => {

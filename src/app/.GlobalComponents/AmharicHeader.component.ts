@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "Header",
+  selector: "AmharicHeader",
   template: `
     <div id="Navbar">
       <div id="NavbarContainer">
         <div id="NavbarImageContainer">
           <img id="NavbarImage" src="assets/logo.png" alt="LogoPicture" />
-          <button id='LanguageSwitch' (click)="navigateTo('/')">Amharic</button>
+          <button id='LanguageSwitch' (click)="navigateTo('/en')">English</button>
         </div>
         <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
           <i
@@ -24,14 +24,14 @@ import { Router } from "@angular/router";
             [ngClass]="{ hide: !isNavbarOpen }"
           ></i>
           <div #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
-            <a (click)="navigateTo('/en')">Home</a>
-            <a (click)="navigateTo('/About')">About</a>
-            <a (click)="navigateTo('/Events')">Events</a>
-            <a (click)="navigateTo('/Live')">Live</a>
-            <a (click)="navigateTo('/Gallery')">Gallery</a>
-            <a (click)="navigateTo('/Member')">Member</a>
-            <a (click)="navigateTo('/Contact')">Contact</a>
-            <a id='MobileLanguageSwitch' (click)="navigateTo('/')">Amharic</a>
+            <a (click)="navigateTo('/')">መግቢያ</a>
+            <a (click)="navigateTo('/About')">ስለ እኛ</a>
+            <a (click)="navigateTo('/Events')">ክስተቶች</a>
+            <a (click)="navigateTo('/Live')">ቀጥታ ሥርጭት</a>
+            <a (click)="navigateTo('/Gallery')">ፎቶግራፎች</a>
+            <a (click)="navigateTo('/Member')">አባልነት</a>
+            <a (click)="navigateTo('/Contact')">አግኙን</a>
+            <a id='MobileLanguageSwitch' (click)="navigateTo('/en')">English</a>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@ import { Router } from "@angular/router";
     `,
   ],
 })
-export class HeaderComponent implements OnInit {
+export class AmharicHeaderComponent implements OnInit {
     isNavbarOpen = false;
 
     constructor(private router: Router) {}

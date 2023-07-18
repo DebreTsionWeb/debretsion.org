@@ -5,22 +5,45 @@ import { Auth } from '@angular/fire/auth';
   selector: 'AdminHome',
   template: `
 
-  <AdminHeader></AdminHeader>
+
     <div id='AuthContainer'>
         <ng-container *ngIf="login === true">
           <AdminLogin></AdminLogin>
         </ng-container>
 
         <ng-container *ngIf="loggedIn === true">
-          <p>hi</p>
+          <AdminHeader></AdminHeader>
+          <div id='AdminHome'>
+            <div id="AdminHomeContainer">
+              <p>hi</p>
+            </div>
+          </div>
+          <AdminFooter></AdminFooter>
         </ng-container>
       </div>
-  <AdminFooter></AdminFooter>
+
 
 
     `,
   styles: [`
-
+    #AuthContainer {
+      display: flex;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #AdminHome {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   `]
 })
 

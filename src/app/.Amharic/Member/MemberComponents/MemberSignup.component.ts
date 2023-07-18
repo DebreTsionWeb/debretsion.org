@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, inject } from "@angular/core"
 import { Firestore, collection, addDoc} from '@angular/fire/firestore';
 
 @Component({
-    selector: "MemberSignup",
+    selector: "AmharicMemberSignup",
     template: `
         <div id="MemberSignup">
       <div id="MemberSignupContainer">
@@ -218,7 +218,7 @@ import { Firestore, collection, addDoc} from '@angular/fire/firestore';
 
     `]
 })
-export class MemberSignup implements OnInit {
+export class AmharicMemberSignup implements OnInit {
 
   @ViewChild('SignupError', { static: false }) signupErrorRef!: ElementRef;
   private firestore: Firestore = inject(Firestore);

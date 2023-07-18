@@ -6,7 +6,7 @@ export const environment = {
     storageBucket: 'debretsionweb.appspot.com',
     locationId: 'us-central',
     apiKey: 'AIzaSyA3yT_4rYS-Yn7C8XucfB3jvn1tcG1dZZk',
-    authDomain: 'debretsionweb.firebaseapp.com' || 'localhost:4200',
+    authDomain: 'debretsionweb.firebaseapp.com',
     messagingSenderId: '280747100520',
   },
 };
