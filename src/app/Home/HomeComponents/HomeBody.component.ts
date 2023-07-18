@@ -31,7 +31,7 @@ interface Galleries {
                 </div>
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
-                    <p id="HeroHeader">ደብረ ጽዮን ቅ/ማርያም ወ ቅ/ገብርኤል ኢ.ኦ.ተ.ቤ ብሩክቪል ሜሪላንድ</p>
+                    <p id="HeroHeader">Debre Tsion Kidist Mariam we Gebriel Church</p>
                   </div>
                   <div id="HeroSubHeaderContainer">
                     <p id="HeroSubText">መዝሙር ፸፯÷፷፰
