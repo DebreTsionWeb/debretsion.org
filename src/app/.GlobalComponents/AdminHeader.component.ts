@@ -9,34 +9,26 @@ import { Router } from "@angular/router";
         <div id="NavbarImageContainer">
           <img id="logo" src="assets/logo.png" alt="LogoPicture" />
         </div>
-        <div id="NavbarTextContainer">
+        <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
           <i
             id="bars"
             class="fa fa-solid fa-bars"
             (click)="toggleNavbar()"
+            [ngClass]="{ hide: isNavbarOpen }"
           ></i>
           <i
             id="close"
             class="fa fa-solid fa-times"
             (click)="toggleNavbar()"
+            [ngClass]="{ hide: !isNavbarOpen }"
           ></i>
-          <ul #navbar id="NavbarListContainer" >
-            <li id="Home">
-              <a (click)="navigateTo('/Admin')">Home</a>
-            </li>
-            <li id="Events">
-              <a (click)="navigateTo('/AdminEvents')">Events</a>
-            </li>
-            <li id="Gallery">
-              <a (click)="navigateTo('/AdminGallery')">Gallery</a>
-            </li>
-            <li id="Member">
-              <a (click)="navigateTo('/AdminMember')">Member</a>
-            </li>
-            <li id="Login">
-              <a (click)="navigateTo('/AdminLogin')">Login</a>
-            </li>
-          </ul>
+          <div #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
+            <a (click)="navigateTo('/Admin')">Admin Home</a>
+            <a (click)="navigateTo('/AdminEvents')">Admin Events</a>
+            <a (click)="navigateTo('/AdminGallery')">Admin Gallery</a>
+            <a (click)="navigateTo('/AdminMember')">Admin Member</a>
+            <a (click)="navigateTo('/AdminLogin')">Admin Logout</a>
+          </div>
         </div>
       </div>
     </div>
@@ -53,6 +45,7 @@ import { Router } from "@angular/router";
         flex-direction: row;
         background-color: #152238;
         color: white;
+        z-index: 10;
       }
 
       #NavbarContainer {
@@ -61,18 +54,23 @@ import { Router } from "@angular/router";
         width: 95%;
         height: 100%;
         justify-content: space-between;
+        align-items: center;
       }
 
       #NavbarImageContainer {
         display: flex;
         position: relative;
         width: 75px;
+        height: 75px;
+        justify-content: center;
+        align-items: center;
       }
 
       #logo {
         display: flex;
         position: relative;
         width: 100%;
+        height: 100%;
       }
 
       #NavbarTextContainer {
@@ -80,7 +78,7 @@ import { Router } from "@angular/router";
         position: relative;
         justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 50%;
       }
 
       #NavbarListContainer {
@@ -91,12 +89,13 @@ import { Router } from "@angular/router";
         justify-content: space-between;
       }
 
-      #NavbarListContainer li a {
+      a {
         cursor: pointer;
+        font-family: 'InterMedium';
       }
 
-      #NavbarListContainer li {
-        list-style: none;
+      a:hover {
+        opacity: 0.5;
       }
 
       #bars {
@@ -107,76 +106,79 @@ import { Router } from "@angular/router";
         display: none;
       }
 
-      @media (max-width: 700px) {
+      @media (max-width: 1100px) {
         #bars {
           display: flex;
+          position: absolute;
+          right: 10%;
           font-size: 38px;
+          cursor: pointer;
         }
 
         #close {
           display: none;
           font-size: 38px;
-          margin-left: 10
-          px;
+          cursor: pointer;
+          margin-bottom: 15px;
         }
 
         #NavbarListContainer {
           display: none;
         }
 
+        #NavbarTextContainer.show {
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: -2.6%;
+          width: 105.1%;
+          height: 350%;
+          margin-right: 0;
+          flex-direction: column;
+          background-color: #152238;
+          border-radius: 0 0 20px 20px;
+          overflow: hidden;
+          border: 1px solid black;
+        }
+
         #NavbarListContainer.show {
-          display: block;
+          display: flex;
+          width: 100%;
+          height: 60%;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
         }
 
-        #Home {
+        #NavbarListContainer.show a {
+          display: flex;
+          width: 35%;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          padding: 8px 5px;
+          margin: 5px;
+          border-radius: 10px;
         }
 
-        #Home:hover {
-          opacity: 0.5;
+        #NavbarListContainer.show a:hover {
+          opacity: 0.7;
         }
 
-        #Events {
+        #MobileLanguageSwitch {
+          display: flex;
         }
 
-        #Events:hover {
-          opacity: 0.5;
-        }
-        #Live {
         }
 
-        #Live:hover {
-          opacity: 0.5;
+        .show {
+        display: flex !important;
         }
 
-        #About {
-        }
-
-        #About:hover {
-          opacity: 0.5;
-        }
-
-        #Gallery {
-        }
-
-        #Gallery:hover {
-          opacity: 0.5;
-        }
-
-        #Contact {
-        }
-
-        #Contact:hover {
-          opacity: 0.5;
-        }
-      }
-
-      .show {
-        display: block !important;
-      }
-
-      .hide {
+        .hide {
         display: none;
-      }
+        }
     `,
   ],
 })

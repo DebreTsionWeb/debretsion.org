@@ -16,7 +16,7 @@ interface Galleries {
 }
 
 @Component({
-    selector: "HomeBody",
+    selector: "AmharicHomeBody",
     template: `
         <div id="HomeBody">
           <div id="HomeBodyContainer">
@@ -963,7 +963,7 @@ interface Galleries {
 
     `]
 })
-export class HomeBody implements OnInit{
+export class AmharicHomeBody implements OnInit{
 
   Event$: Observable<Events[]>;
   Gallery$: Observable<Galleries[]>;

@@ -32,6 +32,25 @@ import { MemberBody } from './Member/MemberComponents/MemberBody.component';
 import { MemberLogin } from './Member/MemberComponents/MemberLogin.component';
 import { MemberSignup } from './Member/MemberComponents/MemberSignup.component';
 import { HomeBody } from './Home/HomeComponents/HomeBody.component';
+
+import { AmharicHeaderComponent } from './.GlobalComponents/AmharicHeader.component';
+import { AmharicGalleryScreen } from './.Amharic/Gallery/GalleryScreen.component';
+import { AmharicHomeScreen } from './.Amharic/Home/HomeScreen.component';
+import { AmharicAboutScreen } from './.Amharic/About/AboutScreen.component';
+import { AmharicContactScreen } from './.Amharic/Contact/ContactScreen.component';
+import { AmharicEventsScreen } from './.Amharic/Events/EventsScreen.component';
+import { AmharicMemberScreen } from './.Amharic/Member/MemberScreen.component';
+import { AmharicLiveScreen } from './.Amharic/Live/LiveScreen.component';
+import { AmharicLiveBody } from './.Amharic/Live/LiveComponents/LiveBody.component';
+import { AmharicContactBody } from './.Amharic/Contact/ContactComponents/ContactBody.component';
+import { AmharicGalleryBody } from './.Amharic/Gallery/GalleryComponents/GalleryBody.component';
+import { AmharicAboutBody } from './.Amharic/About/AboutComponents/AboutBody.component';
+import { AmharicEventsBody } from './.Amharic/Events/EventsComponents/EventsBody.component';
+import { AmharicMemberBody } from './.Amharic/Member/MemberComponents/MemberBody.component';
+import { AmharicMemberLogin } from './.Amharic/Member/MemberComponents/MemberLogin.component';
+import { AmharicMemberSignup } from './.Amharic/Member/MemberComponents/MemberSignup.component';
+import { AmharicHomeBody } from './.Amharic/Home/HomeComponents/HomeBody.component';
+
 import { AdminScreen } from './.Admin/AdminScreen.component';
 import { AdminHeader } from './.GlobalComponents/AdminHeader.component';
 import { AdminFooter } from './.GlobalComponents/AdminFooter.component';
@@ -62,6 +81,25 @@ import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
     MemberLogin,
     MemberSignup,
     HomeBody,
+
+    AmharicHeaderComponent,
+    AmharicGalleryScreen,
+    AmharicHomeScreen,
+    AmharicAboutScreen,
+    AmharicContactScreen,
+    AmharicEventsScreen,
+    AmharicMemberScreen,
+    AmharicLiveScreen,
+    AmharicLiveBody,
+    AmharicContactBody,
+    AmharicGalleryBody,
+    AmharicAboutBody,
+    AmharicEventsBody,
+    AmharicMemberBody,
+    AmharicMemberLogin,
+    AmharicMemberSignup,
+    AmharicHomeBody,
+
     AdminScreen,
     AdminHeader,
     AdminFooter,
