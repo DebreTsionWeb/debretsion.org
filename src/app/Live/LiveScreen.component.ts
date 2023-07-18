@@ -16,6 +16,4 @@ import { Component } from '@angular/core';
 })
 
 export class LiveScreen{
-
-  title = 'Live | Debre Tsion';
 }

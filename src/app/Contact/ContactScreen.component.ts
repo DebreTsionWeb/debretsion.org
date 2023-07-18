@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <Header></Header>
     <ContactBody></ContactBody>
     <Footer></Footer>
-    
+
     `,
   styles: [`
 
@@ -14,5 +14,4 @@ import { Component } from '@angular/core';
 })
 
 export class ContactScreen {
-  title = 'Contact | Debre Tsion';
 }

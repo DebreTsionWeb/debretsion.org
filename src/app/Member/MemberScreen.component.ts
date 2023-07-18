@@ -15,5 +15,4 @@ import { Component } from '@angular/core';
 })
 
 export class MemberScreen {
-  title = 'Member | Debre Tsion';
 }

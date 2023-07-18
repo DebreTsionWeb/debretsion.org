@@ -16,7 +16,7 @@ interface Galleries {
           <h1 id="GalleryHeader">ፎቶግራፎች</h1>
         </div>
         <div id="CollectionContainer">
-          <div class="Collection" *ngFor="let gallery of Gallery$ | async">
+          <div id="Collection" *ngFor="let gallery of Gallery$ | async">
             <div id="CollectionHeaderContainer">
               <p id="CollectionHeader">{{ gallery.Name }}</p>
             </div>
@@ -105,7 +105,7 @@ interface Galleries {
         position: relative;
         flex-direction: column;
       }
-      .Collection {
+      #Collection {
         display: flex;
         position: relative;
         flex-direction: column;
