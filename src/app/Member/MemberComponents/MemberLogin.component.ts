@@ -8,7 +8,7 @@ import { Auth } from '@angular/fire/auth';
     <div id="MemberLogin">
       <div id="MemberLoginContainer">
         <div id="MemberLoginHeaderContainer">
-          <h1 id="MemberLoginHeader">አባልነት Login</h1>
+          <h1 id="MemberLoginHeader">Member Login</h1>
         </div>
         <div id="LoginInputContainer">
           <ng-container id="EmailContainer" *ngIf="email === true">

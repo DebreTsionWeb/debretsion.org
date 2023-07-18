@@ -13,7 +13,7 @@ interface Galleries {
     <div id="GalleryBody">
       <div id="GalleryBodyContainer">
         <div id="GalleryHeaderContainer">
-          <h1 id="GalleryHeader">ፎቶግራፎች</h1>
+          <h1 id="GalleryHeader">Gallery</h1>
         </div>
         <div id="CollectionContainer">
           <div id="Collection" *ngFor="let gallery of Gallery$ | async">

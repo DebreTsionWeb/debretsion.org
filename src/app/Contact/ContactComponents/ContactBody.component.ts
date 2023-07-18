@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="ContactBody">
           <div id="ContactBodyContainer">
             <div id="ContactHeaderContainer">
-              <h1 id="ContactHeader">አግኙን</h1>
+              <h1 id="ContactHeader">Contact Us</h1>
             </div>
             <div id="InfoContainer">
               <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>

@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody"  >
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                    <h1 id='AboutHeaderText'>የቤተ ክርስቲያኒቱ የእድገት ጉዞ</h1>
+                    <h1 id='AboutHeaderText'>About Us</h1>
                 <div id="AboutBodyTextContainer">
                     <p id='AboutText'>ቤተ ክርስቲያናችን ለመጀመሪያ ጊዜ የእመቤታችን ቅዳሴ ቤቷ በሚከበርበት ዓመታዊ በዓል እንደ
 ኢትዮጵያውያን አቆጣጠር ዕለተ ቅዳሜ ሰኔ 21 ቀን 2006 ዓ.ም (ጁን 28/2014) በደማቅ ሥርዓተ

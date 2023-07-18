@@ -15,7 +15,7 @@ interface Events {
       <div id="EventsBody">
         <div id="EventsBodyContainer">
           <div id="EventsBodyHeaderContainer">
-            <h1 id="EventsBodyHeader">ክስተቶች</h1>
+            <h1 id="EventsBodyHeader">Events</h1>
           </div>
           <div id="EventCardContainer">
             <div id="EventCardBodyContainer">
