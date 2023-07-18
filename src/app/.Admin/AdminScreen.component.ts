@@ -4,7 +4,6 @@ import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'AdminScreen',
   template: `
-    <AdminHeader></AdminHeader>
       <div id='AuthContainer'>
         <ng-container *ngIf="login === true">
           <AdminLogin></AdminLogin>
@@ -14,7 +13,6 @@ import { Auth } from '@angular/fire/auth';
           <AdminHome></AdminHome>
         </ng-container>
       </div>
-    <AdminFooter></AdminFooter>
 
     `,
   styles: [`

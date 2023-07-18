@@ -6,7 +6,6 @@ import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'AdminLogin',
   template: `
-  <AdminHeader></AdminHeader>
     <div id='AuthContainer'>
         <ng-container *ngIf="login === true">
           <div id="AdminLogin">
@@ -40,13 +39,16 @@ import { Auth } from '@angular/fire/auth';
         </ng-container>
 
         <ng-container *ngIf="login === false">
-          <div id="LogoutButtonContainer">
-            <p id='LogoutText'>Hello Mr.Admin!</p>
-            <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+          <div id="LogoutScreen">
+            <AdminHeader></AdminHeader>
+              <div id="LogoutButtonContainer">
+                <p id='LogoutText'>Hello Mr.Admin!</p>
+                <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+              </div>
+            <AdminFooter></AdminFooter>
           </div>
         </ng-container>
       </div>
-    <AdminFooter></AdminFooter>
 
     `,
   styles: [`
@@ -54,7 +56,19 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           width: 100%;
-          margin-top: 25vh;
+          height: 100vh;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        #LogoutScreen {
+          display: flex;
+          position: relative;
+          width: 100vw;
+          height: 100vh;
+          padding: 0;
+          margin: 0;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
         }
@@ -95,7 +109,7 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           width: 100%;
-          height: 100%;
+          height: 15%;
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -178,6 +192,7 @@ import { Auth } from '@angular/fire/auth';
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
         }
+
         #LogoutButtonContainer {
           display: flex;
           position: relative;

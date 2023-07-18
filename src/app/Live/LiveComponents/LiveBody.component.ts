@@ -168,6 +168,4 @@ export class LiveBody implements OnInit, AfterViewInit {
         });
       });
   }
-
-  Title = 'Live | Debre Tsion';
 }

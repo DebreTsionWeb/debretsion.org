@@ -45,11 +45,9 @@ import { Router } from "@angular/router";
     `
       #Navbar {
         display: flex;
-        position: fixed;
-        width: 100%;
-        height: 80px;
-        left: 0;
-        top: 0;
+        position: relative;
+        width: 100vw;
+        height: 10vh;
         justify-content: center;
         align-items: center;
         flex-direction: row;

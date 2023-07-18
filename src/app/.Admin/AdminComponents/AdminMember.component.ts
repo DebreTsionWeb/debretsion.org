@@ -1,29 +1,51 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef, inject } from "@angular/core";
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
 
 @Component({
   selector: 'AdminMember',
   template: `
 
-  <AdminHeader></AdminHeader>
+
     <div id='AuthContainer'>
         <ng-container *ngIf="login === true">
           <AdminLogin></AdminLogin>
         </ng-container>
 
         <ng-container *ngIf="loggedIn === true">
-          <p>hi</p>
+          <div id="AdminMember">
+            <div id="AdminMemberContainer">
+            <AdminHeader></AdminHeader>
+              <p>hi</p>
+            <AdminFooter></AdminFooter>
+            </div>
+          </div>
         </ng-container>
+
       </div>
-  <AdminFooter></AdminFooter>
+
 
 
     `,
   styles: [`
-      p{
-        color: black;
-        font-size: 150px;
-      }
+    #AuthContainer {
+      display: flex;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #AdminMember {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   `]
 })
 

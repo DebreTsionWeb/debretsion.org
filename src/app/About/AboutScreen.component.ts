@@ -15,5 +15,4 @@ import { Component } from '@angular/core';
 })
 
 export class AboutScreen {
-  title = 'About Us | Debre Tsion';
 }

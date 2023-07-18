@@ -23,9 +23,11 @@ interface Galleries {
 
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
-                <img id='BackgroundVideo' src=''>
+                <video id='BackgroundVideo' muted autoplay>
+                  <source src="https://rr1---sn-vgqsrn66.googlevideo.com/videoplayback?expire=1689655277&ei=jcO1ZNLSCK6N_9EPktKOwAg&ip=45.139.56.252&id=o-AIj__Ck5F3WUShDW4ULOMdDJIixiGMjmn8ny4FJTlfGB&itag=137&aitags=134%2C136%2C137%2C160%2C243&source=youtube&requiressl=yes&spc=Ul2Sq99GOhtqU80dIvKnNzmBsKkuDIjCS5kX2hq0wQ&vprv=1&svpuc=1&mime=video%2Fmp4&ns=ByuNdhklN2p4bdp3muE5m9kO&gir=yes&clen=167578558&dur=448.233&lmt=1688089853196743&keepalive=yes&fexp=24007246,24350017,51000012&beids=24350017&c=WEB&txp=6219224&n=QHqR2thKLaLzcg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAMD3q3J83WQGKHruQsDjvu331rpIVuYgJqjbGUGNo6FFAiEA8_aeVSbtnHjLo1suWRu1oq-7KD8UJMI5vUdIxNLI9ng%3D&redirect_counter=1&cm2rm=sn-ab5ely76&req_id=d323ba2d100fa3ee&cms_redirect=yes&cmsv=e&mh=OB&mip=71.191.242.196&mm=34&mn=sn-vgqsrn66&ms=ltu&mt=1689633411&mv=m&mvi=1&pl=19&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAIre0wsXkk4Uw5nmV3HFxbLxw8rwBwKqlOmusCV9-8kPAiEAixtJq01ykkYClgdY6K5LIV7qM6FNqasWfcnPNahh3bk%3D">
+                </video>
                 <div id="HeroImageContainer">
-                  <img src="assets/ExampleAboutImg.jpg" id="HeroImage"/>
+                  <!-- <img src="assets/ExampleAboutImg.jpg" id="HeroImage"/> -->
                 </div>
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
@@ -42,6 +44,7 @@ interface Galleries {
                   </div>
                 </div>
               </div>
+              <div id="Blur"></div>
             </div>
 
             <div id="HomeAboutContainer">
@@ -113,7 +116,7 @@ interface Galleries {
                 <p id="HomeGalleryHeader">በቅርብ የወጡ</p>
               </div>
               <div id="HomeGalleryImageContainer">
-                <div class="Collection" *ngFor="let gallery of Gallery$ | async">
+                <div id="Collection" *ngFor="let gallery of Gallery$ | async">
                   <div id="CollectionHeaderContainer">
                     <p id="CollectionHeader">{{ gallery.Name }}</p>
                   </div>
@@ -194,6 +197,7 @@ interface Galleries {
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         #HeroVideoContainer {
@@ -203,15 +207,24 @@ interface Galleries {
             height: 94vh;
             justify-content: center;
             align-items: center;
-            object-fit: cover;
+            overflow: hidden;
         }
 
         #BackgroundVideo {
             display: flex;
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 200%;
+            height: 200%;
             filter: brightness(50%);
+        }
+
+        #Blur {
+            display: flex;
+            position: absolute;
+            bottom: -50px;
+            width: 99.5vw;
+            height: 5%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
         }
 
         #HeroImageContainer {
@@ -615,7 +628,7 @@ interface Galleries {
             margin-left: 5%;
         }
 
-        .Collection {
+        #Collection {
             display: flex;
             position: relative;
             flex-direction: column;
