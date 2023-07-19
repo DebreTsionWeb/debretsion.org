@@ -37,7 +37,7 @@ import { Auth } from '@angular/fire/auth';
           </div>
           <div id="DonateBodyContainer">
             <div id="DonateHeaderContainer">
-              <p id="DonateHeader">ለግሱ</p>
+              <p id="DonateHeader">Donate</p>
             </div>
             <div id="DonateIconContainer">
               <div id="DonateIcon">

@@ -25,12 +25,12 @@ import { Router } from "@angular/router";
           ></i>
           <div #navbar id="NavbarListContainer" [ngClass]="{ 'show': isNavbarOpen }">
             <a (click)="navigateTo('/en')">Home</a>
-            <a (click)="navigateTo('/About')">About</a>
-            <a (click)="navigateTo('/Events')">Events</a>
-            <a (click)="navigateTo('/Live')">Live</a>
-            <a (click)="navigateTo('/Gallery')">Gallery</a>
-            <a (click)="navigateTo('/Member')">Member</a>
-            <a (click)="navigateTo('/Contact')">Contact</a>
+            <a (click)="navigateTo('/en/About')">About</a>
+            <a (click)="navigateTo('/en/Events')">Events</a>
+            <a (click)="navigateTo('/en/Live')">Live</a>
+            <a (click)="navigateTo('/en/Gallery')">Gallery</a>
+            <a (click)="navigateTo('/en/Member')">Member</a>
+            <a (click)="navigateTo('/en/Contact')">Contact</a>
             <a id='MobileLanguageSwitch' (click)="navigateTo('/')">Amharic</a>
           </div>
         </div>

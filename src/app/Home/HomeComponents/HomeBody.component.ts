@@ -31,15 +31,10 @@ interface Galleries {
                 </div>
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
-                    <p id="HeroHeader">Debre Tsion Kidist Mariam we Gebriel Church</p>
+                    <p id="HeroHeader">Debre Tsion Kidist Mariam we Gebriel E.O.T.C Brookeville, Maryland </p>
                   </div>
                   <div id="HeroSubHeaderContainer">
-                    <p id="HeroSubText">መዝሙር ፸፯÷፷፰
-                    "የወደደውን የጽዮንን ተራራ።
-                    መቅደሱን እንደ አርያም ሠራ፥
-                    ለዘላለምም በምድር ውስጥ መሠረታት።
-                    <br>
-                    የተለያዩ ድኅረ ገጾችን ለማየት ወደ ታች ይሸብልሉ(ክስተቶች፣ አካባቢ፣ ቀጥታ ሥርጭት፣ አባልነት/ልገሳ)!
+                    <p id="HeroSubText">Psalms 78:68 "The mount Zion which he loved, And he built his sanctuary like high palaces, like the earth which he hath established forever."
                     </p>
                   </div>
                 </div>
@@ -49,13 +44,13 @@ interface Galleries {
 
             <div id="HomeAboutContainer">
               <div id="HomeAboutHeaderContainer">
-                <p id="HomeAboutHeader">አመሠራረት</p>
+                <p id="HomeAboutHeader">About Us</p>
               </div>
               <div id="HomeAboutSubTextContainer">
-                <p id="HomeAboutSubText">አስተዳዳራዊ መዋቅር ደብረ ጽዮን ቅድሰት ማርያም ወቅዱስ ገብርኤል የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርሰቲያን በሊቀ ኅሩያን ቄስ ከፈለኝ ወልደ ጊዮርጊስ ሰኔ 21 ቀን 2006 ዓ.ም ( እ.ኤ.አ ጁን 28 / 2014 ) በሜሪላንድ ስቴት በሲልቨር ስፕሪንግ ከተማ በኪራይ ቤተ ክርስቲያን ውስጥ ተመሰረተች። የደብረ ጽዮን ቅድስት ማርያም ወቅዱስ ገብርኤል ቤተ ክርስቲያን በዋሽንግተን ዲሲና አካባቢው ሀገረ ስብከት ሊቀ ጳጳስ በብጹዕ አቡነ ፋኑኤል ተባርካ አገልግሎት መስጠት ከጀመረችበት ጊዜ ጀምሮ ከጊዜ ወደ ጊዜ በምታሳየው ፈጣን ለውጥ፣ በንብረትና በምዕመናን ብዛት እንዲሁም በመንፈሳዊ አገልግሎት እያደገች በመምጣቷ በስድስት ዓመት ዕድሜዋ ሰኔ 3 / 2012 ዓ.ም ( እ.ኤ.አ. ጁን 10 / 2020 ) የራሷን ህንፃ ቤተክርስቲያን በመግዛት እዚህ ላይ ደርሳለች::</p>
+                <p id="HomeAboutSubText">Debre Tsion Kidist Mariam and Gebriel Ethiopian Orthodox Tewahedo Church was established in a rented church in Silver Spring, Maryland, on June 21, 2006. Debre Selam Kidist Mariam Church & Kidus Gabriel Church in Washington DC and the surrounding area was blessed by the archbishop of the Diocese of Abune Fanuel, and since the time it began to provide services, it has been growing rapidly, in terms of property and number of believers, as well as in spiritual service. Debre Tsion Kidist Mariam and Gebriel has now established in Brookeville, Maryland with her own fully-owned church building.</p>
               </div>
               <div id="HomeAboutButtonContainer">
-                <button id="HomeAboutButton" (click)="navigateTo('/About')">View About Page</button>
+                <button id="HomeAboutButton" (click)="navigateTo('/en/About')">View About Page</button>
               </div>
             </div>
 
@@ -70,7 +65,7 @@ interface Galleries {
                   <a id='HomeLocationInfo' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
                 </div>
                 <div id="HomeLocationButtonContainer">
-                  <button id="HomeLocationButton" (click)="navigateTo('/Contact')">View Contact Page</button>
+                  <button id="HomeLocationButton" (click)="navigateTo('/en/Contact')">View Contact Page</button>
                 </div>
               </div>
               <div id="HomeLocationMapContainer">
@@ -81,16 +76,16 @@ interface Galleries {
             <div id="HomeEventsContainer">
               <ng-container *ngIf="isMobile; else desktopView">
                 <div id="MobileHomeEventsHeaderContainer">
-                  <p id="MobileHomeEventsHeader">Events</p>
+                  <p id="MobileHomeEventsHeader">Recent Events</p>
                 </div>
                 <div id="MobileHomeEventsImageContainer" *ngIf="Event$ | async as event">
                   <img id="HomeEventsImage" [lazyLoad]="event[0].URL" />
                 </div>
                 <div id="MobileHomeEventsParagraphContainer">
-                  <p id="MobileHomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
+                  <p id="MobileHomeEventsParagraph">Past events and upcoming events can be found on this page.</p>
                 </div>
                 <div id="MobileHomeEventsButtonContainer">
-                  <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
+                  <button id="MobileHomeEventsButton" (click)="navigateTo('/en/Events')">View All Events</button>
                 </div>
               </ng-container>
               <ng-template #desktopView>
@@ -99,13 +94,13 @@ interface Galleries {
                 </div>
                 <div id="HomeEventsTextContainer">
                   <div id="HomeEventsHeaderContainer">
-                    <p id="HomeEventsHeader">ያለፉት በዓላት</p>
+                    <p id="HomeEventsHeader">Recent Evnts</p>
                   </div>
                   <div id="HomeEventsParagraphContainer">
-                    <p id="HomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
+                    <p id="HomeEventsParagraph">Past events and upcoming events can be found on this page.</p>
                   </div>
                   <div id="HomeEventsButtonContainer">
-                    <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
+                    <button id="MobileHomeEventsButton" (click)="navigateTo('/en/Events')">View All Events</button>
                   </div>
                 </div>
               </ng-template>
@@ -113,7 +108,7 @@ interface Galleries {
 
             <div id="HomeGalleryContainer">
               <div id="HomeGalleryHeaderContainer">
-                <p id="HomeGalleryHeader">በቅርብ የወጡ</p>
+                <p id="HomeGalleryHeader">Recent Gallery</p>
               </div>
               <div id="HomeGalleryImageContainer">
                 <div id="Collection" *ngFor="let gallery of Gallery$ | async">
@@ -148,13 +143,13 @@ interface Galleries {
                 </div>
               </div>
               <div id="HomeGalleryButtonContainer">
-                <button id="HomeGalleryButton" (click)="navigateTo('/Gallery')">View All Galleries</button>
+                <button id="HomeGalleryButton" (click)="navigateTo('/en/Gallery')">View All Galleries</button>
               </div>
             </div>
 
             <div id="HomeDonateContainer">
               <div id="HomeDonateHeaderContainer">
-                  <p id="HomeDonateHeader">ለግሱ</p>
+                  <p id="HomeDonateHeader">Donate</p>
               </div>
               <div id="HomeDonateIconContainer">
                 <div id="HomeDonateIcon">
@@ -828,6 +823,14 @@ interface Galleries {
             height: 75vh;
             margin-top: 10%;
             margin-bottom: 10%;
+          }
+
+          #HeroVideoContainer {
+            width: 100%;
+          }
+
+          #Blur {
+            width: 100%;
           }
 
           #HeroImageContainer {

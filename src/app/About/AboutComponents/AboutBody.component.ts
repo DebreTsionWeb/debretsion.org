@@ -6,52 +6,42 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody"  >
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                    <h1 id='AboutHeaderText'>About Us</h1>
-                <div id="AboutBodyTextContainer">
-                    <p id='AboutText'>ቤተ ክርስቲያናችን ለመጀመሪያ ጊዜ የእመቤታችን ቅዳሴ ቤቷ በሚከበርበት ዓመታዊ በዓል እንደ
-ኢትዮጵያውያን አቆጣጠር ዕለተ ቅዳሜ ሰኔ 21 ቀን 2006 ዓ.ም (ጁን 28/2014) በደማቅ ሥርዓተ
-ንግሥ ለአንድ ቀን ብቻ በተከራየነው በኒው ሐምሻየር ላይ በሚገኘው የኡክሬኒያን ኦርቶዶክስ ቤተክርስቲያን
-ውስጥ ብጹዕ አቡነ ፋኑኤል ፣ የአካባቢው አብያተ ክርስቲያናት ካህናትና እጅግ በርካታ የሚሆኑ ምዕመናን
-በተገኙበት በታላቅ ድምቀት ተከብራ አገልግሎቷን ጀመረች::
-በመቀጠልም በሳምንቱ ቅዳሜ ሰኔ 28 / 2006 ዓ.ም (ጁላይ 3/2014) በቋሚነት በሳምንት አንድ ቀን ቅዳሜ
-ዕለት ብቻ ልንገለገል ወደተከራየነው በ Old Columbia pike, Silver Spring MD 20904 ላይ በሚገኘው
-የኤፒስኮፓል ቤተ ክርስቲያን ተዛወርን:: በነገራችን ላይ የዕሁድ ቦታ በማጣታችን ነበር ቅዳሜ ለማድረግ
-የተገደድነው::
-<br>
-<br>
-በዚህ ሁኔታ በአንድ ካህንና በአንድ ዲያቆን የተጀመረው መንፈሳዊ የቅዳሜ አገልግሎት ምንም እንኳን እንደ
-ዕሁድ ሰንበት በርካታ ምዕመናን አባላትን ለማሰባሰብ ጊዜ የፈጀ ቢሆንም ካህናትንና ዲያቆናትን ለዕለት
-አገልግሎት በማስተባበር ለስድስት ዓመታት ዘለቀ::
-በዚሁ የቀጠለው መንፈሳዊ አገልግሎት የህፃናት ትምህርትና ቀልጣፋ አሰራርን እየተከተለ ሄዶ የኮቪድ 19
-ወረርሺኝ በመላው አሜሪካ ባስከተለው እልቂት ሳቢያ አብያተ ክርስቲያናት በሙሉ ሲዘጉ የእኛ
-የመጀመሪያው ሆኖ ተገኘ::
-<br>
-<br>
-ይሁንና ቤተ ክርስቲያን በተዘጋችበት የአንድ ዓመት ተኩል ጊዜ ውስጥ በእግዚአብሔር ፈቃድ ፣
-በእመቤታችን ቸርነት ፣ በአገልጋዮቹ ያላሰለሰ ጥረትና በምዕመናን ህብረት ዛሬ እየተገለገልንበት ያለውን በ
-22222 Georgia Avenue, Brookeville MD 20833 ላይ የሚገኘውን ህንፃ ቤተ ክርስቲያን ገዝተን
-ውስጡንም እንደ ቤተ ክርስቲያናችን ሥርዓትና ትውፊት አድሰንና አዘጋጅተን በብጹአን ሊቃነ ጳጳሳት
-ተባርኮልን ሰፊ መንፈሳዊ አገልግሎት በመስጠት ላይ እንገኛለን::
-ደብራችን ባደረገችው መንፈሳዊ ጉዞ ሁሉ እጅግ በርካታ በሆኑ ብጹአን ሊቃነ ጳጳሳት ፣ ሊቃውንተ
-ቤተክርስቲያን አባቶች ፣ ታዋቂ ሰባክያነ ወንጌል መምህራንና መዘምራን በየጊዜው በሰፊው አገልግሎታቸው
-ተባርካለች::
-<br>
-<br>
-በአንድ ካህንና በአንድ ዲያቆን የተመሰረተችው ቤተ ክርስቲያናችን የአብነት ት/ት በማስተማር ሰባት
-ወጣቶችን በድቁና ማዕረግ ያሾመች ሲሆን ካህናቱም ወደ ሦስት አድገው ሙሉ አገልግሎት በማበርከት ላይ
-ትገኛለች::
-<br>
-<br>
-በተአምራት የተሞላችውና ለዓይን በሚማርክ ገጠራማ ጉብታ ሥፍራ ላይ የተተከለችው ደብረ ጽዮን
-ቅድስት ማርያም ወቅዱስ ገብርኤል የኢ.ኦ.ተ.ቤን ከህንፃ ቤተ ክርስቲያኑ ሥር በፈለቀ ጸበል እጅግ
-የተባረከች በመሆኗ እነሆ በአሁን ሰዓት የጸበል ጥምቀት አገልግሎት ለመጀመር ዝግጅቷን እያጠናቀቀች ነው::
-ቤተ ክርስቲያናችን ሰፊ የመኪና ማቆሚያ ሥፍራና አንድ ሁለገብ የመገልገያ አዳራሽ አላት:</p>
+                  <h1 id='AboutHeaderText'>About Us</h1>
                 </div>
+                <div id="AboutBodyTextContainer">
+                    <p id='AboutText'>
+                      For the first church service at Debre Tsion Kidist Mariam we Gebriel, the holiday of Kidist Mariam is celebrated on her anniversary
+                      Saturday, June 21, 2006 (June 28, 2014 in Ethiopian calendar) was hosted
+                      at an Ukrainian Orthodox Church in New Hampshire, which was rented for one day only.
+                      His Holiness Bishop Abune Fanuel, priests of the local churches, and a large number of congregation attended.
+                      Then, on Saturday, June 28/2006 (July 3, 2014 in the Ethiopian Calendar), church service was held every saturday
+                      at our rental space located on Old Columbia pike, Silver Spring MD 20904.
+                      <br>
+                      <br>
+                      In our first few years running the church, there was only one permenant priest and one permenant deacon, and thus it took time to gather more congregation members.
+                      Kesis Kefelenge, the head priest and owner of Debre Tsion Kidist Mariam we Gebriel, had been coordinating service here for six years, and has 30+ years experience in leadership at multiple churches internationally and within America.
+                      Eyosyas Kefelenge, the head deacon and son of Kesis Kefelenge, has been serving for 5+ years and was the first permenant deacon at Debre Tsion Mariam we Gebriel.
+                      <br>
+                      <br>
+                      During Covid-19, the church had to be shut down for a year and a half. The year and a half that the church was closed, by God's will, and
+                      By the grace of Kidist Mariam, the tireless efforts of the servants and the fellowship of the faithful, we are here today after purhcasing our fully-owned church building in Brookeville, Maryland.
+                      We renewed and prepared the interior according to the order and tradition of our church and prepared it under the guidance of His Holiness the Pope.
+                      We are providing a wide range of spiritual services.
+                      In all the spiritual journeys of our parish, there were many holy bishops, priests, deacons, and servants who served with us.
+                      <br>
+                      <br>
+                      Our church, which was founded by one priest and one deacon, taught exemplary education
+                      and appointed young people with merit and rank for deaconhood, and the priests have grown to three while there have been several new deacons appointed and are contributing full service.
+                      <br>
+                      <br>
+                      Debre Tsion Kidist Mariam we Gebriel, is full of miracles and is planted on a hilltop in the countryside. We have been blessed to offer outdoor and indoor baptism services, weddings, and many more holidays we commence outdoors and indoors.
+                      Our church also has ample parking and a multi-purpose hall.
+                    </p>
                 </div>
             </div>
             <div id="AboutImageContainer">
               <div id="ImageContainer">
-                <img src="assets/ExampleAboutImg.jpg" alt="picture" id="AboutImage">
+                <img id="AboutImage" src="assets/ExampleAboutImg.jpg" alt="picture">
               </div>
             </div>
         </div>

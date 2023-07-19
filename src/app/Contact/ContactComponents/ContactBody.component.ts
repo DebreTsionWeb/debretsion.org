@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="CalendlyContainer">
             <div id="CalendlyHeaderContainer">
-              <h1 id="CalendlyHeader">ቀጠሮ ይያዙ</h1>
+              <h1 id="CalendlyHeader">Appointment Calendar</h1>
             </div>
             <div id="CalendarContainer">
               <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>
