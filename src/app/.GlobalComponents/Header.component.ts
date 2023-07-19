@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
       <div id="NavbarContainer">
         <div id="NavbarImageContainer">
           <img id="NavbarImage" src="assets/logo.png" alt="LogoPicture" />
-          <button id='LanguageSwitch' (click)="navigateTo('/')">Amharic</button>
+          <button mat-raised-button id='LanguageSwitch' (click)="navigateTo('/')">አማርኛ</button>
         </div>
         <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
           <i
@@ -31,7 +31,7 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/en/Gallery')">Gallery</a>
             <a (click)="navigateTo('/en/Member')">Member</a>
             <a (click)="navigateTo('/en/Contact')">Contact</a>
-            <a id='MobileLanguageSwitch' (click)="navigateTo('/')">Amharic</a>
+            <a id='MobileLanguageSwitch' (click)="navigateTo('/')">አማርኛ</a>
           </div>
         </div>
       </div>
@@ -85,7 +85,9 @@ import { Router } from "@angular/router";
         margin-top: 5px;
         justify-content: center;
         align-items: center;
-        border-radius: 20px;
+        border-radius: 55px;
+        background-color: #2978e6;
+        color: white;
         margin-left: 20px;
         font-family: 'InterMedium';
         font-size: 14px;

@@ -24,17 +24,14 @@ interface Galleries {
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
                 <video id='BackgroundVideo' muted autoplay>
-                  <source src="">
+                  <source src="https://rr1---sn-4g5lznl7.googlevideo.com/videoplayback?expire=1689808284&ei=PBm4ZO3gDvHysALiur2ICA&ip=197.205.245.105&id=o-ALKF0sMmjPeQ4LQG1Yj20Gu-jkZ7H0GHNfJZgr9CrLmw&itag=137&aitags=134%2C136%2C137%2C160%2C243&source=youtube&requiressl=yes&spc=Ul2Sq5wG3EXob_pPinL0SQCfGqxLk8ZDHsrkXoE15w&vprv=1&svpuc=1&mime=video%2Fmp4&ns=VYdkOWEs0PDBzP2hBo129GgO&gir=yes&clen=167578558&dur=448.233&lmt=1688089853196743&keepalive=yes&fexp=24007246,24350018,51000023&beids=24350018&c=WEB&txp=6219224&n=WrYCtEsd3MQtFg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAIx1jSfQE8M-1sofl_-sYEGGx9t92XyaM9-73crjx1AWAiA82WI_pvPuBCs_S5aP1xt1xyMcS2IFI_ey84oXYhYAZQ%3D%3D&rm=sn-5abxgpxuxaxjvh-vbme7s&req_id=e46e24dfaa91a3ee&redirect_counter=2&cm2rm=sn-hgns77z&cms_redirect=yes&cmsv=e&mh=OB&mip=71.191.242.196&mm=34&mn=sn-4g5lznl7&ms=ltu&mt=1689786160&mv=D&mvi=1&pl=0&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgP_jcY72HYolEDAU_sxR5R_FTiaCW5u46GO2j66PlJnsCIQC_iIM0pM0iDLU7ITcM5195TRsdbGG21jhyHEgXBXp0Hw%3D%3D">
                 </video>
-                <div id="HeroImageContainer">
-                  <!-- <img src="assets/ExampleAboutImg.jpg" id="HeroImage"/> -->
-                </div>
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
-                    <p id="HeroHeader">ደብረ ጽዮን ቅ/ማርያም ወ ቅ/ገብርኤል ኢ.ኦ.ተ.ቤ ብሩክቪል ሜሪላንድ</p>
+                    <p id="HeroHeader">ደብረ ጽዮን ቅ/ማርያም ወ ቅ/ገብርኤል ኢ.ኦ.ተ.ቤ</p>
                   </div>
                   <div id="HeroSubHeaderContainer">
-                    <p id="HeroSubText">መዝሙር ፸፯÷፷፰
+                    <p id="HeroSubText">መዝሙር ፸፯÷፷፰:
                     "የወደደውን የጽዮንን ተራራ።
                     መቅደሱን እንደ አርያም ሠራ፥
                     ለዘላለምም በምድር ውስጥ መሠረታት።
@@ -44,7 +41,6 @@ interface Galleries {
                   </div>
                 </div>
               </div>
-              <div id="Blur"></div>
             </div>
 
             <div id="HomeAboutContainer">
@@ -55,7 +51,7 @@ interface Galleries {
                 <p id="HomeAboutSubText">አስተዳዳራዊ መዋቅር ደብረ ጽዮን ቅድሰት ማርያም ወቅዱስ ገብርኤል የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርሰቲያን በሊቀ ኅሩያን ቄስ ከፈለኝ ወልደ ጊዮርጊስ ሰኔ 21 ቀን 2006 ዓ.ም ( እ.ኤ.አ ጁን 28 / 2014 ) በሜሪላንድ ስቴት በሲልቨር ስፕሪንግ ከተማ በኪራይ ቤተ ክርስቲያን ውስጥ ተመሰረተች። የደብረ ጽዮን ቅድስት ማርያም ወቅዱስ ገብርኤል ቤተ ክርስቲያን በዋሽንግተን ዲሲና አካባቢው ሀገረ ስብከት ሊቀ ጳጳስ በብጹዕ አቡነ ፋኑኤል ተባርካ አገልግሎት መስጠት ከጀመረችበት ጊዜ ጀምሮ ከጊዜ ወደ ጊዜ በምታሳየው ፈጣን ለውጥ፣ በንብረትና በምዕመናን ብዛት እንዲሁም በመንፈሳዊ አገልግሎት እያደገች በመምጣቷ በስድስት ዓመት ዕድሜዋ ሰኔ 3 / 2012 ዓ.ም ( እ.ኤ.አ. ጁን 10 / 2020 ) የራሷን ህንፃ ቤተክርስቲያን በመግዛት እዚህ ላይ ደርሳለች::</p>
               </div>
               <div id="HomeAboutButtonContainer">
-                <button id="HomeAboutButton" (click)="navigateTo('/About')">View About Page</button>
+                <button mat-raised-button id="HomeAboutButton" (click)="navigateTo('/About')">View About Page</button>
               </div>
             </div>
 
@@ -70,7 +66,7 @@ interface Galleries {
                   <a id='HomeLocationInfo' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
                 </div>
                 <div id="HomeLocationButtonContainer">
-                  <button id="HomeLocationButton" (click)="navigateTo('/Contact')">View Contact Page</button>
+                  <button mat-raised-button id="HomeLocationButton" (click)="navigateTo('/Contact')">View Contact Page</button>
                 </div>
               </div>
               <div id="HomeLocationMapContainer">
@@ -90,7 +86,7 @@ interface Galleries {
                   <p id="MobileHomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
                 </div>
                 <div id="MobileHomeEventsButtonContainer">
-                  <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
+                  <button mat-raised-button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
                 </div>
               </ng-container>
               <ng-template #desktopView>
@@ -105,7 +101,7 @@ interface Galleries {
                     <p id="HomeEventsParagraph">ያለፉት በዓላት እና በቅርብ ጊዜ የሚደርሱ ክስተቶች በዚህ ገጽ ላይ ይገኛሉ</p>
                   </div>
                   <div id="HomeEventsButtonContainer">
-                    <button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
+                    <button mat-raised-button id="MobileHomeEventsButton" (click)="navigateTo('/Events')">View All Events</button>
                   </div>
                 </div>
               </ng-template>
@@ -148,7 +144,7 @@ interface Galleries {
                 </div>
               </div>
               <div id="HomeGalleryButtonContainer">
-                <button id="HomeGalleryButton" (click)="navigateTo('/Gallery')">View All Galleries</button>
+                <button mat-raised-button id="HomeGalleryButton" (click)="navigateTo('/Gallery')">View All Galleries</button>
               </div>
             </div>
 
@@ -205,6 +201,7 @@ interface Galleries {
             position: absolute;
             width: 99.5vw;
             height: 94vh;
+            top: 0;
             justify-content: center;
             align-items: center;
             overflow: hidden;
@@ -227,37 +224,27 @@ interface Galleries {
             background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
         }
 
-        #HeroImageContainer {
-            display: flex;
-            position: relative;
-            width: 50%;
-            height: 95%;
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
-        }
-
-        #HeroImage {
-            display: flex;
-            position: relative;
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-        }
-
         #HeroTextContainer {
             display: flex;
             position: relative;
-            width: 50%;
+            width: 55%;
+            height: 450px;
+            margin-left: 45%;
+            margin-right: 2%;
+            padding-right: 2%;
+            padding-left: 2%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
             z-index: 3;
         }
 
         #HeroHeaderContainer {
             display: flex;
             position: relative;
+            height: 50%;
         }
 
         #HeroHeader {
@@ -266,12 +253,16 @@ interface Galleries {
             font-family: 'InterBold';
             font-size: 52px;
             text-align: right;
+            color: white;
         }
 
         #HeroSubHeaderContainer {
             display: flex;
             position: relative;
+            height: 50%;
             text-align: right;
+            justify-content: center;
+            align-items: center;
         }
 
         #HeroSubText {
@@ -279,6 +270,7 @@ interface Galleries {
             position: relative;
             font-family: 'InterMedium';
             font-size: 22px;
+            color: white;
         }
 
         #HomeAboutContainer {
@@ -326,6 +318,7 @@ interface Galleries {
             position: relative;
             width: 100%;
             height: 30%;
+            margin-top: 5px;
             justify-content: center;
             align-items: center;
         }
@@ -337,7 +330,9 @@ interface Galleries {
             height: 70px;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            border-radius: 55px;
+            background-color: #2978e6;
+            color: white;
             font-family: 'InterMedium';
             font-size: 17px;
         }
@@ -408,7 +403,9 @@ interface Galleries {
             height: 70px;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            border-radius: 55px;
+            background-color: #2978e6;
+            color: white;
             font-family: 'InterMedium';
             font-size: 17px;
         }
@@ -515,7 +512,9 @@ interface Galleries {
             height: 70px;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            border-radius: 55px;
+            background-color: #2978e6;
+            color: white;
             font-family: 'InterMedium';
             font-size: 17px;
         }
@@ -593,7 +592,9 @@ interface Galleries {
             height: 70px;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            border-radius: 55px;
+            background-color: #2978e6;
+            color: white;
             font-family: 'InterMedium';
             font-size: 17px;
         }
@@ -691,7 +692,9 @@ interface Galleries {
             height: 70px;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            border-radius: 55px;
+            background-color: #2978e6;
+            color: white;
             font-family: 'InterMedium';
             font-size: 17px;
         }
@@ -809,15 +812,21 @@ interface Galleries {
 
         @keyframes buttonAnim {
           from {
-            background-color: gradient(#e0e0e0, #c0c0c0);
+            opacity: 1;
           }
           to {
-            background-color: #e0e0e0;
+            opacity: 0.8;
           }
         }
 
+        @media (max-width: 1050px) {
+          #HeroTextContainer {
+            width: 70%;
+            margin-left: 20%;
+          }
+        }
 
-        @media (max-width: 850px) {
+        @media (max-width: 700px) {
 
           #HomeBodyContainer {
             width: 95%;
@@ -825,36 +834,51 @@ interface Galleries {
 
           #HeroContainer {
             flex-direction: column;
-            height: 75vh;
+            height: 80vh;
             margin-top: 10%;
             margin-bottom: 10%;
           }
 
-          #HeroImageContainer {
-            width: 100%;
+          #HeroVideoContainer {
+            width: 100vw;
+            height: 100vh;
+            top: -20vh;
           }
 
-          #HeroImage {
-            height: 100%;
+          #BackgroundVideo {
+            width: 300%;
+            height: 300%;
           }
 
           #HeroTextContainer {
             width: 100%;
-            height: 60%;
+            height: 30%;
+            margin-top: 90%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          #HeroHeaderContainer {
+            height: 50%;
+          }
+
+          #HeroSubHeaderContainer {
+            height: 50%;
           }
 
           #HeroHeader {
-            font-size: 40px;
+            font-size: 30px;
             text-align: center;
           }
 
           #HeroSubText {
-            font-size: 20px;
+            font-size: 15px;
             text-align: center;
           }
 
           #HomeAboutContainer {
-            height: 60vh;
+            height: 90vh;
+            margin-top: -100px;
           }
 
           #HomeAboutHeader {
@@ -981,7 +1005,7 @@ export class AmharicHomeBody implements OnInit{
 
   ngOnInit() {}
 
-  isMobile: boolean = window.innerWidth <= 850;
+  isMobile: boolean = window.innerWidth <= 700;
 
   navigateTo(route: string): void {
     this.router.navigate([route]);

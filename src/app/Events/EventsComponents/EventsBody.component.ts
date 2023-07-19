@@ -211,7 +211,7 @@ interface Events {
         @keyframes rise-up {
           0% {
             opacity: 0;
-            top: 20px;
+            top: 10px;
           }
           100% {
             opacity: 1;
@@ -271,7 +271,7 @@ interface Events {
           flex-direction: column;
           border-radius: 20px;
           cursor: pointer;
-          animation: rise-up 1.5s ease-in-out;
+          animation: rise-up 2s ease-in-out;
           border: 1px solid black;
         }
         #EventCardSecond {

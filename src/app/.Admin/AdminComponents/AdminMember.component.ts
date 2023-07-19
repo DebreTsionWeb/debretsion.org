@@ -27,28 +27,27 @@ interface AdminMembers {
           <AdminHeader></AdminHeader>
           <div id="AdminMember">
             <div id="AdminMemberContainer">
-
-            <table id='MemberTable'>
-              <thead id='MemberTableColumns'>
-                <tr id='ColumnContainer'>
-                  <th id='FirstColumn'>First Name</th>
-                  <th id='Column'>Last Name</th>
-                  <th id='Column'>Kristina</th>
-                  <th id='Column'>Email</th>
-                  <th id='Column'>Phone</th>
-                </tr>
-              </thead>
-              <tbody id='MemberTableRows'>
-                <tr id='RowsContainer' *ngFor="let member of Members$ | async">
-                  <td id='FirstRow'>{{ member.FirstName }}</td>
-                  <td id='Row'>{{ member.LastName }}</td>
-                  <td id='Row'>{{ member.Kristina }}</td>
-                  <td id='Row'>{{ member.Email }}</td>
-                  <td id='Row'>{{ member.Phone }}</td>
-                </tr>
-              </tbody>
-            </table>
-
+              <h1>All Members</h1>
+              <table id='MemberTable'>
+                <thead id='MemberTableColumns'>
+                  <tr id='ColumnContainer'>
+                    <th id='FirstColumn'>First Name</th>
+                    <th id='Column'>Last Name</th>
+                    <th id='Column'>Kristina</th>
+                    <th id='Column'>Email</th>
+                    <th id='Column'>Phone</th>
+                  </tr>
+                </thead>
+                <tbody id='MemberTableRows'>
+                  <tr id='RowsContainer' *ngFor="let member of Members$ | async">
+                    <td id='FirstRow'>{{ member.FirstName }}</td>
+                    <td id='Row'>{{ member.LastName }}</td>
+                    <td id='Row'>{{ member.Kristina }}</td>
+                    <td id='Row'>{{ member.Email }}</td>
+                    <td id='Row'>{{ member.Phone }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <AdminFooter></AdminFooter>

@@ -13,7 +13,7 @@ import { Auth } from '@angular/fire/auth';
                   <MemberSignup></MemberSignup>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Already a member?</p>
-                    <button id='SwitchButton' (click)="switchToLogin()">Login</button>
+                    <button mat-raised-button id='SwitchButton' (click)="switchToLogin()">Login</button>
                   </div>
                 </ng-container>
 
@@ -21,7 +21,7 @@ import { Auth } from '@angular/fire/auth';
                   <MemberLogin></MemberLogin>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Not a member yet?</p>
-                    <button id='SwitchButton' (click)="switchToSignup()">Sign Up</button>
+                    <button mat-raised-button id='SwitchButton' (click)="switchToSignup()">Sign Up</button>
                   </div>
                 </ng-container>
 
@@ -29,7 +29,7 @@ import { Auth } from '@angular/fire/auth';
                   <div id="LoggedInContainer">
                     <p id='LoggedIn'>Welcome Back {{ firstName }}! <br><br> Email: {{ email }} <br><br> Member Name: {{ firstName }} {{ lastName }} <br><br> Kristina Name: {{ kristina }}</p>
                   </div>
-                  <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+                  <button mat-raised-button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
                 </ng-container>
 
               </div>

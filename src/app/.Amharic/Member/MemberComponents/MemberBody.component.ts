@@ -10,18 +10,18 @@ import { Auth } from '@angular/fire/auth';
               <div id="Auth">
 
                 <ng-container *ngIf="signup === true">
-                  <MemberSignup></MemberSignup>
+                  <AmharicMemberSignup></AmharicMemberSignup>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Already a member?</p>
-                    <button id='SwitchButton' (click)="switchToLogin()">Login</button>
+                    <button mat-raised-button id='SwitchButton' (click)="switchToLogin()">Login</button>
                   </div>
                 </ng-container>
 
                 <ng-container *ngIf="login === true">
-                  <MemberLogin></MemberLogin>
+                  <AmharicMemberLogin></AmharicMemberLogin>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Not a member yet?</p>
-                    <button id='SwitchButton' (click)="switchToSignup()">Sign Up</button>
+                    <button mat-raised-button id='SwitchButton' (click)="switchToSignup()">Sign Up</button>
                   </div>
                 </ng-container>
 
@@ -29,7 +29,7 @@ import { Auth } from '@angular/fire/auth';
                   <div id="LoggedInContainer">
                     <p id='LoggedIn'>Welcome Back {{ firstName }}! <br><br> Email: {{ email }} <br><br> Member Name: {{ firstName }} {{ lastName }} <br><br> Kristina Name: {{ kristina }}</p>
                   </div>
-                  <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+                  <button mat-raised-button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
                 </ng-container>
 
               </div>
@@ -122,7 +122,9 @@ import { Auth } from '@angular/fire/auth';
           height: 50px;
           justify-content: center;
           align-items: center;
-          border-radius: 30% / 100%;
+          border-radius: 55px;
+          background-color: #2978e6;
+          color: white;
           font-size: 16px;
           cursor: pointer;
           font-family: 'InterSemi';
