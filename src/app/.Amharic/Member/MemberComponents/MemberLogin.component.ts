@@ -16,14 +16,14 @@ import { Auth } from '@angular/fire/auth';
               <mat-label>Email</mat-label>
               <input matInput id="Email" [(ngModel)]="emailValue" placeholder="Enter Email" required/>
             </mat-form-field>
-            <button id='Switch' (click)="switchToPhone()">Switch to Phone Number</button>
+            <div id='Switch' (click)="switchToPhone()">Switch to Phone Number</div>
           </ng-container>
           <ng-container id="PhoneContainer" *ngIf="phone === true">
             <mat-form-field appearance="outline" id='PhoneForm'>
               <mat-label>Phone Number</mat-label>
               <input matInput id="Phone" [(ngModel)]="phoneValue" placeholder="Enter Phone Number" required/>
             </mat-form-field>
-            <button id='Switch' (click)="switchToEmail()">Switch to Email</button>
+            <div id='Switch' (click)="switchToEmail()">Switch to Email</div>
           </ng-container>
           <div id="PasswordContainer">
             <mat-form-field appearance="outline" id='PasswordForm'>
@@ -37,7 +37,7 @@ import { Auth } from '@angular/fire/auth';
           <p id="AuthError" #AuthError>Invalid Credentials</p>
         </div>
         <div id="LoginButtonContainer">
-          <button mat-raised-button color="primary" id="LoginButton" (click)="submitLogin()">Login</button>
+          <button mat-raised-button   id="LoginButton" (click)="submitLogin()">Login</button>
         </div>
       </div>
     </div>
@@ -187,7 +187,7 @@ import { Auth } from '@angular/fire/auth';
     `]
 })
 export class AmharicMemberLogin implements OnInit {
-  
+
   @ViewChild('LoginError', { static: false }) LoginErrorRef!: ElementRef;
   @ViewChild('AuthError', { static: false }) AuthErrorRef!: ElementRef;
   private firestore: Firestore = inject(Firestore);

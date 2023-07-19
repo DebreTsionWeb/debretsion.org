@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="CalendlyContainer">
             <div id="CalendlyHeaderContainer">
-              <h1 id="CalendlyHeader">ቀጠሮ ይያዙ</h1>
+              <h1 id="CalendlyHeader">Appointment Calendar</h1>
             </div>
             <div id="CalendarContainer">
               <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>
@@ -62,9 +62,11 @@ import { Component, OnInit } from "@angular/core";
             display: flex;
             width: 40%;
             height: 85%;
+            margin-top: -50px;
+            margin-bottom: 50px;
             flex-direction: column;
             align-items: center;
-            animation: fade-in 1.5s ease-in-out;
+            animation: fade-in 1s ease-in-out;
         }
         #ContactHeaderContainer {
             display: flex;
@@ -87,7 +89,6 @@ import { Component, OnInit } from "@angular/core";
           height: 70%;
           flex-direction: column;
           margin-top: 5%;
-
         }
         #Maps {
           display: flex;
@@ -109,7 +110,7 @@ import { Component, OnInit } from "@angular/core";
           width: 50%;
           height: 600px;
           flex-direction: column;
-          animation: slide-in 4s ease-in-out;
+          animation: slide-in 2s ease-in-out;
         }
         #CalendlyHeaderContainer {
             display: flex;

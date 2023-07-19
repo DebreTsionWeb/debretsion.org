@@ -155,12 +155,13 @@ import { Component, OnInit } from "@angular/core";
                 align-items: center;
                 justify-content: center;
                 width: 100%;
+                margin-top: 20px;
             }
             #AboutBodyTextContainer, #AboutHeaderText{
                 text-align: center;
             }
             #AboutText {
-              height: 150px;
+              height: 300px;
             }
             #AboutImageContainer {
                 justify-content: center;

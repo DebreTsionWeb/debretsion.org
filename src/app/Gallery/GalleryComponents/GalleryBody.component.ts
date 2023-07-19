@@ -73,7 +73,7 @@ interface Galleries {
       @keyframes rise-up {
         0% {
           opacity: 0;
-          top: 20px;
+          top: 10px;
         }
         100% {
           opacity: 1;

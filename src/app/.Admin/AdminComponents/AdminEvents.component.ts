@@ -35,7 +35,7 @@ import { Auth } from '@angular/fire/auth';
                   <p id="SubmitError" #SubmitError>Please Fill Out All Fields</p>
                 </div>
                 <div id="SubmitEventButtonContainer">
-                  <button id='SubmitEventButton' mat-raised-button color="primary" (click)="submitEvent()">Submit Event</button>
+                  <button mat-raised-button id='SubmitEventButton' mat-raised-button   (click)="submitEvent()">Submit Event</button>
                   <p id="Success" #Success>Event Created Successfully</p>
                 </div>
               </div>
@@ -184,7 +184,9 @@ import { Auth } from '@angular/fire/auth';
           height: 75px;
           justify-content: center;
           align-items: center;
-          border-radius: 30px;
+          border-radius: 55px;
+          background-color: #2978e6;
+          color: white;
           border: 1px solid black;
           font-size: 18px;
           font-family: 'InterBold';

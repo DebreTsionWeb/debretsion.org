@@ -53,7 +53,7 @@ import { Firestore, collection, addDoc} from '@angular/fire/firestore';
           <p id="SignupError" #SignupError>Please Fill Out All Fields</p>
         </div>
         <div id="SignupButtonContainer">
-          <button id='SignupButton' mat-raised-button color="primary" (click)="submitSignup()">Sign Up</button>
+          <button mat-raised-button id='SignupButton' mat-raised-button   (click)="submitSignup()">Sign Up</button>
         </div>
       </div>
     </div>

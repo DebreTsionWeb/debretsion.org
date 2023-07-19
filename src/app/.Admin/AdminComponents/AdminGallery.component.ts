@@ -24,7 +24,7 @@ import { Auth } from '@angular/fire/auth';
                     <input id='CreateGalleryTitle' matInput [(ngModel)]="Title" placeholder="Enter Gallery Title" required>
                   </div>
                   <div id="AddGalleryImgURLContainer">
-                    <button id='AddGalleryImgURL' mat-raised-button color="primary" (click)="addGallery()">Add Another Image</button>
+                    <button mat-raised-button id='AddGalleryImgURL' mat-raised-button   (click)="addGallery()">Add Another Image</button>
                   </div>
                   <div id="CreateGalleryImgURLContainer" >
                     <input id='CreateGalleryImgURL' *ngFor="let i of count" matInput [(ngModel)]="Gallery[i]" placeholder="Enter Gallery Img URL" required>
@@ -34,7 +34,7 @@ import { Auth } from '@angular/fire/auth';
                   <p id="SubmitError" #SubmitError>Please Fill Out All Fields</p>
                 </div>
                 <div id="SubmitGalleryButtonContainer">
-                  <button id='SubmitGalleryButton' mat-raised-button color="primary" (click)="submitGallery()">Submit Gallery</button>
+                  <button mat-raised-button id='SubmitGalleryButton' mat-raised-button   (click)="submitGallery()">Submit Gallery</button>
                   <p id="Success" #Success>Gallery Created Successfully</p>
                 </div>
               </div>
@@ -242,7 +242,9 @@ import { Auth } from '@angular/fire/auth';
           height: 75px;
           justify-content: center;
           align-items: center;
-          border-radius: 30px;
+          border-radius: 55px;
+          background-color: #2978e6;
+          color: white;
           border: 1px solid black;
           font-size: 18px;
           font-family: 'InterBold';

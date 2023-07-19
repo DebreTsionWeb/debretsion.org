@@ -32,7 +32,7 @@ import { Auth } from '@angular/fire/auth';
                 <p id="AuthError" #AuthError>Invalid Credentials</p>
               </div>
               <div id="LoginButtonContainer">
-                <button mat-raised-button color="primary" id="LoginButton" (click)="submitLogin()">Login</button>
+                <button mat-raised-button id="LoginButton" (click)="submitLogin()">Login</button>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ import { Auth } from '@angular/fire/auth';
             <AdminHeader></AdminHeader>
               <div id="LogoutButtonContainer">
                 <p id='LogoutText'>Hello Mr.Admin!</p>
-                <button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
+                <button mat-raised-button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
               </div>
             <AdminFooter></AdminFooter>
           </div>
@@ -179,7 +179,9 @@ import { Auth } from '@angular/fire/auth';
           position: relative;
           width: 40%;
           height: 55px;
-          border-radius: 35px;
+          border-radius: 55px;
+          background-color: #2978e6;
+          color: white;
           justify-content: center;
           align-items: center;
           font-size: 20px;
@@ -206,7 +208,9 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           border: 1px solid black;
-          border-radius: 35px;
+          border-radius: 55px;
+          background-color: #2978e6;
+          color: white;
           cursor: pointer;
         }
         #LogoutButton:hover {
