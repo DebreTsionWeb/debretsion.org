@@ -89,7 +89,6 @@ import { Auth } from '@angular/fire/auth';
           position: relative;
           width: 100%;
           height: 100%;
-          margin-top: 15%;
           justify-content: center;
           align-items: center;
           animation: slide-in 1s ease-in-out;
@@ -213,13 +212,16 @@ import { Auth } from '@angular/fire/auth';
         @media (max-width: 850px) {
           #MemberBody {
             flex-direction: column;
-            height: 120vh;
+            height: 135vh;
           }
           #MemberBodyContainer {
             width: 90%;
             height: 100%;
             margin-top: 10%;
             text-align: center;
+          }
+          #AuthContainer {
+            margin-top: 15%;
           }
           #DonateBodyContainer{
             position: relative;

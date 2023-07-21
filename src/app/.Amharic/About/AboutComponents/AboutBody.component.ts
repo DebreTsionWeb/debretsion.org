@@ -148,7 +148,8 @@ import { Component, OnInit } from "@angular/core";
             width: 100%;
         }
         @media (max-width: 700px) {
-            #AboutBody{
+            #AboutBody {
+                height: 115vh;
                 flex-direction: column;
             }
             #AboutBodyContainer, #AboutBodyHeaderContainer{
