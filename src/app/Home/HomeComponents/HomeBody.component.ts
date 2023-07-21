@@ -23,9 +23,10 @@ interface Galleries {
 
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
-                <video id='BackgroundVideo' muted autoplay>
+                <video id='BackgroundVideo' muted autoplay loop preload>
                   <source src="https://rr1---sn-4g5lznl7.googlevideo.com/videoplayback?expire=1689808284&ei=PBm4ZO3gDvHysALiur2ICA&ip=197.205.245.105&id=o-ALKF0sMmjPeQ4LQG1Yj20Gu-jkZ7H0GHNfJZgr9CrLmw&itag=137&aitags=134%2C136%2C137%2C160%2C243&source=youtube&requiressl=yes&spc=Ul2Sq5wG3EXob_pPinL0SQCfGqxLk8ZDHsrkXoE15w&vprv=1&svpuc=1&mime=video%2Fmp4&ns=VYdkOWEs0PDBzP2hBo129GgO&gir=yes&clen=167578558&dur=448.233&lmt=1688089853196743&keepalive=yes&fexp=24007246,24350018,51000023&beids=24350018&c=WEB&txp=6219224&n=WrYCtEsd3MQtFg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAIx1jSfQE8M-1sofl_-sYEGGx9t92XyaM9-73crjx1AWAiA82WI_pvPuBCs_S5aP1xt1xyMcS2IFI_ey84oXYhYAZQ%3D%3D&rm=sn-5abxgpxuxaxjvh-vbme7s&req_id=e46e24dfaa91a3ee&redirect_counter=2&cm2rm=sn-hgns77z&cms_redirect=yes&cmsv=e&mh=OB&mip=71.191.242.196&mm=34&mn=sn-4g5lznl7&ms=ltu&mt=1689786160&mv=D&mvi=1&pl=0&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgP_jcY72HYolEDAU_sxR5R_FTiaCW5u46GO2j66PlJnsCIQC_iIM0pM0iDLU7ITcM5195TRsdbGG21jhyHEgXBXp0Hw%3D%3D">
                 </video>
+
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
                     <p id="HeroHeader">Debre Tsion Kidist Mariam we Kidus Gebriel E.O.T.C</p>
@@ -296,7 +297,6 @@ interface Galleries {
             display: flex;
             position: relative;
             width: 85%;
-
         }
 
         #HomeAboutSubText {
@@ -304,7 +304,6 @@ interface Galleries {
             position: relative;
             font-family: 'InterMedium';
             font-size: 22px;
-
         }
 
         #HomeAboutButtonContainer {
@@ -386,6 +385,8 @@ interface Galleries {
             position: relative;
             width: 80%;
             height: 35%;
+            margin-top: 15px;
+            margin-bottom: 15px;
             justify-content: flex-start;
             align-items: center;
         }
@@ -872,7 +873,8 @@ interface Galleries {
 
           #HomeAboutContainer {
             height: 90vh;
-            margin-top: -100px;
+            margin-top: -30px;
+            margin-bottom: 30px;
           }
 
           #HomeAboutHeader {

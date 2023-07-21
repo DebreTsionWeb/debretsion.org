@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="ContactBody">
           <div id="ContactBodyContainer">
             <div id="ContactHeaderContainer">
-              <h1 id="ContactHeader">Contact Us</h1>
+              <p id="ContactHeader">Contact Us</p>
             </div>
             <div id="InfoContainer">
               <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="CalendlyContainer">
             <div id="CalendlyHeaderContainer">
-              <h1 id="CalendlyHeader">Appointment Calendar</h1>
+              <p id="CalendlyHeader">Appointment Calendar</p>
             </div>
             <div id="CalendarContainer">
               <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>
@@ -63,7 +63,7 @@ import { Component, OnInit } from "@angular/core";
             width: 40%;
             height: 85%;
             margin-top: -50px;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
             flex-direction: column;
             align-items: center;
             animation: fade-in 1s ease-in-out;
@@ -74,6 +74,7 @@ import { Component, OnInit } from "@angular/core";
         }
         #ContactHeader {
           font-size: 40px;
+          font-family: 'InterBold';
         }
         #InfoContainer {
           display: flex;
@@ -120,6 +121,7 @@ import { Component, OnInit } from "@angular/core";
         }
         #CalendlyHeader {
           font-size: 40px;
+          font-family: 'InterBold';
         }
         #CalendarContainer {
           display: flex;

@@ -53,7 +53,7 @@ import { Auth } from '@angular/fire/auth';
             display: flex;
             position: relative;
             width: 100%;
-            height: 95vh;
+            height: 115vh;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;

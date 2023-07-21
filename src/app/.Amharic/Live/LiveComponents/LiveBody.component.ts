@@ -7,7 +7,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
     <div id='Live'>
       <div id='LiveContainer'>
         <div id='LiveHeaderContainer'>
-          <h1 id='LiveHeader'>ቀጥታ ሥርጭት</h1>
+          <p id='LiveHeader'>ቀጥታ ሥርጭት</p>
         </div>
         <div id='LivePlayerContainer'>
           <p id='LiveSubText'>View our latest live stream</p>

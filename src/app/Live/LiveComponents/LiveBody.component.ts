@@ -7,7 +7,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
     <div id='Live'>
       <div id='LiveContainer'>
         <div id='LiveHeaderContainer'>
-          <h1 id='LiveHeader'>Live</h1>
+          <p id='LiveHeader'>Live</p>
         </div>
         <div id='LivePlayerContainer'>
           <p id='LiveSubText'>View our latest live stream</p>
@@ -73,6 +73,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
     }
     #LiveHeader {
       font-size: 40px;
+      font-family: 'InterBold';
     }
     #LivePlayerContainer {
       display: flex;

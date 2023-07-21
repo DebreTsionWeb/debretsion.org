@@ -11,7 +11,7 @@ import { Auth } from '@angular/fire/auth';
           <div id="AdminLogin">
             <div id="AdminLoginContainer">
               <div id="AdminLoginHeaderContainer">
-                <h1 id="AdminLoginHeader">Admin Login</h1>
+                <p id="AdminLoginHeader">Admin Login</p>
               </div>
               <div id="LoginInputContainer">
                 <ng-container id="NameContainer" >

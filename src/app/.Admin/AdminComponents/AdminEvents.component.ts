@@ -18,7 +18,7 @@ import { Auth } from '@angular/fire/auth';
             <div id="AdminEventsContainer">
               <div id="CreateEventContainer">
                 <div id="AdminEventsHeaderContainer">
-                  <h1 id="AdminEventsHeader">Admin Events</h1>
+                  <p id="AdminEventsHeader">Admin Events</p>
                 </div>
                 <div id="CreateEventForm">
                   <div id="CreateEventTitleContainer">
