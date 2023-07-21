@@ -103,10 +103,10 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           width: 100%;
-          height: 30px;
+          height: 20px;
           font-size: 15px;
           padding-left: 15px;
-          padding-top: 25px;
+          margin-top: 35px;
         }
         #Switch {
           display: flex;

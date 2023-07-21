@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
     <div id="Navbar">
       <div id="NavbarContainer">
         <div id="NavbarImageContainer">
-          <img id="NavbarImage" src="assets/logo.png" alt="LogoPicture" />
+          <img id="NavbarImage" src="assets/logo.png" alt="LogoPicture" (click)="navigateTo('/')"/>
           <button mat-raised-button id='LanguageSwitch' (click)="navigateTo('/en')">English</button>
         </div>
         <div id="NavbarTextContainer" [ngClass]="{ 'show': isNavbarOpen }">
@@ -75,6 +75,7 @@ import { Router } from "@angular/router";
         width: 100%;
         height: 100%;
         margin-top: 5px;
+        cursor: pointer;
       }
 
       #LanguageSwitch {
