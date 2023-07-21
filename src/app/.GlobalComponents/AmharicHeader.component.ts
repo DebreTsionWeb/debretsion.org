@@ -27,7 +27,7 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/')">መግቢያ</a>
             <a (click)="navigateTo('/About')">ስለ እኛ</a>
             <a (click)="navigateTo('/Events')">ክስተቶች</a>
-            <a (click)="navigateTo('/Live')">ቀጥታ ሥርጭት</a>
+            <a id='Live' (click)="navigateTo('/Live')">ቀጥታ ሥርጭት</a>
             <a (click)="navigateTo('/Gallery')">ፎቶግራፎች</a>
             <a (click)="navigateTo('/Member')">አባልነት</a>
             <a (click)="navigateTo('/Contact')">አግኙን</a>
@@ -192,6 +192,10 @@ import { Router } from "@angular/router";
           padding: 8px 5px;
           margin: 5px;
           border-radius: 10px;
+        }
+
+        #Live {
+          font-size: 16px !important;
         }
 
         #NavbarListContainer.show a:hover {

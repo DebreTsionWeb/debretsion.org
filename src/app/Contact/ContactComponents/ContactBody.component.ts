@@ -62,8 +62,6 @@ import { Component, OnInit } from "@angular/core";
             display: flex;
             width: 40%;
             height: 85%;
-            margin-top: -50px;
-            margin-bottom: 70px;
             flex-direction: column;
             align-items: center;
             animation: fade-in 1s ease-in-out;
@@ -166,7 +164,9 @@ import { Component, OnInit } from "@angular/core";
             justify-content: center;
           }
           #ContactBodyContainer {
-            margin-bottom: 10%;
+
+            margin-top: -50px;
+            margin-bottom: 70px;
           }
           #CalendlyContainer {
             width: 90%;
