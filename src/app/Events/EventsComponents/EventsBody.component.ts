@@ -15,7 +15,7 @@ interface Events {
       <div id="EventsBody">
         <div id="EventsBodyContainer">
           <div id="EventsBodyHeaderContainer">
-            <h1 id="EventsBodyHeader">Events</h1>
+            <p id="EventsBodyHeader">Events</p>
           </div>
           <div id="EventCardContainer">
             <div id="EventCardBodyContainer">
@@ -231,8 +231,7 @@ interface Events {
           flex-direction: column;
         }
         #EventsBodyHeader {
-          display: flex;
-          position: relative;
+          font-family: 'InterBold';
           flex-direction: column;
           margin-top: 5%;
           font-size: 40px;

@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="ContactBody">
           <div id="ContactBodyContainer">
             <div id="ContactHeaderContainer">
-              <h1 id="ContactHeader">አግኙን</h1>
+              <p id="ContactHeader">አግኙን</p>
             </div>
             <div id="InfoContainer">
               <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
           </div>
           <div id="CalendlyContainer">
             <div id="CalendlyHeaderContainer">
-              <h1 id="CalendlyHeader">ቀጠሮ ይያዙ</h1>
+              <p id="CalendlyHeader">ቀጠሮ ይያዙ</p>
             </div>
             <div id="CalendarContainer">
               <div id="Calendar"><div class="calendly-inline-widget" data-url="https://calendly.com/dtkmg?hide_gdpr_banner=1"></div>
@@ -87,7 +87,6 @@ import { Component, OnInit } from "@angular/core";
           height: 70%;
           flex-direction: column;
           margin-top: 5%;
-
         }
         #Maps {
           display: flex;
@@ -163,7 +162,8 @@ import { Component, OnInit } from "@angular/core";
             justify-content: center;
           }
           #ContactBodyContainer {
-            margin-bottom: 6%;
+            margin-top: -50px;
+            margin-bottom: 70px;
           }
           #CalendlyContainer {
             width: 90%;

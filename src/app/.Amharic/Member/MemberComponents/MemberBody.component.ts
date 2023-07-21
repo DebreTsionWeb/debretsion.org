@@ -53,7 +53,7 @@ import { Auth } from '@angular/fire/auth';
             display: flex;
             position: relative;
             width: 100%;
-            height: 95vh;
+            height: 105vh;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -91,7 +91,7 @@ import { Auth } from '@angular/fire/auth';
           height: 100%;
           justify-content: center;
           align-items: center;
-          /* animation: slide-in 0.1s ease-in-out; */
+          animation: slide-in 1s ease-in-out;
         }
         #Auth {
           display: flex;
@@ -212,13 +212,16 @@ import { Auth } from '@angular/fire/auth';
         @media (max-width: 850px) {
           #MemberBody {
             flex-direction: column;
-            height: 120vh;
+            height: 135vh;
           }
           #MemberBodyContainer {
             width: 90%;
             height: 100%;
             margin-top: 10%;
             text-align: center;
+          }
+          #AuthContainer {
+            margin-top: 15%;
           }
           #DonateBodyContainer{
             position: relative;

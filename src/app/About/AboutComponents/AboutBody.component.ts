@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody"  >
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                  <h1 id='AboutHeaderText'>About Us</h1>
+                  <p id='AboutHeaderText'>About Us</p>
                 </div>
                 <div id="AboutBodyTextContainer">
                     <p id='AboutText'>
@@ -52,7 +52,7 @@ import { Component, OnInit } from "@angular/core";
           display: flex;
           position: relative;
           width: 100%;
-          height: 90vh;
+          height: 105vh;
           flex-direction: row;
           justify-content: center;
           animation: fade-in 1.5s ease-in-out;
@@ -94,8 +94,8 @@ import { Component, OnInit } from "@angular/core";
             align-items: flex-start;
         }
         #AboutHeaderText {
-            display: flex;
-            position: relative;
+          font-family: 'InterBold';
+          font-size: 40px;
         }
         #AboutBodyTextContainer {
             display: flex;
@@ -138,7 +138,8 @@ import { Component, OnInit } from "@angular/core";
             width: 100%;
         }
         @media (max-width: 700px) {
-            #AboutBody{
+            #AboutBody {
+                height: 115vh;
                 flex-direction: column;
             }
             #AboutBodyContainer, #AboutBodyHeaderContainer{

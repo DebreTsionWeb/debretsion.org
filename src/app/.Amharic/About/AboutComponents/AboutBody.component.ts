@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
         <div id="AboutBody">
             <div id="AboutBodyContainer">
                 <div id="AboutBodyHeaderContainer">
-                    <h1 id='AboutHeaderText'>የቤተ ክርስቲያኒቱ የእድገት ጉዞ</h1>
+                    <p id='AboutHeaderText'>የቤተ ክርስቲያኒቱ የእድገት ጉዞ</p>
                 <div id="AboutBodyTextContainer">
                     <p id='AboutText'>ቤተ ክርስቲያናችን ለመጀመሪያ ጊዜ የእመቤታችን ቅዳሴ ቤቷ በሚከበርበት ዓመታዊ በዓል እንደ
 ኢትዮጵያውያን አቆጣጠር ዕለተ ቅዳሜ ሰኔ 21 ቀን 2006 ዓ.ም (ጁን 28/2014) በደማቅ ሥርዓተ
@@ -62,7 +62,7 @@ import { Component, OnInit } from "@angular/core";
           display: flex;
           position: relative;
           width: 100%;
-          height: 90vh;
+          height: 105vh;
           flex-direction: row;
           justify-content: center;
           animation: fade-in 1.5s ease-in-out;
@@ -104,8 +104,8 @@ import { Component, OnInit } from "@angular/core";
             align-items: flex-start;
         }
         #AboutHeaderText {
-            display: flex;
-            position: relative;
+            font-family: 'InterBold';
+            font-size: 40px;
         }
         #AboutBodyTextContainer {
             display: flex;
@@ -148,7 +148,8 @@ import { Component, OnInit } from "@angular/core";
             width: 100%;
         }
         @media (max-width: 700px) {
-            #AboutBody{
+            #AboutBody {
+                height: 115vh;
                 flex-direction: column;
             }
             #AboutBodyContainer, #AboutBodyHeaderContainer{

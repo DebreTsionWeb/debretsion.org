@@ -27,7 +27,7 @@ interface AdminMembers {
           <AdminHeader></AdminHeader>
           <div id="AdminMember">
             <div id="AdminMemberContainer">
-              <h1>All Members</h1>
+              <p>All Members</p>
               <table id='MemberTable'>
                 <thead id='MemberTableColumns'>
                   <tr id='ColumnContainer'>

@@ -8,7 +8,7 @@ import { Auth } from '@angular/fire/auth';
     <div id="MemberLogin">
       <div id="MemberLoginContainer">
         <div id="MemberLoginHeaderContainer">
-          <h1 id="MemberLoginHeader">አባልነት Login</h1>
+          <p id="MemberLoginHeader">አባልነት Login</p>
         </div>
         <div id="LoginInputContainer">
           <ng-container id="EmailContainer" *ngIf="email === true">
@@ -73,8 +73,7 @@ import { Auth } from '@angular/fire/auth';
           text-align: center;
         }
         #MemberLoginHeader {
-          display: flex;
-          position: relative;
+          font-family: 'InterBold';
           font-size: 40px;
         }
         #LoginInputContainer {
@@ -104,10 +103,10 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           width: 100%;
-          height: 30px;
+          height: 20px;
           font-size: 15px;
           padding-left: 15px;
-          padding-top: 25px;
+          margin-top: 35px;
         }
         #Switch {
           display: flex;

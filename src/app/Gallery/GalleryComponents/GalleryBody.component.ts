@@ -13,7 +13,7 @@ interface Galleries {
     <div id="GalleryBody">
       <div id="GalleryBodyContainer">
         <div id="GalleryHeaderContainer">
-          <h1 id="GalleryHeader">Gallery</h1>
+          <p id="GalleryHeader">Gallery</p>
         </div>
         <div id="CollectionContainer">
           <div id="Collection" *ngFor="let gallery of Gallery$ | async">
@@ -93,8 +93,7 @@ interface Galleries {
         flex-direction: column;
       }
       #GalleryHeader {
-        display: flex;
-        position: relative;
+        font-family: 'InterBold';
         flex-direction: column;
         margin-top: 5%;
         font-size: 40px;

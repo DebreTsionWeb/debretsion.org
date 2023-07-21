@@ -7,7 +7,7 @@ import { Firestore, collection, addDoc} from '@angular/fire/firestore';
         <div id="MemberSignup">
       <div id="MemberSignupContainer">
         <div id="MemberSignupHeaderContainer">
-          <h1 id="MemberSignupHeader">አባልነት Signup</h1>
+          <p id="MemberSignupHeader">አባልነት Signup</p>
         </div>
         <div id="SignupInputContainer">
           <div id="NameContainer">
@@ -89,8 +89,7 @@ import { Firestore, collection, addDoc} from '@angular/fire/firestore';
             text-align: center;
         }
         #MemberSignupHeader {
-          display: flex;
-          position: relative;
+          font-family: 'InterBold';
           font-size: 40px;
         }
         #SignupInputContainer {
