@@ -73,8 +73,7 @@ import { Auth } from '@angular/fire/auth';
           text-align: center;
         }
         #MemberLoginHeader {
-          display: flex;
-          position: relative;
+          font-family: 'InterBold';
           font-size: 40px;
         }
         #LoginInputContainer {

@@ -125,14 +125,18 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
     @media (max-width: 720px) {
       #Live {
-        height: 90vh;
+        height: 95vh;
       }
       #playerContainer {
         width: 100%;
         height: 40%;
       }
+      #LiveHeaderContainer {
+        margin-top: 5%;
+        justify-content: center;
+        align-items: center;
+      }
     }
-
   `]
 })
 

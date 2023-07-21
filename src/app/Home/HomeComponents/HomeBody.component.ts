@@ -385,8 +385,8 @@ interface Galleries {
             position: relative;
             width: 80%;
             height: 35%;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-top: 35px;
+            margin-bottom: 35px;
             justify-content: flex-start;
             align-items: center;
         }

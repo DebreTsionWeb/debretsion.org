@@ -89,8 +89,7 @@ import { Firestore, collection, addDoc} from '@angular/fire/firestore';
             text-align: center;
         }
         #MemberSignupHeader {
-          display: flex;
-          position: relative;
+          font-family: 'InterBold';
           font-size: 40px;
         }
         #SignupInputContainer {

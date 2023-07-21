@@ -104,8 +104,8 @@ import { Component, OnInit } from "@angular/core";
             align-items: flex-start;
         }
         #AboutHeaderText {
-            display: flex;
-            position: relative;
+            font-family: 'InterBold';
+            font-size: 40px;
         }
         #AboutBodyTextContainer {
             display: flex;

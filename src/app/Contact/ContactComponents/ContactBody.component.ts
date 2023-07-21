@@ -166,7 +166,7 @@ import { Component, OnInit } from "@angular/core";
             justify-content: center;
           }
           #ContactBodyContainer {
-            margin-bottom: 6%;
+            margin-bottom: 10%;
           }
           #CalendlyContainer {
             width: 90%;
