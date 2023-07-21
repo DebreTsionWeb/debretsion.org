@@ -53,7 +53,7 @@ import { Auth } from '@angular/fire/auth';
             display: flex;
             position: relative;
             width: 100%;
-            height: 95vh;
+            height: 115vh;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -91,7 +91,7 @@ import { Auth } from '@angular/fire/auth';
           height: 100%;
           justify-content: center;
           align-items: center;
-          /* animation: slide-in 0.1s ease-in-out; */
+          animation: slide-in 1s ease-in-out;
         }
         #Auth {
           display: flex;

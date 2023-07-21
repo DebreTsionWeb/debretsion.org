@@ -62,7 +62,7 @@ import { Component, OnInit } from "@angular/core";
           display: flex;
           position: relative;
           width: 100%;
-          height: 90vh;
+          height: 105vh;
           flex-direction: row;
           justify-content: center;
           animation: fade-in 1.5s ease-in-out;

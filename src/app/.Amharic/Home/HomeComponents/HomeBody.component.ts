@@ -392,6 +392,8 @@ interface Galleries {
             position: relative;
             width: 80%;
             height: 35%;
+            margin-top: 15px;
+            margin-bottom: 15px;
             justify-content: flex-start;
             align-items: center;
         }
@@ -878,7 +880,8 @@ interface Galleries {
 
           #HomeAboutContainer {
             height: 90vh;
-            margin-top: -100px;
+            margin-top: -30px;
+            margin-bottom: 30px;
           }
 
           #HomeAboutHeader {

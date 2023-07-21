@@ -91,7 +91,7 @@ import { Auth } from '@angular/fire/auth';
           height: 100%;
           justify-content: center;
           align-items: center;
-          /* animation: slide-in 0.1s ease-in-out; */
+          animation: slide-in 1s ease-in-out;
         }
         #Auth {
           display: flex;

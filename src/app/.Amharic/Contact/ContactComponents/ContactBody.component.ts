@@ -62,6 +62,8 @@ import { Component, OnInit } from "@angular/core";
             display: flex;
             width: 40%;
             height: 85%;
+            margin-top: -50px;
+            margin-bottom: 70px;
             flex-direction: column;
             align-items: center;
             animation: fade-in 1.5s ease-in-out;
@@ -87,7 +89,6 @@ import { Component, OnInit } from "@angular/core";
           height: 70%;
           flex-direction: column;
           margin-top: 5%;
-
         }
         #Maps {
           display: flex;
