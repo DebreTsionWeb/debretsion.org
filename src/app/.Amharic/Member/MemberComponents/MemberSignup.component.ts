@@ -250,13 +250,31 @@ export class AmharicMemberSignup implements OnInit {
     } else {
       console.log('Signup submitted:', this.firstValue, this.lastValue, this.kristinaValue, this.phoneValue, this.emailValue, this.passwordValue);
       addDoc(collection(this.firestore, 'Members'), {
-        firstValue: this.firstValue,
-        lastValue: this.lastValue,
-        kristinaValue: this.kristinaValue,
-        phoneValue: this.phoneValue,
-        emailValue: this.emailValue,
-        passwordValue: this.passwordValue,
+        FirstName: this.firstValue,
+        LastName: this.lastValue,
+        KristinaName: this.kristinaValue,
+        Phone: this.phoneValue,
+        Email: this.emailValue,
+        Password: this.passwordValue,
         Date: new Date()
+      }).then(() => {
+        const member = {
+          FirstName: this.firstValue,
+          LastName: this.lastValue,
+          KristinaName: this.kristinaValue,
+          Phone: this.phoneValue,
+          Email: this.emailValue,
+        }
+
+        localStorage.setItem('user', JSON.stringify(member));
+        localStorage.setItem('loggedIn', 'true');
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+
+      }).catch((error) => {
+        console.error('Error adding document: ', error);
       });
     }
   }

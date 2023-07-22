@@ -23,8 +23,8 @@ interface Galleries {
 
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
-                <video id='BackgroundVideo' muted autoplay loop preload>
-                  <source src="https://rr1---sn-4g5lznl7.googlevideo.com/videoplayback?expire=1689808284&ei=PBm4ZO3gDvHysALiur2ICA&ip=197.205.245.105&id=o-ALKF0sMmjPeQ4LQG1Yj20Gu-jkZ7H0GHNfJZgr9CrLmw&itag=137&aitags=134%2C136%2C137%2C160%2C243&source=youtube&requiressl=yes&spc=Ul2Sq5wG3EXob_pPinL0SQCfGqxLk8ZDHsrkXoE15w&vprv=1&svpuc=1&mime=video%2Fmp4&ns=VYdkOWEs0PDBzP2hBo129GgO&gir=yes&clen=167578558&dur=448.233&lmt=1688089853196743&keepalive=yes&fexp=24007246,24350018,51000023&beids=24350018&c=WEB&txp=6219224&n=WrYCtEsd3MQtFg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAIx1jSfQE8M-1sofl_-sYEGGx9t92XyaM9-73crjx1AWAiA82WI_pvPuBCs_S5aP1xt1xyMcS2IFI_ey84oXYhYAZQ%3D%3D&rm=sn-5abxgpxuxaxjvh-vbme7s&req_id=e46e24dfaa91a3ee&redirect_counter=2&cm2rm=sn-hgns77z&cms_redirect=yes&cmsv=e&mh=OB&mip=71.191.242.196&mm=34&mn=sn-4g5lznl7&ms=ltu&mt=1689786160&mv=D&mvi=1&pl=0&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgP_jcY72HYolEDAU_sxR5R_FTiaCW5u46GO2j66PlJnsCIQC_iIM0pM0iDLU7ITcM5195TRsdbGG21jhyHEgXBXp0Hw%3D%3D">
+                <video id='BackgroundVideo' muted autoplay loop preload playsinline webkit-playsinline poster="https://i.ytimg.com/an_webp/QmpQOLcT9js/mqdefault_6s.webp?du=3000&sqp=CILl56UG&rs=AOn4CLALEDnklRdpFB8jEM4Z1tFYAl1B8g">
+                  <source src="">
                 </video>
 
                 <div id="HeroTextContainer">
@@ -150,7 +150,7 @@ interface Galleries {
               <div id="HomeDonateIconContainer">
                 <div id="HomeDonateIcon">
                   <a href=""><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                  <a href=""><img id='Square' src="assets/square.jpg" alt=""></a>
+                  <a href="https://square.link/u/rf53D66B"><img id='Square' src="assets/square.jpg" alt=""></a>
                 </div>
               </div>
             </div>
@@ -200,6 +200,7 @@ interface Galleries {
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            object-fit: contain;
         }
 
         #BackgroundVideo {
@@ -208,15 +209,6 @@ interface Galleries {
             width: 200%;
             height: 200%;
             filter: brightness(50%);
-        }
-
-        #Blur {
-            display: flex;
-            position: absolute;
-            bottom: -50px;
-            width: 99.5vw;
-            height: 5%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
         }
 
         #HeroTextContainer {
@@ -653,7 +645,7 @@ interface Galleries {
         }
 
         #CollectionImagesContainer::-webkit-scrollbar{
-          height: 0.5em;
+          height: 0.5em !important;
           background-color: white;
         }
 

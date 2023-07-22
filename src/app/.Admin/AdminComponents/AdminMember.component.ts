@@ -7,7 +7,7 @@ import { orderBy } from "firebase/firestore";
 interface AdminMembers {
   FirstName: string;
   LastName: string;
-  Kristina: string;
+  KristinaName: string;
   Email: string;
   Phone: string;
   Date: string;
@@ -27,7 +27,7 @@ interface AdminMembers {
           <AdminHeader></AdminHeader>
           <div id="AdminMember">
             <div id="AdminMemberContainer">
-              <p>All Members</p>
+              <p id='TableHeader'>All Members</p>
               <table id='MemberTable'>
                 <thead id='MemberTableColumns'>
                   <tr id='ColumnContainer'>
@@ -42,7 +42,7 @@ interface AdminMembers {
                   <tr id='RowsContainer' *ngFor="let member of Members$ | async">
                     <td id='FirstRow'>{{ member.FirstName }}</td>
                     <td id='Row'>{{ member.LastName }}</td>
-                    <td id='Row'>{{ member.Kristina }}</td>
+                    <td id='Row'>{{ member.KristinaName }}</td>
                     <td id='Row'>{{ member.Email }}</td>
                     <td id='Row'>{{ member.Phone }}</td>
                   </tr>
@@ -95,6 +95,10 @@ interface AdminMembers {
     #AdminMemberContainer::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.3);
       border-radius: 1% / 90%;
+    }
+    #TableHeader {
+      font-size: 40px;
+      font-family: 'InterBold';
     }
     #MemberTable {
 

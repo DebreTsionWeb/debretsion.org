@@ -104,6 +104,7 @@ import { Auth } from '@angular/fire/auth';
           display: flex;
           position: relative;
           font-size: 40px;
+          font-family: 'InterBold';
         }
         #LoginInputContainer {
           display: flex;
