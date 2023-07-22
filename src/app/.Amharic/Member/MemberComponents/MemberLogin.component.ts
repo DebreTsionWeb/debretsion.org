@@ -220,7 +220,20 @@ export class AmharicMemberLogin implements OnInit {
     } else {
       try {
         const membersCollection = collection(this.firestore, 'Members');
-        const querySnapshot = await getDocs(query(membersCollection, where('Email', '==', this.emailValue), where('Password', '==', this.passwordValue)));
+
+        let queryFilters = [
+          where('Password', '==', this.passwordValue)
+        ];
+
+        if (this.emailValue) {
+          queryFilters.push(where('Email', '==', this.emailValue));
+        }
+
+        if (this.phoneValue) {
+          queryFilters.push(where('Phone', '==', this.phoneValue));
+        }
+
+        const querySnapshot = await getDocs(query(membersCollection, ...queryFilters));
 
         if (querySnapshot.empty) {
           this.AuthErrorRef.nativeElement.style.display = 'flex';
@@ -231,6 +244,7 @@ export class AmharicMemberLogin implements OnInit {
           querySnapshot.forEach((doc) => {
             const member = doc.data();
             delete member['Password'];
+            delete member['Date'];
             if (member) {
               localStorage.setItem('user', JSON.stringify(member));
               localStorage.setItem('loggedIn', 'true');

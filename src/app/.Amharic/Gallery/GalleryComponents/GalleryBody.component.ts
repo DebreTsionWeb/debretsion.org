@@ -131,7 +131,7 @@ interface Galleries {
         overflow-x: scroll;
       }
       #CollectionImagesContainer::-webkit-scrollbar {
-        height: 0.5em;
+        height: 0.5em !important;
         background-color: white;
       }
       #CollectionImagesContainer::-webkit-scrollbar-thumb {

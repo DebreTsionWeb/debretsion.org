@@ -42,7 +42,7 @@ import { Auth } from '@angular/fire/auth';
             <div id="DonateIconContainer">
               <div id="DonateIcon">
                 <a href=""><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                <a href=""><img id='Square' src="assets/square.jpg" alt=""></a>
+                <a href="https://square.link/u/rf53D66B"><img id='Square' src="assets/square.jpg" alt=""></a>
               </div>
             </div>
           </div>
@@ -280,7 +280,7 @@ export class AmharicMemberBody implements OnInit {
       this.firstName = JSON.parse(localStorage.getItem("user")!)['FirstName'];
       this.lastName = JSON.parse(localStorage.getItem("user")!)['LastName'];
       this.email = JSON.parse(localStorage.getItem("user")!)['Email'];
-      this.kristina = JSON.parse(localStorage.getItem("user")!)['Kristina'];
+      this.kristina = JSON.parse(localStorage.getItem("user")!)['KristinaName'];
 
     } else {
       this.loggedIn = false;
