@@ -23,8 +23,8 @@ interface Galleries {
 
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
-                <video id='BackgroundVideo' muted autoplay loop preload playsinline webkit-playsinline poster="https://i.ytimg.com/an_webp/QmpQOLcT9js/mqdefault_6s.webp?du=3000&sqp=CILl56UG&rs=AOn4CLALEDnklRdpFB8jEM4Z1tFYAl1B8g">
-                  <source src="">
+                <video id='BackgroundVideo' muted autoplay loop preload playsinline webkit-playsinline poster="https://firebasestorage.googleapis.com/v0/b/debretsionweb.appspot.com/o/debretsionherothumbnail.png?alt=media&token=4d5eedfd-03dd-4ab5-a96f-863df80f944b">
+                  <source src="https://firebasestorage.googleapis.com/v0/b/debretsionweb.appspot.com/o/debretsionherovideo.mp4?alt=media&token=0dbba2ff-9ec4-4253-b9f6-ccca84da7169">
                 </video>
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
@@ -154,8 +154,8 @@ interface Galleries {
               </div>
               <div id="HomeDonateIconContainer">
                 <div id="HomeDonateIcon">
-                  <a href=""><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                  <a href="https://square.link/u/rf53D66B"><img id='Square' src="assets/square.jpg" alt=""></a>
+                  <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
+                  <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
                 </div>
               </div>
             </div>
@@ -759,10 +759,34 @@ interface Galleries {
           margin-left: 15px;
         }
 
+        #ZelleContainer {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          font-family: 'InterSemi';
+          text-decoration: underline;
+          text-decoration-color: transparent;
+        }
+
+        #ZelleText {
+          display: none;
+          position: absolute;
+          top: -40px;
+          font-size: 12px;
+          margin-left: -15px;
+        }
+
         #Zelle:hover, #Square:hover {
           transform: scale(1.1);
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
+        }
+
+        #ZelleContainer:hover #ZelleText {
+          display: flex;
         }
 
         button{
@@ -880,7 +904,7 @@ interface Galleries {
 
           #HomeAboutContainer {
             height: 90vh;
-            margin-top: -30px;
+            margin-top: -10px;
             margin-bottom: 50px;
           }
 
@@ -986,6 +1010,9 @@ interface Galleries {
             width: 70%;
           }
 
+          #ZelleText {
+            display: flex;
+          }
         }
 
     `]

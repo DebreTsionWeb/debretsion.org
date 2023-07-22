@@ -41,8 +41,8 @@ import { Auth } from '@angular/fire/auth';
             </div>
             <div id="DonateIconContainer">
               <div id="DonateIcon">
-                <a href=""><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                <a href="https://square.link/u/rf53D66B"><img id='Square' src="assets/square.jpg" alt=""></a>
+                <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
+                <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
               </div>
             </div>
           </div>
@@ -204,10 +204,30 @@ import { Auth } from '@angular/fire/auth';
             position: relative;
             width: 100px;
         }
+        #ZelleContainer {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          font-family: 'InterSemi';
+          text-decoration: underline;
+          text-decoration-color: transparent;
+        }
+        #ZelleText {
+          display: none;
+          position: absolute;
+          top: -40px;
+          font-size: 12px;
+        }
         #Zelle:hover, #Square:hover {
           transform: scale(1.1);
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
+        }
+        #ZelleContainer:hover #ZelleText {
+          display: flex;
         }
         @media (max-width: 850px) {
           #MemberBody {
@@ -239,7 +259,9 @@ import { Auth } from '@angular/fire/auth';
             flex-direction: row;
             justify-content: space-around;
           }
-
+          #ZelleText {
+            display: flex;
+          }
         }
     `]
 })
