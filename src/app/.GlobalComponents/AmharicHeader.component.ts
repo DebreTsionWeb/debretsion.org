@@ -29,7 +29,7 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/Events')">ክስተቶች</a>
             <a id='Live' (click)="navigateTo('/Live')">ቀጥታ ሥርጭት</a>
             <a (click)="navigateTo('/Gallery')">ፎቶግራፎች</a>
-            <a (click)="navigateTo('/Member')">አባልነት</a>
+            <a (click)="navigateTo('/Member')">ለግሱ</a> <!-- አባልነት -->
             <a (click)="navigateTo('/Contact')">አግኙን</a>
             <a id='MobileLanguageSwitch' (click)="navigateTo('/en')">English</a>
           </div>

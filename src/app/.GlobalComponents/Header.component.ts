@@ -29,7 +29,7 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/en/Events')">Events</a>
             <a (click)="navigateTo('/en/Live')">Live</a>
             <a (click)="navigateTo('/en/Gallery')">Gallery</a>
-            <a (click)="navigateTo('/en/Member')">Member</a>
+            <a (click)="navigateTo('/en/Member')">Donate</a>
             <a (click)="navigateTo('/en/Contact')">Contact</a>
             <a id='MobileLanguageSwitch' (click)="navigateTo('/')">አማርኛ</a>
           </div>
