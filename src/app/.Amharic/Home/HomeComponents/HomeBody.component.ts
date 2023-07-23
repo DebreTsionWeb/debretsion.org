@@ -905,10 +905,6 @@ interface Galleries {
 
           #HomeAboutContainer {
             height: 90vh;
-<<<<<<< HEAD
-            margin-top: -10px;
-=======
->>>>>>> fa169fbde076fd04649bc14b05cf4fc87e8a8497
             margin-bottom: 50px;
           }
 
