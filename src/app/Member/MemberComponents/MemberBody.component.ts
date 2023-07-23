@@ -9,7 +9,7 @@ import { Auth } from '@angular/fire/auth';
             <div id="AuthContainer">
               <div id="Auth">
 
-                <ng-container *ngIf="signup === true">
+                <!-- <ng-container *ngIf="signup === true">
                   <MemberSignup></MemberSignup>
                   <div id="SwitchContainer">
                     <p id='SwitchQuestion'>Already a member?</p>
@@ -30,19 +30,19 @@ import { Auth } from '@angular/fire/auth';
                     <p id='LoggedIn'>Welcome Back {{ firstName }}! <br><br> Email: {{ email }} <br><br> Member Name: {{ firstName }} {{ lastName }} <br><br> Kristina Name: {{ kristina }}</p>
                   </div>
                   <button mat-raised-button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
-                </ng-container>
+                </ng-container> -->
 
-              </div>
-            </div>
-          </div>
-          <div id="DonateBodyContainer">
-            <div id="DonateHeaderContainer">
-              <p id="DonateHeader">Donate</p>
-            </div>
-            <div id="DonateIconContainer">
-              <div id="DonateIcon">
-                <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
+                <div id="DonateBodyContainer">
+                  <div id="DonateHeaderContainer">
+                    <p id="DonateHeader">Donate</p>
+                  </div>
+                  <div id="DonateIconContainer">
+                    <div id="DonateIcon">
+                      <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
+                      <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,13 +160,13 @@ import { Auth } from '@angular/fire/auth';
         }
         #DonateBodyContainer {
           display: flex;
-          position: absolute;
+          position: relative;
           width: 97%;
           height: 450px;
           margin-bottom: 5%;
           flex-direction: column;
-          justify-content: flex-end;
-          align-items: flex-end;
+          justify-content: center;
+          align-items: center;
           animation: fade-in 2s ease-in-out;
         }
         #DonateHeaderContainer {
@@ -188,7 +188,7 @@ import { Auth } from '@angular/fire/auth';
           height: 100%;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-end;
+          align-items: center;
         }
         #DonateIcon {
           display: flex;
