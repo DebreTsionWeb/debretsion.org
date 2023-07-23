@@ -51,7 +51,7 @@ import { Component, OnInit } from "@angular/core";
             </div>
             <div id="AboutImageContainer">
               <div id="ImageContainer">
-                <img src="assets/ExampleAboutImg.jpg" alt="picture" id="AboutImage">
+                <img src="assets/AboutImg.jpg" alt="picture" id="AboutImage">
               </div>
             </div>
         </div>

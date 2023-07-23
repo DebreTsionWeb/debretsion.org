@@ -23,9 +23,10 @@ interface Galleries {
 
             <div id="HeroContainer">
               <div id="HeroVideoContainer">
-                <video id='BackgroundVideo' muted autoplay loop preload playsinline webkit-playsinline poster="https://firebasestorage.googleapis.com/v0/b/debretsionweb.appspot.com/o/debretsionherothumbnail.png?alt=media&token=4d5eedfd-03dd-4ab5-a96f-863df80f944b">
-                  <source src="https://firebasestorage.googleapis.com/v0/b/debretsionweb.appspot.com/o/debretsionherovideo.mp4?alt=media&token=0dbba2ff-9ec4-4253-b9f6-ccca84da7169">
+                <video id='BackgroundVideo' muted autoplay loop preload playsinline webkit-playsinline [muted]="'muted'" autoplay="autoplay" loop="loop" playsinline poster="assets/debretsionherothumbnail.png">
+                  <source src="https://dms-exp2.licdn.com/playlist/vid/D4E05AQGNgzjJDNZjbQ/mp4-720p-30fp-crf28/0/1690089121716?e=1690696800&v=beta&t=3-RvVtcP0elwprJ_S_W9_DQXX2v12211St5BMyrinTs">
                 </video>
+
                 <div id="HeroTextContainer">
                   <div id="HeroHeaderContainer">
                     <p id="HeroHeader">ደብረ ጽዮን ቅ/ማርያም ወ ቅ/ገብርኤል ኢ.ኦ.ተ.ቤ</p>
@@ -77,7 +78,7 @@ interface Galleries {
             <div id="HomeEventsContainer">
               <ng-container *ngIf="isMobile; else desktopView">
                 <div id="MobileHomeEventsHeaderContainer">
-                  <p id="MobileHomeEventsHeader">Events</p>
+                  <p id="MobileHomeEventsHeader">ክስተቶች</p>
                 </div>
                 <div id="MobileHomeEventsImageContainer" *ngIf="Event$ | async as event">
                   <img id="HomeEventsImage" [lazyLoad]="event[0].URL" />
@@ -904,7 +905,10 @@ interface Galleries {
 
           #HomeAboutContainer {
             height: 90vh;
+<<<<<<< HEAD
             margin-top: -10px;
+=======
+>>>>>>> fa169fbde076fd04649bc14b05cf4fc87e8a8497
             margin-bottom: 50px;
           }
 
