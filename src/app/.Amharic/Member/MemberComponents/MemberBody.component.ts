@@ -31,7 +31,7 @@ import { Auth } from '@angular/fire/auth';
                   </div>
                   <button mat-raised-button id='LogoutButton' mat-raised-button (click)="logOut()">Logout</button>
                 </ng-container> -->
-                
+
                 <div id="DonateBodyContainer">
                   <div id="DonateHeaderContainer">
                     <p id="DonateHeader">ለግሱ</p>
@@ -43,17 +43,6 @@ import { Auth } from '@angular/fire/auth';
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div id="DonateBodyContainer">
-            <div id="DonateHeaderContainer">
-              <p id="DonateHeader">ለግሱ</p>
-            </div>
-            <div id="DonateIconContainer">
-              <div id="DonateIcon">
-                <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
               </div>
             </div>
           </div>
