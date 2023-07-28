@@ -15,7 +15,14 @@ import { Auth } from '@angular/fire/auth';
           <AdminHeader></AdminHeader>
           <div id='AdminHome'>
             <div id="AdminHomeContainer">
-              <p>hi</p>
+              <p id='HomeText'>Go to
+                <a id='Cloudinary' href='https://console.cloudinary.com/console/c-d201f2e8822a2a98c87f8a8b5a27b9/media_library/search?q=' target='blank'>Cloudinary</a> or
+                <a id='Cloudinary' href='https://console.firebase.google.com/project/debretsionweb/storage/debretsionweb.appspot.com/files' target='blank'>Firebase</a>
+                cloud storage to upload new photos. <br>
+                Click the three dots on your uploaded image and click copy url to get the image url. <br>
+                Then use those image urls when creating a new event or gallery. <br> <br>
+                Cloudinary Login: debretsionkidistmariamwekidusg@gmail.com Pw: {{ Password }} 
+              </p>
             </div>
           </div>
           <AdminFooter></AdminFooter>
@@ -43,6 +50,9 @@ import { Auth } from '@angular/fire/auth';
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+    #HomeText {
+      text-align: center;
     }
   `]
 })
