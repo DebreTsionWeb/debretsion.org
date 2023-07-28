@@ -21,7 +21,7 @@ import { Auth } from '@angular/fire/auth';
                 cloud storage to upload new photos. <br>
                 Click the three dots on your uploaded image and click copy url to get the image url. <br>
                 Then use those image urls when creating a new event or gallery. <br> <br>
-                Cloudinary Login: debretsionkidistmariamwekidusg@gmail.com Pw: {{ Password }} 
+                Cloudinary Login: debretsionkidistmariamwekidusg@gmail.com Pw: {{ Password }}
               </p>
             </div>
           </div>
