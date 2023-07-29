@@ -19,6 +19,11 @@ Admin pages (to create events and galleries, and uses firebase auth):
 https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670588/demos/dtadmin_ot6w9d.mp4
 
 
+Mobile view: 
+
+https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670615/demos/dtmobile_qaav78.mp4
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
