@@ -6,20 +6,23 @@ This website was made to give back to our childhood church and learn Angular, Fi
 
 Home Page: 
 
-<video width="900" height="300" src="https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670605/demos/dthome_quta6y.mp4"></video>
+https://github.com/DebreTsionWeb/debretsion.org/assets/106638403/6e509df3-9d3d-49eb-bfe5-0d18af8c27c6
 
 
 All other pages: 
 
-<video width="900" height="300" src="https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670616/demos/dtpages_hecoib.mp4"></video>
+https://github.com/DebreTsionWeb/debretsion.org/assets/106638403/75469841-d2eb-43fb-aa57-db26c4b6555d
+
 
 Admin pages (to create events and galleries, and uses firebase auth):
 
-<video width="900" height="300" src="https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670588/demos/dtadmin_ot6w9d.mp4"></video>
+https://github.com/DebreTsionWeb/debretsion.org/assets/106638403/230af27e-ba16-49d5-8d1f-321888292bce
+
 
 Mobile view: 
 
-<video width="900" height="300" src="https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670615/demos/dtmobile_qaav78.mp4"></video>
+https://github.com/DebreTsionWeb/debretsion.org/assets/106638403/c3858e09-4f49-4ad0-8b1c-0a3cec822019
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
