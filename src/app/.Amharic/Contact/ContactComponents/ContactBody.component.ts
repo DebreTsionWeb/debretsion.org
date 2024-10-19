@@ -9,8 +9,8 @@ import { Component, OnInit } from "@angular/core";
               <p id="ContactHeader">አግኙን</p>
             </div>
             <div id="InfoContainer">
-              <p id="Address">22222 Gerogia Ave,<br>Brookeville, MD 20833</p>
-              <p id="PhoneNumber">Phone: 301-570-3300</p>
+              <p id="Address">22222 Georgia Ave,<br>Brookeville, MD 20833</p>
+              <p id="PhoneNumber">Phone: 804-814-6011</p>
               <a id='Email' href="https://mail.google.com/mail?view=cm&fs=1&to=kwgzme@yahoo.com&su=Draft" target="blank">kwgzme@yahoo.com</a>
             </div>
             <div id="MapsContainer">

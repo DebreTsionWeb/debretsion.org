@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'en/Events', title: 'Events | DTKMG', component: EventsScreen},
   { path: 'en/Live', title: 'Live | DTKMG', component: LiveScreen},
   { path: 'en/Gallery', title: 'Gallery | DTKMG', component: GalleryScreen},
-  { path: 'en/Member', title: 'Member | DTKMG', component: MemberScreen},
+  { path: 'en/Donate', title: 'Donate | DTKMG', component: MemberScreen},
   { path: 'en/Contact', title: 'Contact Us | DTKMG', component: ContactScreen},
 
   { path: '', title: 'Home | DTKMG', component: AmharicHomeScreen },
@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'Events', title: 'Events | DTKMG', component: AmharicEventsScreen},
   { path: 'Live', title: 'Live | DTKMG', component: AmharicLiveScreen},
   { path: 'Gallery', title: 'Gallery | DTKMG', component: AmharicGalleryScreen},
-  { path: 'Member', title: 'Member | DTKMG', component: AmharicMemberScreen},
+  { path: 'Donate', title: 'Donate | DTKMG', component: AmharicMemberScreen},
   { path: 'Contact', title: 'Contact Us | DTKMG', component: AmharicContactScreen},
 
   { path: 'Admin', title: 'Admin Portal | DTKMG', component: AdminScreen},

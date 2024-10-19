@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -116,6 +117,7 @@ import { AdminMember } from './.Admin/AdminComponents/AdminMember.component';
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatMenuModule,
     MatButtonModule,
     MatFormFieldModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

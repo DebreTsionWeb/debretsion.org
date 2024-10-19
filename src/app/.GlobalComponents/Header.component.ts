@@ -29,7 +29,12 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/en/Events')">Events</a>
             <a (click)="navigateTo('/en/Live')">Live</a>
             <a (click)="navigateTo('/en/Gallery')">Gallery</a>
-            <a (click)="navigateTo('/en/Member')">Donate</a>
+            <a id="NavbarListMember" mat-button [matMenuTriggerFor]="memberMenu">Member</a>
+            <mat-menu #memberMenu="matMenu">
+              <a mat-menu-item href="https://www.zeffy.com/en-US/ticketing/1efa851d-a182-4c79-9e8e-f436c35178b7">Single</a>
+              <a mat-menu-item href="https://www.zeffy.com/en-US/ticketing/8b37c24f-a593-4754-a691-d09a7b1a2628">Married</a>
+            </mat-menu>
+            <a (click)="navigateTo('/en/Donate')">Donate</a>
             <a (click)="navigateTo('/en/Contact')">Contact</a>
             <a id='MobileLanguageSwitch' (click)="navigateTo('/')">አማርኛ</a>
           </div>
@@ -117,11 +122,17 @@ import { Router } from "@angular/router";
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
+        align-items: center;
       }
 
       a {
         cursor: pointer;
         font-family: 'InterMedium';
+      }
+
+      .mdc-button {
+        letter-spacing: normal !important;
+        font-size: 16px;
       }
 
       a:hover {
@@ -192,6 +203,11 @@ import { Router } from "@angular/router";
           padding: 8px 5px;
           margin: 5px;
           border-radius: 10px;
+        }
+
+        #NavbarListMember {
+          width: 26% !important;
+          padding: 19px 55px !important;
         }
 
         #NavbarListContainer.show a:hover {
