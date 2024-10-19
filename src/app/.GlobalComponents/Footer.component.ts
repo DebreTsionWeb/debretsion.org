@@ -27,8 +27,8 @@ import { Component, OnInit } from "@angular/core";
         <div id="Zelle">
         <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target="blank"><img id='Zelle' src="assets/zelle.webp" alt=""></a>
         </div>
-        <div id="Square">
-        <a href="https://square.link/u/rf53D66B" target="blank"><img id='Square' target="blank" src="assets/square.jpg" alt=""></a>
+        <div id="Zeffy">
+              <a href="https://www.zeffy.com/en-US/donation-form/fb04e99d-e542-46e8-a7f3-dd9907545ae7" target='blank'><img id='Zeffy' src="assets/zeffy.png" alt=""></a>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@ import { Component, OnInit } from "@angular/core";
         color: white;
        }
 
-       #Address:hover, #Email:hover, #Icon:hover, #Zelle:hover, #Square:hover{
+       #Address:hover, #Email:hover, #Icon:hover, #Zelle:hover, #Zeffy:hover{
         opacity: 0.8;
         }
 
@@ -124,7 +124,7 @@ import { Component, OnInit } from "@angular/core";
         width: 25px;
         margin-top: 3px;
        }
-       #Square{
+      #Zeffy{
         width: 24px;
         height: 24px;
         margin-bottom: 3px;
