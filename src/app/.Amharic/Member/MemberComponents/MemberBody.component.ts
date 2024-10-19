@@ -40,6 +40,7 @@ import { Auth } from '@angular/fire/auth';
                     <div id="DonateIcon">
                       <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>301-570-3300</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
                       <a href="https://square.link/u/rf53D66B" target='blank'><img id='Square' src="assets/square.jpg" alt=""></a>
+                      <a href="https://www.zeffy.com/en-US/donation-form/fb04e99d-e542-46e8-a7f3-dd9907545ae7" target='blank'><img id='Zeffy' src="assets/zeffy.png" alt=""></a>
                     </div>
                   </div>
                 </div>
@@ -53,7 +54,7 @@ import { Auth } from '@angular/fire/auth';
             display: flex;
             position: relative;
             width: 100%;
-            height: 105vh;
+            height: 85vh;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -199,7 +200,7 @@ import { Auth } from '@angular/fire/auth';
           justify-content: space-around;
           align-items: center;
         }
-        #Zelle, #Square {
+        #Zelle, #Square, #Zeffy {
             display: flex;
             position: relative;
             width: 100px;
@@ -221,7 +222,7 @@ import { Auth } from '@angular/fire/auth';
           top: -40px;
           font-size: 12px;
         }
-        #Zelle:hover, #Square:hover {
+        #Zelle:hover, #Square:hover, #Zeffy:hover {
           transform: scale(1.1);
           transition: transform 0.3s ease-in-out;
           opacity: 0.8;
@@ -232,7 +233,6 @@ import { Auth } from '@angular/fire/auth';
         @media (max-width: 850px) {
           #MemberBody {
             flex-direction: column;
-            height: 135vh;
           }
           #MemberBodyContainer {
             width: 90%;
@@ -252,11 +252,9 @@ import { Auth } from '@angular/fire/auth';
           #DonateIconContainer{
             justify-content: center;
             align-items: center;
-            height: 50%;
           }
           #DonateIcon{
             width: 60%;
-            flex-direction: row;
             justify-content: space-around;
           }
           #ZelleText {
