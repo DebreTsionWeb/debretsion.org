@@ -125,7 +125,7 @@ import { Router } from "@angular/router";
         cursor: pointer;
         font-family: 'InterMedium';
         text-decoration: none;
-        color black;
+        color: black;
       }
 
       .mdc-button {
