@@ -29,11 +29,7 @@ import { Router } from "@angular/router";
             <a (click)="navigateTo('/en/Events')">Events</a>
             <a (click)="navigateTo('/en/Live')">Live</a>
             <a (click)="navigateTo('/en/Gallery')">Gallery</a>
-            <a id="NavbarListMember" mat-button [matMenuTriggerFor]="memberMenu">Member</a>
-            <mat-menu #memberMenu="matMenu">
-              <a mat-menu-item href="https://www.zeffy.com/en-US/ticketing/1efa851d-a182-4c79-9e8e-f436c35178b7">Single</a>
-              <a mat-menu-item href="https://www.zeffy.com/en-US/ticketing/8b37c24f-a593-4754-a691-d09a7b1a2628">Married</a>
-            </mat-menu>
+            <a href="https://www.zeffy.com/en-US/ticketing/8b37c24f-a593-4754-a691-d09a7b1a2628">Member</a>
             <a (click)="navigateTo('/en/Donate')">Donate</a>
             <a (click)="navigateTo('/en/Contact')">Contact</a>
             <a id='MobileLanguageSwitch' (click)="navigateTo('/')">አማርኛ</a>
