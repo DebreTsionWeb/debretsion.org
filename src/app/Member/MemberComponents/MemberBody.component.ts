@@ -39,7 +39,14 @@ import { Auth } from '@angular/fire/auth';
                   <div id="DonateIconContainer">
                     <div id="DonateIcon">
                       <a id='ZelleContainer' href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiREVCUkUgVFNJT04gS0lESVNUIE1BUklBTSBXRSBLSURVUyBHQUJSSSIsImFjdGlvbiI6InBheW1lbnQiLCJ0b2tlbiI6ImR0bWFyaWFtZ0BnbWFpbC5jb20ifQ==" target='blank'><p id='ZelleText'>804-814-6011</p><img id='Zelle' src="assets/zelle.webp" alt=""></a>
-                      <a href="https://www.zeffy.com/en-US/donation-form/fb04e99d-e542-46e8-a7f3-dd9907545ae7" target='blank'><img id='Zeffy' src="assets/zeffy.png" alt=""></a>Pay Your Tithes Here
+                      <br />
+                      <br />
+                      <a href="https://www.zeffy.com/donation-form/special-project-funding" target='blank'><img id='Zeffy' src="assets/zeffy.png" alt=""></a>
+                      Special Project Funding
+                      <br />
+                      <br />
+                      <a href="https://www.zeffy.com/en-US/donation-form/fb04e99d-e542-46e8-a7f3-dd9907545ae7" target='blank'><img id='Zeffy' src="assets/zeffy.png" alt=""></a>
+                      Pay Your Tithes Here
                     </div>
                   </div>
                 </div>
